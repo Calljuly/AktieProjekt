@@ -1,11 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const options = (props) =>{
-return (
-<button className="navigationOption">
-<img className="optionImg" src={props.bild}></img>
-{props.Name}
-</button>
+
+    return (
+        <button onClick={props.change} className="navigationOption">
+        <img className="optionImg" src={props.bild}></img>
+        {props.Name}
+        </button>
 
 )
 }
