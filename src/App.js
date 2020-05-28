@@ -11,19 +11,7 @@ function App() {
   const [homeClicked, changeHomeState] = useState(false)
   const [portfolioClicked, changePortfolioState] = useState(false)
   const [settingsClicked, changeSettingsState] = useState(false)
-  const show = null;
-
-  const ShowContent = () => {
-    if(homeClicked){
-      return  <Main Date={date.date1}></Main>
-    }
-    else if(portfolioClicked){
-      return  <p>Portfolio</p>
-    }
-    else if(settingsClicked){
-      return  <p>Settings</p>
-    }
-  }
+  
   const homeButtonClicked = () =>{
     if(!homeClicked){
       changeHomeState(true);
@@ -55,7 +43,9 @@ function App() {
     changeSettings={settingsButtonClicked}
     >
     </Meny>
-    {ShowContent()}
+    <Main homeScreen={homeClicked}
+    portfolioScreen={portfolioClicked}
+    settingsScreen={settingsClicked}></Main>
     </div>
   );
 }
