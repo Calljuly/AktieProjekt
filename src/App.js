@@ -5,11 +5,13 @@ import Meny from './Components/SideMenu'
 import Main from './Components/MainContentComponent'
 
 function App() {
- 
+  const [date, setDate] = useState({
+    date1 : '2020-05-28'
+  })
   return (
     <div className="App">
       <Meny></Meny>
-      <Main></Main>
+      <Main Date={date.date1}></Main>
     </div>
   );
 }

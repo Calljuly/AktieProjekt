@@ -72,9 +72,10 @@ html, body{
 }
 #logout{
   color: #C9B791;
+  width: 12%;
   text-align: center;
   opacity: 1;
-  padding: 20px;
+  padding: 2%;
   font-size: x-large;
   position: absolute;
   left: 7%;
@@ -100,6 +101,7 @@ html, body{
   padding: 5%;
   padding-top: 50px;
   float: left;
+  width: 80%;
 }
 .optionImg{
   margin-right: 10px;
