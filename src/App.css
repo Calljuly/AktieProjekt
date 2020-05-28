@@ -1,5 +1,7 @@
+
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -35,4 +37,78 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#sideMenu{
+  background-color: #3C3C3B;
+  width: 25%;
+  height: 900px;
+  float: left;
+}
+.navigationOption{
+  background-color: #363636;
+  color: #C9B791;
+  border: none;
+  font-size: x-large;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  opacity: 1;
+
+}
+.navigationOption:hover{
+  background-color: #292929;
+  color: #FDCC6B;
+}
+.navigationOptionActive{
+  background-color: #292929;
+  color: #FDCC6B;
+
+}
+#logout{
+  color: #C9B791;
+  text-align: center;
+  opacity: 1;
+  padding: 20px;
+  font-size: x-large;
+  position: absolute;
+  left:120px;
+  top: 700px;
+  border-top: 1px solid #C9B791;
+}
+#mainContent{
+  display: inline-block;
+  width: 75%;
+  float: left;
+}
+* {
+  box-sizing: border-box;
+}
+.title{
+  color: #656565;
+  opacity: 1;
+  font-family: 'Poppins-Medium';
+  float: left;
+  margin: 40px;
+}
+#campus{
+  padding: 5%;
+  padding-top: 50px;
+  float: left;
+}
+.optionImg{
+  margin-right: 10px;
+  opacity: 1;
+}
+.infoBox{
+  background-color: #FFD98D;
+  font-size: x-large;
+  padding: 10px;
+  padding-left: 20px;
+  width: 70%;
+  position: absolute;
+  float: left; 
+  margin: 40px;
+  top: 60px;
+  text-align: left;
 }
