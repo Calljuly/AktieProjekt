@@ -10,7 +10,7 @@ export default function ProfilePicture (props){
          
         <div style={containerStyles}>
             <div style={editSymbol}></div>
-            <img style={imageStyles} src={require(`./${props.pictureName.toLowerCase()}.jpg`)} alt='Profile'/>
+            <img style={imageStyles} src={require(`../../images/${props.pictureName.toLowerCase()}.jpg`)} alt='Profile'/>
         </div>
         
     );
