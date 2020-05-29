@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../Header'
-import InfoBox from '../InfoBox'
+import Header from './Header'
+import InfoBox from './InfoBox'
 
 const maincomponent = (props) =>{
 

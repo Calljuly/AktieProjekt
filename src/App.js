@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Meny from './Components/SidoMeny/SideMenu'
-import Main from './Components/SidoMeny/MainContentComponent'
+import Main from './Components/Main/MainContentComponent'
 
 function App() {
   const [date, setDate] = useState({
