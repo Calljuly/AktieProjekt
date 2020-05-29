@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import Options from './SideNavigationOptions'
-import Setting from '../Bilder/cog.svg'
-import Home from '../Bilder/home.svg'
-import Test from '../Bilder/portfolio.png'
+import Setting from '../../images/cog.svg'
+import Home from '../../images/home.svg'
+import Test from '../../images/portfolio.png'
 
 
 const container = (props) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import LogOutPic from '../Bilder/logout.svg'
+import LogOutPic from '../../images/logout.svg'
 
 const logout = () => {
 return (<div id="logout">

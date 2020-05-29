@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from './Header'
 import InfoBox from './InfoBox'
 
@@ -41,8 +41,8 @@ const maincomponent = (props) =>{
 
     return (
         <div id="mainContent">
-            <Header head={getTitle()}></Header>
-            {ShowContent()}
+        <Header head={getTitle()}></Header>
+        {ShowContent()}
         </div>
         )
 }
