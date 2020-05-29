@@ -1,8 +1,7 @@
 import React from 'react'
-import Bild from '../Bilder/Image 2@2x.png'
+import Bild from '../Bilder/LoggoTyp.png'
 import Container from './SideNavigationContainer'
 import LogOut from './Logout'
-import Test from '../Bilder/cog.svg'
 
 const sidemenu = (props) => {
 return (

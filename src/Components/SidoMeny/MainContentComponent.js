@@ -1,7 +1,6 @@
 import React from 'react'
-import Header from './Header'
-import InfoBox from './InfoBox'
-
+import Header from '../Header'
+import InfoBox from '../InfoBox'
 
 const maincomponent = (props) =>{
 
@@ -10,6 +9,7 @@ const maincomponent = (props) =>{
     const fullText = textStart.concat( props.Date, textEnd)
 
     let title = null;
+
     const ShowContent = () => {
         if(props.homeScreen){
             title = 'Hem';

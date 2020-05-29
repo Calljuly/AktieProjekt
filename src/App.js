@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Meny from './Components/SideMenu'
-import Main from './Components/MainContentComponent'
+import Meny from './Components/SidoMeny/SideMenu'
+import Main from './Components/SidoMeny/MainContentComponent'
 
 function App() {
   const [date, setDate] = useState({
