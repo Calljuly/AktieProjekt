@@ -3,7 +3,7 @@ import Container from './SideNavigationContainer'
 import LogOut from './Logout'
 import Bild from '../../images/LoggoTyp.png'
 
-const sidemenu = (props) => {
+const SideMenu = (props) => {
 return (
     <div id="sideMenu">
     <img id="campus" src={Bild} alt="Campus Mölndal"></img>
@@ -15,4 +15,4 @@ return (
 );
 
 }
-export default sidemenu;
+export default SideMenu;

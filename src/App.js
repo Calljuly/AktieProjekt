@@ -40,12 +40,11 @@ function App() {
     <Main Date={date.date1}
     homeScreen={homeClicked}
     portfolioScreen={portfolioClicked}
-    settingsScreen={settingsClicked}></Main>
+    settingsScreen={settingsClicked}/>
     <Meny 
     changeHome={homeButtonClicked}
     changePortfolio={portfolioButtonClicked}
-    changeSettings={settingsButtonClicked}>
-    </Meny>
+    changeSettings={settingsButtonClicked}/>
     </div>
   );
 }

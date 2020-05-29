@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const options = (props) =>{
+const Options = (props) =>{
 
     return (
         <button onClick={props.change} className="navigationOption">
@@ -10,4 +10,4 @@ const options = (props) =>{
 
 )
 }
-export default options;
+export default Options;

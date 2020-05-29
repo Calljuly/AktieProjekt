@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Header from './Header'
 import InfoBox from './InfoBox'
 
-const maincomponent = (props) =>{
+const MainComponent = (props) =>{
 
     const textStart = 'Välkommen Magnus! Ditt innehav blev senast uppdaterad ';
     const textEnd = '. Ta gärna en titt!'
@@ -46,4 +46,4 @@ const maincomponent = (props) =>{
         </div>
         )
 }
-export default maincomponent;
+export default MainComponent;
