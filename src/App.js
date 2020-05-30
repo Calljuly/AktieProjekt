@@ -10,7 +10,6 @@ function App() {
   const [homeClicked, changeHomeState] = useState(true)
   const [portfolioClicked, changePortfolioState] = useState(false)
   const [settingsClicked, changeSettingsState] = useState(false)
-  const show = null;
 
   const homeButtonClicked = () =>{
     if(!homeClicked){

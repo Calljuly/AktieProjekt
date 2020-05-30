@@ -6,11 +6,11 @@ import Bild from '../../images/LoggoTyp.png'
 const SideMenu = (props) => {
 return (
     <div id="sideMenu">
-    <img id="campus" src={Bild} alt="Campus Mölndal"></img>
+    <img id="campus" src={Bild} alt="Campus Mölndal"/>
         <Container changeHome={props.changeHome}
         changePortfolio={props.changePortfolio}
-        changeSettings={props.changeSettings}></Container>
-        <LogOut></LogOut>
+        changeSettings={props.changeSettings}/>
+        <LogOut/>
     </div>
 );
 
