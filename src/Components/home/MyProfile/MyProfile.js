@@ -8,7 +8,7 @@ import './myProfile.css'
 export default function HomeDashboardMyProfile(props){
     return(
         <div id='main'>
-            <p>Min Profil</p>
+            <p><strong>Min Profil</strong></p>
             <div id='image-summary-main-container'>
                 <div className='image-summary-container'>
                     <ProfilePicture pictureName = {'testprofile'}/>
