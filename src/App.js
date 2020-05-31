@@ -9,13 +9,12 @@ const dummyProfile = {
   adress: 'trätorget',
   zipCode: '456123',
   city: 'Göteborg',
-  preferences: ['it', 'restaurang', 'djurhållning', 'industri']
+  preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
 }
 
 function App() {
   return (
     <div>
-      <h1>Hello world!</h1>
       <HomeDashboardMyProfile person={dummyProfile}/>
     </div>
   );

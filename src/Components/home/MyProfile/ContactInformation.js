@@ -1,5 +1,4 @@
 import React from 'react';
-import './contactInformation.css';
 
 export default function HomeDashBoardMyProfileContactInformation(props){
     return (
