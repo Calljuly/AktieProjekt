@@ -1,18 +1,10 @@
 import React, {useState} from 'react';
 import Main from './Components/home/MainContentComponent'
 import Meny from './Components/SidoMeny/SideMenu'
-import HomeDashboardMyProfile from './Components/home/MyProfile/MyProfile';
 import './App.css';
 
-const dummyProfile = {
-  name: 'John Doe',
-  'social security number': '730605-9090',
-  mail: 'john@gmail.com',
-  adress: 'trätorget',
-  zipCode: '456123',
-  city: 'Göteborg',
-  preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
-}
+
+
 
 function App() {
   const [date, setDate] = useState({
@@ -56,7 +48,6 @@ function App() {
     homeScreen={homeClicked}
     portfolioScreen={portfolioClicked}
     settingsScreen={settingsClicked}/>
-    <HomeDashboardMyProfile person={dummyProfile}/>
     </div>
   );
 }
