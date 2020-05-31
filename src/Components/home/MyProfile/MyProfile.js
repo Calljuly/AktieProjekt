@@ -10,7 +10,7 @@ export default function HomeDashboardMyProfile(props){
         <div id='main'>
             <div id="header-button-container">
                 <p><strong>Min Profil</strong></p>
-                <button>Redigera</button>
+                <button id="#edit-btn">Redigera</button>
             </div>
             <div id='image-summary-main-container'>
                 <div className='image-summary-container'>

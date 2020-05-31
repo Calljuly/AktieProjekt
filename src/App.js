@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import './App.css';
-import Meny from './Components/SidoMeny/SideMenu'
 import Main from './Components/home/MainContentComponent'
+import Meny from './Components/SidoMeny/SideMenu'
 import HomeDashboardMyProfile from './Components/home/MyProfile/MyProfile';
+import './App.css';
 
 const dummyProfile = {
   name: 'John Doe',
@@ -48,14 +48,15 @@ function App() {
 
   return (
     <div className="App">
-    <Main Date={date.date1}
-    homeScreen={homeClicked}
-    portfolioScreen={portfolioClicked}
-    settingsScreen={settingsClicked}/>
     <Meny 
     changeHome={homeButtonClicked}
     changePortfolio={portfolioButtonClicked}
     changeSettings={settingsButtonClicked}/>
+    <Main Date={date.date1}
+    homeScreen={homeClicked}
+    portfolioScreen={portfolioClicked}
+    settingsScreen={settingsClicked}/>
+    <HomeDashboardMyProfile person={dummyProfile}/>
     </div>
   );
 }
