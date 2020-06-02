@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Main from './Components/home/MainContentComponent'
 import Meny from './Components/SidoMeny/SideMenu'
 import './App.css';
-import HomeDashboardMyProfile from './Components/home/MyProfile/MyProfile';
+import HomeDashBoardContainer from './Components/home/DashBoardContainer';
 
 
 
@@ -49,7 +49,7 @@ function App() {
   }
 
   return (
-    <HomeDashboardMyProfile person={dummyProfile}/>
+    <HomeDashBoardContainer person={dummyProfile}/>
     // <div className="App">
     // <Meny 
     // changeHome={homeButtonClicked}

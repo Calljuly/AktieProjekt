@@ -5,16 +5,19 @@ import HomeMyProfileSummary from './Summary';
 import HomeDashBoardMyProfilePrefferedBusinesses from './PrefferedBusinesses';
 import HomeDashBoardMyProfileContactInformation from './ContactInformation';
 
-//kommer behöva ändras till 50 % när emils kod ska vara i samma div
 const Main = styled.div`
-    margin: 1em;
-    width: fit-content;
+    margin: 0.5em;
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
 `;
 
 const TitleButtonContainer = styled.div`
-    width: 100%;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        display: block;
+    }
 `;
 
 const Button = styled.button`
@@ -22,7 +25,10 @@ const Button = styled.button`
     background-color: rgb(70, 67, 67);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 1em;
+    @media (max-width: 768px) {
+        padding: 0.2em;
+    }
 `;
 
 const ImageSummaryContainer = styled.div`

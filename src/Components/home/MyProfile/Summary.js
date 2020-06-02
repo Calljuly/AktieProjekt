@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     margin: 1em;
+    @media (max-width: 768px) {
+        margin: 0;
+    }
 `;
 
 const Name = styled.p`

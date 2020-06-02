@@ -6,6 +6,9 @@ const Container = styled.div`
     height: 100px;
     width: 100px;
     margin: 1em;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const EditSymbol = styled.div`
