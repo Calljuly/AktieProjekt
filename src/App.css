@@ -64,7 +64,8 @@ html, body{
   border-top: 1px solid #C9B791;
 }
 #mainContent{
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   width: 75%;
 }
 * {
@@ -93,9 +94,9 @@ html, body{
   padding: 10px;
   padding-left: 20px;
   width: 70%;
-  position: absolute;
+  /* position: absolute; */
   float: left; 
   margin: 40px;
-  top: 60px;
+  /* top: 60px; */
   text-align: left;
 }
