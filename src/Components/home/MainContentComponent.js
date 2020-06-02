@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Header from './Header';
 import InfoBox from './InfoBox';
-import HomeDashboardMyProfile from './MyProfile/MyProfile';
+import HomeDashBoardContainer from '../home/DashBoardContainer';
 
 
 const dummyProfile = {
@@ -55,7 +55,7 @@ const MainComponent = (props) =>{
         <div id="mainContent">
         <Header head={getTitle()}></Header>
         {ShowContent()}
-        <HomeDashboardMyProfile person={dummyProfile}/>
+        <HomeDashBoardContainer person={dummyProfile}/>
         </div>
         )
 }

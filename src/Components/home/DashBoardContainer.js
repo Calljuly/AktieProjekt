@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import HomeDashboardMyProfile from '../home/MyProfile/MyProfile';
 
 const MainContainer = styled.div`
+    border-radius: 5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: grey;
+    background-color: #F6FAFB;
     height: 100%;
     width: 100%;
 `;
