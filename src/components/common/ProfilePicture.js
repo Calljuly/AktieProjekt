@@ -1,6 +1,29 @@
 import React from 'react';
-import {containerStyles, editSymbol, imageStyles} from './ProfilePictureStyles';
+import styled from 'styled-components';
 
+const Container = styled.div`
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    margin: 1em;
+`;
+
+const EditSymbol = styled.div`
+    background-color: #FDCC6B;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+`;
+
+const Image = styled.img`
+    padding: 0px;
+    margin: 0px;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+`;
 
 
 
@@ -8,10 +31,10 @@ export default function ProfilePicture (props){
     
     return(
          
-        <div style={containerStyles}>
-            <div style={editSymbol}></div>
-            <img style={imageStyles} src={require(`../../images/${props.pictureName.toLowerCase()}.jpg`)} alt='Profile'/>
-        </div>
+        <Container>
+            <EditSymbol/>
+            <Image src={require(`../../images/${props.pictureName.toLowerCase()}.jpg`)} alt='Profile'/>
+        </Container>
         
     );
 }

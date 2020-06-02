@@ -1,4 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Table = styled.table`
+    width:100%;
+    padding: 0.5em;
+`;
+
+const Caption = styled.caption`
+    width:70%;
+    text-align: left;
+    color: rgb(170, 167, 167);
+    padding: 0.5em;
+`;
 
 
 export default function HomeDashBoardMyProfilePrefferedBusinesses(props){
@@ -21,12 +34,12 @@ export default function HomeDashBoardMyProfilePrefferedBusinesses(props){
 
     return (
         <div>
-            <table>
-            <caption>Föredragna industrier</caption>
+            <Table>
+            <Caption>Föredragna industrier</Caption>
                <tbody>
                   {constructTableRows(prefferedBusinesses)}
                </tbody>
-            </table>
+            </Table>
          </div>
     );
      

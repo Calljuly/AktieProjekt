@@ -1,31 +1,48 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Table = styled.table`
+    width:100%;
+    padding: 0.5em;
+`;
+
+const Caption = styled.caption`
+    width:70%;
+    text-align: left;
+    color: rgb(170, 167, 167);
+    padding: 0.5em;
+`;
+
+const Th = styled.th`
+    text-align: left;
+`;
 
 export default function HomeDashBoardMyProfileContactInformation(props){
     return (
-        <table>
-            <caption style={{textAlign: 'left'}}>Kontaktuppgifter</caption>
+        <Table>
+            <Caption>Kontaktuppgifter</Caption>
             <tbody>
                 <tr>
-                    <th>Name</th>
+                    <Th>Name</Th>
                     <td>{props.person.name}</td>
                 </tr>
                 <tr>
-                    <th>Mail</th>
+                    <Th>Mail</Th>
                     <td>{props.person.mail}</td>
                 </tr>
                 <tr>
-                    <th>Adress</th>
+                    <Th>Adress</Th>
                     <td>{props.person.adress}</td>
                 </tr>
                 <tr>
-                    <th>Postnummer</th>
+                    <Th>Postnummer</Th>
                     <td>{props.person.zipCode}</td>
                 </tr>
                 <tr>
-                    <th>Postort</th>
+                    <Th>Postort</Th>
                     <td>{props.person.city}</td>
                 </tr>
             </tbody>
-        </table>
+        </Table>
     );
 }

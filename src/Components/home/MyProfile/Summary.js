@@ -1,11 +1,32 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    margin: 1em;
+`;
+
+const Name = styled.p`
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 5px;
+`;
+
+const NumbersDescription = styled.p`
+    font-size: 0.85em;
+    color: rgb(170, 167, 167);
+    margin: 5px;
+`;
+
+const Numbers = styled.p`
+    margin: 5px;
+`;
 
 export default function HomeMyProfileSummary(props){
     return (
-        <div>
-            <p style={{fontSize:'1.25em'}}><strong>{props.person.name}</strong></p>
-            <p style={{fontSize:'0.75em'}}>Personnummer/Organisationsnummer:</p>
-            <p>{props.person['social security number']}</p>
-        </div>
+        <Container>
+            <Name>{props.person.name}</Name>
+            <NumbersDescription >Personnummer/Organisationsnummer:</NumbersDescription>
+            <Numbers>{props.person['social security number']}</Numbers>
+        </Container>
     )
 }
