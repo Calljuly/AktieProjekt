@@ -41,6 +41,24 @@ const Main = styled.div`
     padding: 2em;
 `;
 
+const Total = styled.span`
+    font-size: 38px;
+    color: #3C4368;
+`;
+
+const LastUpdated = styled.span`
+    font-size: 13px;
+    color: #A1A8C3;
+    margin-left: 15px;
+
+`;
+
+const TotalContainer = styled.p`
+    margin: 35px 0px;
+    /* margin-left: 0px; */
+
+`;
+
 function MyPossessionsContent() {
   return (
     <Main>
@@ -48,7 +66,7 @@ function MyPossessionsContent() {
                 <p><strong>Mitt innehav</strong></p>
                 <Button>Min Portfölj</Button>
         </TitleButtonContainer>
-        <br/><br/>
+        <TotalContainer><Total>{total} SEK</Total><LastUpdated>Uppdaterad: {new Date(document.lastModified).toDateString()}</LastUpdated></TotalContainer>
       <div className = "container">
           {items}
           

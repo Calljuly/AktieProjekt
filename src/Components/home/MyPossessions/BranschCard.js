@@ -1,38 +1,45 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const BranchName = styled.span`
+    font-size: 14px;  
+    color: #3D4465;
+`;
+
+const Companies = styled.span`
+    font-size: 12px;
+    color: #A1A8C3;
+  `;
+
+const SEK = styled.span`
+font-size: 14px;
+color: #A1A8C3;
+`;
+
+const Amount = styled.span`
+font-size: 13px;
+color: #646C9A;
+`;
+
 
 const BranchCard = ({branch, amount, boxColor}) =>{
     let colorStyle = {
         backgroundColor: boxColor};
     
-    let test = {
-      fontSize: 14 + "px",  
-      color: "#3D4465"
-    };
-
-    let test2 = {
-        fontSize: 12 + "px"  ,
-        color: "#A1A8C3"
-      };
-
-    let sekStyle = {
-        fontSize: 14 + "px"  ,
-        color: "#A1A8C3"
-    }
-
     return (
         
         <div className = "category">
             <div className = "left">
                 <div className = "colorBox" style = {colorStyle}></div>
                 <p>
-                    <span style = {test}>{branch}</span> 
+                    <BranchName>{branch}</BranchName> 
                     <br/> 
-                    <span style = {test2}>Företag 1, Företag 2 +4</span>
+                    <Companies>Företag 1, Företag 2 +4</Companies>
                 </p>          
             </div>
             <p>
-                <span style = {test}>{amount}</span>
-                <span style = {sekStyle}> SEK</span>
+                <Amount>{amount}</Amount>
+                <SEK> SEK</SEK>
             </p>
         </div>
     )
