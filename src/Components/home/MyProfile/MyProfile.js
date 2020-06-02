@@ -7,17 +7,11 @@ import HomeDashBoardMyProfileContactInformation from './ContactInformation';
 
 const Main = styled.div`
     margin: 0.5em;
-    @media (max-width: 768px) {
-        font-size: 12px;
-    }
 `;
 
 const TitleButtonContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    @media (max-width: 768px) {
-        display: block;
-    }
 `;
 
 const Button = styled.button`

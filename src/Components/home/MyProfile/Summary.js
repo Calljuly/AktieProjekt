@@ -29,7 +29,8 @@ export default function HomeMyProfileSummary(props){
     return (
         <Container>
             <Name>{props.person.name}</Name>
-            <NumbersDescription >Personnummer/Organisationsnummer:</NumbersDescription>
+            <NumbersDescription >Personnummer/</NumbersDescription>
+            <NumbersDescription>Organisationsnummer:</NumbersDescription>
             <Numbers>{props.person['social security number']}</Numbers>
         </Container>
     )

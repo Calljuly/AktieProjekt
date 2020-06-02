@@ -8,9 +8,6 @@ const Container = styled.div`
     max-height: 100px;
     max-width: 100px;
     margin: 1em;
-    @media (max-width: 768px) {
-        display: none;
-    }
 `;
 
 const EditSymbol = styled.div`
