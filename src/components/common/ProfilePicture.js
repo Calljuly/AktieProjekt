@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     display: inline-block;
-    height: 100px;
-    width: 100px;
+    min-height: 100px;
+    min-width: 100px;
+    max-height: 100px;
+    max-width: 100px;
     margin: 1em;
     @media (max-width: 768px) {
         display: none;
