@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import './App.css';
-import Meny from './Components/SidoMeny/SideMenu'
 import Main from './Components/home/MainContentComponent'
+import Meny from './Components/SidoMeny/SideMenu'
+import './App.css';
+
 
 function App() {
   const [date, setDate] = useState({
@@ -35,15 +36,16 @@ function App() {
   }
 
   return (
+    
     <div className="App">
-    <Main Date={date.date1}
-    homeScreen={homeClicked}
-    portfolioScreen={portfolioClicked}
-    settingsScreen={settingsClicked}/>
     <Meny 
     changeHome={homeButtonClicked}
     changePortfolio={portfolioButtonClicked}
     changeSettings={settingsButtonClicked}/>
+    <Main Date={date.date1}
+    homeScreen={homeClicked}
+    portfolioScreen={portfolioClicked}
+    settingsScreen={settingsClicked}/>
     </div>
   );
 }
