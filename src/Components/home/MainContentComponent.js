@@ -1,6 +1,18 @@
-import React, {useState} from 'react'
-import Header from './Header'
-import InfoBox from './InfoBox'
+import React, {useState} from 'react';
+import Header from './Header';
+import InfoBox from './InfoBox';
+import HomeDashBoardContainer from '../home/DashBoardContainer';
+
+
+const dummyProfile = {
+  name: 'John Doe',
+  'social security number': '730605-9090',
+  mail: 'john@gmail.com',
+  adress: 'trätorget',
+  zipCode: '456123',
+  city: 'Göteborg',
+  preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
+}
 
 const MainComponent = (props) =>{
 
@@ -43,6 +55,7 @@ const MainComponent = (props) =>{
         <div id="mainContent">
         <Header head={getTitle()}></Header>
         {ShowContent()}
+        <HomeDashBoardContainer person={dummyProfile}/>
         </div>
         )
 }
