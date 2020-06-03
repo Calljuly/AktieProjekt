@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import Main from './Components/home/MainContentComponent'
-import Meny from './Components/SidoMeny/SideMenu'
+import SideMenu from './Components/SidoMeny/SideMenu'
 import './App.css';
+import styled from 'styled-components'
 
 
 function App() {
@@ -34,14 +35,15 @@ function App() {
       changePortfolioState(false);
     }
   }
-
+  
   return (
     
     <div className="App">
-    <Meny 
+    <SideMenu 
     changeHome={homeButtonClicked}
     changePortfolio={portfolioButtonClicked}
     changeSettings={settingsButtonClicked}/>
+
     <Main Date={date.date1}
     homeScreen={homeClicked}
     portfolioScreen={portfolioClicked}

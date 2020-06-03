@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Header from './Header';
 import InfoBox from './InfoBox';
 import HomeDashBoardContainer from '../home/DashBoardContainer';
+import styled from 'styled-components'
 
 
 const dummyProfile = {
@@ -13,6 +14,13 @@ const dummyProfile = {
   city: 'Göteborg',
   preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
 }
+  const Test = styled.div`
+  background-color: #F6FAFB;
+  display: inline-flex;
+  flex-direction: column;
+  width: 75%;
+  height: 100vh;
+  `;
 
 const MainComponent = (props) =>{
 
@@ -48,11 +56,11 @@ const MainComponent = (props) =>{
       }
 
     return (
-        <div id="mainContent">
+        <Test>
         <Header head={getTitle()}/>
         {ShowContent()}
         <HomeDashBoardContainer person={dummyProfile}/>
-        </div>
+        </Test>
         )
 }
 export default MainComponent;

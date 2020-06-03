@@ -1,9 +1,30 @@
 import React from 'react'
 import LogOutPic from '../../images/logout.svg'
+import styled from 'styled-components'
 
 const LogOut = () => {
-return (<div id="logout">
-        <p><img className="optionImg" src={LogOutPic} alt="Log out "></img>Logga ut</p>
-    </div>)
-}
+    
+    const OptionsImgStyle = styled.img`
+        margin-right: 10px;
+        opacity: 1;
+    `;
+    const LogOutStyle = styled.div`
+        color: #C9B791;
+        width: 12%;
+        text-align: center;
+        opacity: 1;
+        padding: 2%;
+        font-size: x-large;
+        position: absolute;
+        left: 7%;
+        bottom: 4%;
+        border-top: 1px solid #C9B791;
+    `;
+    
+    return (
+        <LogOutStyle>
+            <p><OptionsImgStyle src={LogOutPic} alt="Log out "/>Logga ut</p>
+        </LogOutStyle>
+        )
+    }
 export default LogOut;

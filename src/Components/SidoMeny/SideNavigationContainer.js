@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Options from './SideNavigationOptions'
 import Setting from '../../images/cog.svg'
 import Home from '../../images/home.svg'
