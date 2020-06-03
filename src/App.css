@@ -1,107 +1,24 @@
+* {
+  box-sizing: border-box;
+}
 #root{
   height: 100%;
+  width: 100%;
+
 }
 html, body{
   height: 100%;
   margin : 0;
+  width: 100%;
+  font-size: 16px;
+
 }
 .App {
   text-align: center;
   height: 100%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#sideMenu{
-  background-color: #3C3C3B;
-  width: 25%;
-  height: 100%;
-  float: left;
-}
-.navigationOption{
-  background-color: #363636;
-  color: #C9B791;
-  border: none;
-  font-size: x-large;
   width: 100%;
-  text-align: left;
-  padding: 20px;
-  opacity: 1;
 
 }
-.navigationOption:hover{
-  background-color: #292929;
-  color: #FDCC6B;
-}
-.navigationOptionActive{
-  background-color: #292929;
-  color: #FDCC6B;
-
-}
-#logout{
-  color: #C9B791;
-  width: 12%;
-  text-align: center;
-  opacity: 1;
-  padding: 2%;
-  font-size: x-large;
-  position: absolute;
-  left: 7%;
-  bottom: 4%;
-  border-top: 1px solid #C9B791;
-}
-#mainContent{
-  display: inline-flex;
-  flex-direction: column;
-  width: 75%;
-  height: 100vh;
-}
-* {
-  box-sizing: border-box;
-}
-.title{
-  color: #656565;
-  opacity: 1;
-  float: left;
-  margin: 40px;
-  font-family: 'Poppins-Medium';
-}
-#campus{
-  padding: 5%;
-  padding-top: 50px;
-  float: left;
-  width: 80%;
-}
-.optionImg{
-  margin-right: 10px;
-  opacity: 1;
-}
-.infoBox{
-  background-color: #FFD98D;
-  font-size: x-large;
-  padding: 10px;
-  padding-left: 20px;
-  width: 70%;
-  /* position: absolute; */
-  float: left; 
-  margin: 40px;
-  /* top: 60px; */
-  text-align: left;
-}
-
 .container{
   width: 100%;
   height: 15px;

@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Header from './Header';
 import InfoBox from './InfoBox';
 import HomeDashBoardContainer from '../home/DashBoardContainer';
+import styled from 'styled-components'
 
 
 const dummyProfile = {
@@ -15,6 +16,20 @@ const dummyProfile = {
   phone: '07001010101',
   preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
 }
+  const MainDivStyle = styled.div`
+  display: inline-block;
+  background-color: #F6FAFB;
+  flex-direction: column;
+  width: 80%;
+  height: 100vh;
+  position: absolute;
+  left: 20%;
+ 
+  `;
+  const TopDivStyled = styled.div`
+  display:flex-box;
+  width: 80%;
+  `;
 
 const MainComponent = (props) =>{
 
@@ -22,43 +37,39 @@ const MainComponent = (props) =>{
     const textEnd = '. Ta gärna en titt!'
     const fullText = textStart.concat( props.Date, textEnd)
 
-    let title = null;
-
     const ShowContent = () => {
         if(props.homeScreen){
-            title = 'Hem';
+            
           return  <InfoBox text={fullText} ></InfoBox>;
         }
         else if(props.portfolioScreen){
-            title = 'Portfolio';
           return  <InfoBox text="Portfolio" ></InfoBox>;
         }
         else if(props.settingsScreen){
-            title = 'Settings';
           return  <InfoBox text="Settings eller inställningar" ></InfoBox>
         }
       }
-      const getTitle = () => {
+    const getTitle = () => {
         if(props.homeScreen){
            
-          return  title = 'Hem';
+          return  'Hem';
         }
         else if(props.portfolioScreen){
            
-          return   title = 'Portfolio';
+          return 'Portfolio';
         }
         else if(props.settingsScreen){
             
-          return  title = 'Settings';
+          return 'Settings';
         }
       }
-
+     
     return (
-        <div id="mainContent">
-        <Header head={getTitle()}></Header>
-        {ShowContent()}
+        <MainDivStyle>
+        <TopDivStyled><Header head={getTitle()}/>
+        {ShowContent()}</TopDivStyled>
         <HomeDashBoardContainer person={dummyProfile}/>
-        </div>
+        </MainDivStyle>
         )
 }
 export default MainComponent;
