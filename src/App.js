@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Main from './Components/home/MainContentComponent'
 import Meny from './Components/SidoMeny/SideMenu'
 import './App.css';
+import SettingsMyProfile from './Components/settings/MyProfile/MyProfile';
 
 
 function App() {
@@ -36,18 +37,31 @@ function App() {
     }
   }
 
+  const dummyProfile = {
+    name: 'John Doe',
+    'social security number': '730605-9090',
+    mail: 'john@gmail.com',
+    adress: 'trätorget',
+    zipCode: '456123',
+    city: 'Göteborg',
+    phone: '07001010101',
+    preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
+  }
+
   return (
-    
-    <div className="App">
-    <Meny 
-    changeHome={homeButtonClicked}
-    changePortfolio={portfolioButtonClicked}
-    changeSettings={settingsButtonClicked}/>
-    <Main Date={date.date1}
-    homeScreen={homeClicked}
-    portfolioScreen={portfolioClicked}
-    settingsScreen={settingsClicked}/>
+    <div>
+      <SettingsMyProfile person={dummyProfile}/>
     </div>
+    // <div className="App">
+    // <Meny 
+    // changeHome={homeButtonClicked}
+    // changePortfolio={portfolioButtonClicked}
+    // changeSettings={settingsButtonClicked}/>
+    // <Main Date={date.date1}
+    // homeScreen={homeClicked}
+    // portfolioScreen={portfolioClicked}
+    // settingsScreen={settingsClicked}/>
+    // </div>
   );
 }
 
