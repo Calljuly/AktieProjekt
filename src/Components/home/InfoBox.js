@@ -6,11 +6,12 @@ const InfoBoxStyle = styled.div`
 background-color: #FFD98D;
 border-radius: 5px;
 font-size: 1em;
-padding: 0.7em;
+padding: 1em;
+
 /* padding-left: 20px; */
-width: 95%;
+width: 100%;
 /* float: left;  */
-margin: 1em;
+/* margin: 15px; */
 /* margin-top:20px; */
 /* text-align: left; */
  `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header';
+import PageTitle from './PageTitle';
 import InfoBox from './InfoBox';
 import HomeDashBoardContainer from '../home/DashBoardContainer';
 import SettingsDashBoardContainer from '../settings/DashBoardContainer';
@@ -12,6 +12,10 @@ import styled from 'styled-components'
   position: absolute;
   left: 20%;
   `;
+
+const HeaderContainer = styled.div`
+  margin: 15px;
+`;
 
 const DashBoardContainer = styled.div`
   min-height:90%;
@@ -66,10 +70,10 @@ const MainComponent = (props) =>{
      
     return (
         <MainDivStyle>
-          <div>
-            <Header head={getTitle()}/>
+          <HeaderContainer>
+            <PageTitle head={getTitle()}/>
             {displayInfobox()}
-          </div>
+          </HeaderContainer>
           <DashBoardContainer>
             {ShowContent()}
           </DashBoardContainer>

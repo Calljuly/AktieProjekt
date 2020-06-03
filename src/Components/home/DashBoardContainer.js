@@ -5,9 +5,10 @@ import MyPossessionsContent from '../home/MyPossessions/MyPossessionsContent';
 
 const MainContainer = styled.div`
     border-radius: 5px;
+    color: #3C4368;
     display: flex;
     justify-content: space-around;
-    background-color: #ffffff;
+    background-color: #F6FAFB;
     height: fit-content;
     width: 100%;
     @media (max-width: 768px) {
@@ -17,7 +18,7 @@ const MainContainer = styled.div`
 
 const SubContainer = styled.div`
     min-height: 100%;
-    width: 40%;
+    width: 60%;
     background-color: white;
     border-radius: 10px;
     margin: 15px;
