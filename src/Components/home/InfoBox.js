@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const InfoBoxStyle = styled.div`
+display:block;
 background-color: #FFD98D;
 font-size: x-large;
 padding: 20px;

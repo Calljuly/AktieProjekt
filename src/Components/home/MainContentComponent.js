@@ -15,12 +15,13 @@ const dummyProfile = {
   preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
 }
   const MainDivStyle = styled.div`
+  display: inline-block;
   background-color: #F6FAFB;
   flex-direction: column;
   width: 80%;
   height: 100vh;
-  position:absolute;
-  left:20%;
+  position: absolute;
+  left: 20%;
  
   `;
 
@@ -56,11 +57,14 @@ const MainComponent = (props) =>{
           return 'Settings';
         }
       }
-
+      const Test = styled.div`
+      display:flex-box;
+      width: 80%;
+      `;
     return (
         <MainDivStyle>
-        <Header head={getTitle()}/>
-        {ShowContent()}
+        <Test><Header head={getTitle()}/>
+        {ShowContent()}</Test>
         <HomeDashBoardContainer person={dummyProfile}/>
         </MainDivStyle>
         )

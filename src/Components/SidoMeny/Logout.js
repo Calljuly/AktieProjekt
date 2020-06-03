@@ -8,13 +8,13 @@ opacity: 1;
 `;
 const LogOutStyle = styled.div`
 color: #C9B791;
-width: 12%;
+width: 25%;
 text-align: center;
 opacity: 1;
 padding: 2%;
 font-size: x-large;
 position: absolute;
-left: 7%;
+left: 25%;
 bottom: 4%;
 border-top: 1px solid #C9B791;
 `;

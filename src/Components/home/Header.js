@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const HeaderStyle = styled.h1`
+display:block;
 color: #656565;
 opacity: 1;
 float: left;
@@ -13,9 +14,9 @@ font-family: 'Poppins-Medium';
 const Header = (props) => {
         
         return (
-                <div>
+                
                         <HeaderStyle>{props.head}</HeaderStyle>
-                </div>
+                
                 )
 }                      
 export default Header;

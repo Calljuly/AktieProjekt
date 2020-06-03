@@ -12,7 +12,7 @@ const MainContainer = styled.div`
     height: 100%;
     width: 100%;
     @media (max-width: 768px) {
-        display: block;
+        display: inline-block;
     }
 `;
 
@@ -22,9 +22,11 @@ const SubContainer = styled.div`
     background-color: white;
     border-radius: 10px;
     @media (max-width: 768px) {
-        height: 100%;
-        width: 100%;
+        height: 50%;
+        width: 90%;
+        margin:auto;
     }
+    
 `;
 
 const HomeDashBoardContainer = ({person}) =>{
