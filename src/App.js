@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import Main from './Components/home/MainContentComponent'
 import SideMenu from './Components/SidoMeny/SideMenu'
 import './App.css';
-import styled from 'styled-components'
-
 
 function App() {
   const [date, setDate] = useState({

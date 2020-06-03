@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Header from './Header';
 import InfoBox from './InfoBox';
 import HomeDashBoardContainer from '../home/DashBoardContainer';
@@ -16,10 +16,12 @@ const dummyProfile = {
 }
   const MainDivStyle = styled.div`
   background-color: #F6FAFB;
-  display: inline-flex;
   flex-direction: column;
-  width: 75%;
+  width: 80%;
   height: 100vh;
+  position:absolute;
+  left:20%;
+ 
   `;
 
 const MainComponent = (props) =>{

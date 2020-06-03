@@ -6,7 +6,8 @@ import styled from 'styled-components'
 
 const SideMenuStyle = styled.div`
 background-color: #3C3C3B;
-width: 25%;
+position: fixed;
+width: 20%;
 height: 100%;
 float: left;
 `;
