@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Form = styled.form`
-    padding: 1em;
     width: 100%;
 `;
 
@@ -12,8 +11,14 @@ const FlexContainer = styled.div`
 `;
 
 const PaddedContainer = styled.div`
-    padding: 0.5em;
     width: 100%;
+    margin-bottom: 1em;
+
+`;
+
+const PaddedContainerRightMargin = styled(PaddedContainer)`
+    margin-right: 1em;
+
 `;
 
 const Label = styled.label `
@@ -22,16 +27,18 @@ const Label = styled.label `
 
 const Input = styled.input `
     width:100%;
+    padding: 0.4em;
+
 `;
 
 const SettingsMyProfileForm = ({person}) => {
     return(
         <Form>
             <FlexContainer>
-                <PaddedContainer>
+                <PaddedContainerRightMargin>
                     <Label>Förnamn</Label>
                     <Input name='fName' type="text" defaultValue={person.name}></Input>
-                </PaddedContainer>
+                </PaddedContainerRightMargin>
                 <PaddedContainer>
                     <Label>Efternamn</Label>
                     <Input name='lName' type="text" defaultValue={person.name}></Input>
@@ -46,10 +53,10 @@ const SettingsMyProfileForm = ({person}) => {
                 <Input name='adress' type="text" defaultValue={person.adress}></Input>
             </PaddedContainer>
             <FlexContainer>
-                <PaddedContainer>
+                <PaddedContainerRightMargin>
                     <Label>Postort</Label>
                     <Input name='city' type='text' defaultValue={person.city}></Input>
-                </PaddedContainer>
+                </PaddedContainerRightMargin>
                 <PaddedContainer>
                     <Label>Postnummer</Label>
                     <Input name='zipCode' type='text' defaultValue={person.zipCode}></Input>

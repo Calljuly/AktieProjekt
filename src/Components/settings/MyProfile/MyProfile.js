@@ -14,6 +14,7 @@ const Button = styled.button`
     border-radius: 5px;
     border: none;
     padding: 1em;
+    margin-top: 1em;
 `;
 
 const SettingsMyProfile = ({person}) =>{
