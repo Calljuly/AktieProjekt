@@ -6,6 +6,7 @@ import SettingsMyProfileForm from './Form';
 const Main = styled.div`
     width: 50%;
     margin-left: 20px;
+    text-align: left;
 `;
 
 const Button = styled.button`

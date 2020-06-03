@@ -7,9 +7,8 @@ const MainContainer = styled.div`
     border-radius: 5px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     background-color: #F6FAFB;
-    height: 100%;
+    height: fit-content;
     width: 100%;
     @media (max-width: 768px) {
         display: inline-block;
@@ -17,7 +16,7 @@ const MainContainer = styled.div`
 `;
 
 const SubContainer = styled.div`
-    height: 90%;
+    min-height: 100%;
     width: 40%;
     background-color: white;
     border-radius: 10px;

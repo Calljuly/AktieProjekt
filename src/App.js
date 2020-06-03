@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Main from './Components/home/MainContentComponent'
 import SideMenu from './Components/SidoMeny/SideMenu'
 import './App.css';
-import SettingsMyProfile from './Components/settings/MyProfile/MyProfile';
 
 function App() {
   const [date, setDate] = useState({
@@ -50,15 +49,16 @@ function App() {
   
   return (
     <div className="App">
-    <SideMenu 
-    changeHome={homeButtonClicked}
-    changePortfolio={portfolioButtonClicked}
-    changeSettings={settingsButtonClicked}/>
+      <SideMenu 
+      changeHome={homeButtonClicked}
+      changePortfolio={portfolioButtonClicked}
+      changeSettings={settingsButtonClicked}/>
 
-    <Main Date={date.date1}
-    homeScreen={homeClicked}
-    portfolioScreen={portfolioClicked}
-    settingsScreen={settingsClicked}/>
+      <Main Date={date.date1}
+      homeScreen={homeClicked}
+      portfolioScreen={portfolioClicked}
+      settingsScreen={settingsClicked}/>
+    
     </div>
   );
 }

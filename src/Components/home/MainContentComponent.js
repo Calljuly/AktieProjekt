@@ -66,8 +66,10 @@ const MainComponent = (props) =>{
      
     return (
         <MainDivStyle>
-        <TopDivStyled><Header head={getTitle()}/>
-        {ShowContent()}</TopDivStyled>
+          <TopDivStyled>
+            <Header head={getTitle()}/>
+            {ShowContent()}
+          </TopDivStyled>
         <HomeDashBoardContainer person={dummyProfile}/>
         </MainDivStyle>
         )
