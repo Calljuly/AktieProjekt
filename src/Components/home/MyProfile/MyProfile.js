@@ -7,6 +7,7 @@ import HomeDashBoardMyProfileContactInformation from './ContactInformation';
 
 const Main = styled.div`
     margin: 0.5em;
+    padding: 2em;
 `;
 
 const TitleButtonContainer = styled.div`
