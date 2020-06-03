@@ -24,6 +24,10 @@ const dummyProfile = {
   left: 20%;
  
   `;
+  const TopDivStyled = styled.div`
+  display:flex-box;
+  width: 80%;
+  `;
 
 const MainComponent = (props) =>{
 
@@ -57,14 +61,11 @@ const MainComponent = (props) =>{
           return 'Settings';
         }
       }
-      const Test = styled.div`
-      display:flex-box;
-      width: 80%;
-      `;
+     
     return (
         <MainDivStyle>
-        <Test><Header head={getTitle()}/>
-        {ShowContent()}</Test>
+        <TopDivStyled><Header head={getTitle()}/>
+        {ShowContent()}</TopDivStyled>
         <HomeDashBoardContainer person={dummyProfile}/>
         </MainDivStyle>
         )
