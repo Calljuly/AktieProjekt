@@ -14,7 +14,7 @@ const dummyProfile = {
   city: 'Göteborg',
   preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
 }
-  const Test = styled.div`
+  const MainDivStyle = styled.div`
   background-color: #F6FAFB;
   display: inline-flex;
   flex-direction: column;
@@ -56,11 +56,11 @@ const MainComponent = (props) =>{
       }
 
     return (
-        <Test>
+        <MainDivStyle>
         <Header head={getTitle()}/>
         {ShowContent()}
         <HomeDashBoardContainer person={dummyProfile}/>
-        </Test>
+        </MainDivStyle>
         )
 }
 export default MainComponent;
