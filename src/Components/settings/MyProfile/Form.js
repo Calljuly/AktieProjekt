@@ -8,6 +8,9 @@ const Form = styled.form`
 const FlexContainer = styled.div`
     display: flex;
     width: 100%;
+    @media (max-width: 768px) {
+        display: block;
+    }
 `;
 
 const PaddedContainer = styled.div`

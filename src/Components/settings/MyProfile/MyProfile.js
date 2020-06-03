@@ -5,6 +5,7 @@ import SettingsMyProfileForm from './Form';
 
 const Main = styled.div`
     width: 50%;
+    margin-left: 20px;
 `;
 
 const Button = styled.button`
@@ -14,7 +15,7 @@ const Button = styled.button`
     border-radius: 5px;
     border: none;
     padding: 1em;
-    margin-top: 1em;
+    margin-top: 0.1em;
 `;
 
 const SettingsMyProfile = ({person}) =>{
