@@ -53,11 +53,11 @@ function App() {
       changeHome={homeButtonClicked}
       changePortfolio={portfolioButtonClicked}
       changeSettings={settingsButtonClicked}/>
-
       <Main Date={date.date1}
       homeScreen={homeClicked}
       portfolioScreen={portfolioClicked}
-      settingsScreen={settingsClicked}/>
+      settingsScreen={settingsClicked}
+      person={dummyProfile}/>
     
     </div>
   );

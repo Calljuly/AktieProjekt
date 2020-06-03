@@ -5,14 +5,13 @@ import SettingsMyProfileForm from './Form';
 
 const Main = styled.div`
     width: 50%;
-    margin-left: 20px;
+    padding: 15px;
     text-align: left;
 `;
 
 const Button = styled.button`
     background-color: #FDCC6B;
     color: white;
-    float: right;
     border-radius: 5px;
     border: none;
     padding: 1em;

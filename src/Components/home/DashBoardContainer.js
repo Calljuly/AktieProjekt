@@ -7,7 +7,7 @@ const MainContainer = styled.div`
     border-radius: 5px;
     display: flex;
     justify-content: space-around;
-    background-color: #F6FAFB;
+    background-color: #ffffff;
     height: fit-content;
     width: 100%;
     @media (max-width: 768px) {
@@ -20,12 +20,13 @@ const SubContainer = styled.div`
     width: 40%;
     background-color: white;
     border-radius: 10px;
+    margin: 15px;
     @media (max-width: 768px) {
         height: 50%;
         width: 90%;
         margin:auto;
     }
-    
+
 `;
 
 const HomeDashBoardContainer = ({person}) =>{

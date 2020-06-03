@@ -5,7 +5,7 @@ const OptionsStyle = styled.button`
 background-color: #363636;
 color: #C9B791;
 border: none;
-font-size: 2rem;
+font-size: 1rem;
 width: 100%;
 text-align: left;
 padding: 20px;
