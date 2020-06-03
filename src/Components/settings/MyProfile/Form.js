@@ -31,6 +31,8 @@ const Label = styled.label `
 const Input = styled.input `
     width:100%;
     padding: 0.4em;
+    border-radius: 4px;
+    border: 1px solid #EBEDF2;
 
 `;
 
