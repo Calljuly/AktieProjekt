@@ -40,11 +40,11 @@ const SettingsMyProfileForm = ({person}) => {
             <FlexContainer>
                 <PaddedContainerRightMargin>
                     <Label>Förnamn</Label>
-                    <Input name='fName' type="text" defaultValue={person.name}></Input>
+                    <Input name='fName' type="text" defaultValue={person.fName}></Input>
                 </PaddedContainerRightMargin>
                 <PaddedContainer>
                     <Label>Efternamn</Label>
-                    <Input name='lName' type="text" defaultValue={person.name}></Input>
+                    <Input name='lName' type="text" defaultValue={person.lName}></Input>
                 </PaddedContainer>
             </FlexContainer>
             <PaddedContainer>

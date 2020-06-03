@@ -5,12 +5,14 @@ import HomeDashBoardContainer from '../home/DashBoardContainer';
 
 
 const dummyProfile = {
-  name: 'John Doe',
+  fName: 'Lisa',
+  lName: 'Nilsson',
   'social security number': '730605-9090',
   mail: 'john@gmail.com',
   adress: 'trätorget',
   zipCode: '456123',
   city: 'Göteborg',
+  phone: '07001010101',
   preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
 }
 

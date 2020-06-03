@@ -38,7 +38,8 @@ function App() {
   }
 
   const dummyProfile = {
-    name: 'John Doe',
+    fName: 'Lisa',
+    lName: 'Nilsson',
     'social security number': '730605-9090',
     mail: 'john@gmail.com',
     adress: 'trätorget',
@@ -49,19 +50,16 @@ function App() {
   }
 
   return (
-    <div>
-      <SettingsMyProfile person={dummyProfile}/>
+    <div className="App">
+    <Meny 
+    changeHome={homeButtonClicked}
+    changePortfolio={portfolioButtonClicked}
+    changeSettings={settingsButtonClicked}/>
+    <Main Date={date.date1}
+    homeScreen={homeClicked}
+    portfolioScreen={portfolioClicked}
+    settingsScreen={settingsClicked}/>
     </div>
-    // <div className="App">
-    // <Meny 
-    // changeHome={homeButtonClicked}
-    // changePortfolio={portfolioButtonClicked}
-    // changeSettings={settingsButtonClicked}/>
-    // <Main Date={date.date1}
-    // homeScreen={homeClicked}
-    // portfolioScreen={portfolioClicked}
-    // settingsScreen={settingsClicked}/>
-    // </div>
   );
 }
 
