@@ -33,19 +33,32 @@ function App() {
       changePortfolioState(false);
     }
   }
+
+  const dummyProfile = {
+    fName: 'Lisa',
+    lName: 'Nilsson',
+    'social security number': '730605-9090',
+    mail: 'john@gmail.com',
+    adress: 'trätorget',
+    zipCode: '456123',
+    city: 'Göteborg',
+    phone: '07001010101',
+    preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
+  }
+
   
   return (
-    
     <div className="App">
-    <SideMenu 
-    changeHome={homeButtonClicked}
-    changePortfolio={portfolioButtonClicked}
-    changeSettings={settingsButtonClicked}/>
-
-    <Main Date={date.date1}
-    homeScreen={homeClicked}
-    portfolioScreen={portfolioClicked}
-    settingsScreen={settingsClicked}/>
+      <SideMenu 
+      changeHome={homeButtonClicked}
+      changePortfolio={portfolioButtonClicked}
+      changeSettings={settingsButtonClicked}/>
+      <Main Date={date.date1}
+      homeScreen={homeClicked}
+      portfolioScreen={portfolioClicked}
+      settingsScreen={settingsClicked}
+      person={dummyProfile}/>
+    
     </div>
   );
 }

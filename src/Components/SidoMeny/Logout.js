@@ -4,17 +4,18 @@ import styled from 'styled-components'
 
 const OptionsImgStyle = styled.img`
 margin-right: 10px;
-opacity: 1;
 `;
+
 const LogOutStyle = styled.div`
+display: flex;
 color: #C9B791;
-width: 25%;
+width: 60%;
 text-align: center;
 opacity: 1;
 padding: 2%;
-font-size: x-large;
+font-size: 1rem;
 position: absolute;
-left: 25%;
+left: 20%;
 bottom: 4%;
 border-top: 1px solid #C9B791;
 `;
@@ -23,7 +24,8 @@ const LogOut = () => {
     
     return (
         <LogOutStyle>
-            <p><OptionsImgStyle src={LogOutPic} alt="Log out "/>Logga ut</p>
+        <OptionsImgStyle src={LogOutPic} alt="Log out "/>
+            <p>Logga ut</p>
         </LogOutStyle>
         )
     }

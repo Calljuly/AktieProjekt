@@ -28,7 +28,7 @@ const Numbers = styled.p`
 export default function HomeMyProfileSummary(props){
     return (
         <Container>
-            <Name>{props.person.name}</Name>
+            <Name>{props.person.fName + ' ' + props.person.lName}</Name>
             <NumbersDescription >Personnummer/</NumbersDescription>
             <NumbersDescription>Organisationsnummer:</NumbersDescription>
             <Numbers>{props.person['social security number']}</Numbers>
