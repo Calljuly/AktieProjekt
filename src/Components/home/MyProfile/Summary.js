@@ -31,7 +31,7 @@ export default function HomeMyProfileSummary(props){
             <Name>{props.person.fName + ' ' + props.person.lName}</Name>
             <NumbersDescription >Personnummer/</NumbersDescription>
             <NumbersDescription>Organisationsnummer:</NumbersDescription>
-            <Numbers>{props.person['social security number']}</Numbers>
+            <Numbers>{props.person.idNumber}</Numbers>
         </Container>
     )
 }
