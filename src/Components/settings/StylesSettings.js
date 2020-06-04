@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 export const Form = styled.form`
@@ -56,3 +55,30 @@ export const ContainerButton = styled.div`
     justify-content: flex-end;
     padding-top: 10px;
     `;
+export const MainDashBoard = styled.div`
+    color: #3C4368;
+    border-radius: 5px;
+    background-color: #ffffff;
+    width: 100%;
+    @media (max-width: 768px) {
+        display: inline-block;
+    }
+`;
+export const ButtonNavBar = styled.button`
+    border: none;
+    border-bottom: 1px solid #EBEDF2;
+    font-size: 1em;
+    background-color: white;
+    padding: 1em;
+
+    &:hover
+    {
+        color:#FDCC6B;
+        border-bottom: 1px solid #FDCC6B;
+    }
+`;
+export const NavBarContainer = styled.div`
+    display: flex;
+    border-bottom: 1px solid #EBEDF2;
+    background-color: white;
+`;

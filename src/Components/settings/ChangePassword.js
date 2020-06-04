@@ -1,6 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-import {Form, PaddedContainer, Input, Label, Main, Button, ContainerButton } from './StylesForm'
+import {Form, PaddedContainer, Input, Label, Main, Button, ContainerButton } from './StylesSettings'
 
 const ChangePassword = () =>{
     
