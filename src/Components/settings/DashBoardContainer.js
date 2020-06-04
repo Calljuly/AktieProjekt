@@ -1,25 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, {useContext} from 'react';
 import SettingsMyProfile from './MyProfile/MyProfile';
 import NavBar from '../settings/Navigation/NavBar';
-
-const Main = styled.div`
-    color: #3C4368;
-    border-radius: 5px;
-    background-color: #ffffff;
-    width: 100%;
-    @media (max-width: 768px) {
-        display: inline-block;
-    }
-`;
+import ChangePassword from './ChangePassword'
+import SettingsContext from '../SettingsContext'
+import {MainDashBoard} from './StylesSettings'
 
 const SettingsDashBoardContainer = ({person}) =>{
-
+    const currentState = useContext(SettingsContext);
     return(
-        <Main>
+        <MainDashBoard>
             <NavBar/>
-            <SettingsMyProfile person={person}></SettingsMyProfile>
-        </Main>
+            {currentState.currentStateOfSettings ===1 ?
+                <SettingsMyProfile person={person}></SettingsMyProfile> : null}
+            {currentState.currentStateOfSettings ===2 ?
+                <ChangePassword/> : null}
+            {currentState.currentStateOfSettings ===3 ?
+                 <SettingsMyProfile person={person}></SettingsMyProfile> : null}
+        </MainDashBoard>
     )
 }
 
