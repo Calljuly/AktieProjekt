@@ -1,33 +1,27 @@
 import React from 'react';
-import Header from './Header';
+import PageTitle from './PageTitle';
 import InfoBox from './InfoBox';
 import HomeDashBoardContainer from '../home/DashBoardContainer';
+import SettingsDashBoardContainer from '../settings/DashBoardContainer';
 import styled from 'styled-components'
 
-
-const dummyProfile = {
-  name: 'John Doe',
-  'social security number': '730605-9090',
-  mail: 'john@gmail.com',
-  adress: 'trätorget',
-  zipCode: '456123',
-  city: 'Göteborg',
-  preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
-}
   const MainDivStyle = styled.div`
-  display: inline-block;
   background-color: #F6FAFB;
-  flex-direction: column;
   width: 80%;
-  height: 100vh;
+  min-height: 100%;
   position: absolute;
   left: 20%;
- 
   `;
-  const TopDivStyled = styled.div`
-  display:flex-box;
-  width: 80%;
-  `;
+
+const HeaderContainer = styled.div`
+  margin: 15px;
+`;
+
+const DashBoardContainer = styled.div`
+  min-height:90%;
+  min-width:90%;
+  margin:15px;
+`;
 
 const MainComponent = (props) =>{
 
@@ -36,15 +30,22 @@ const MainComponent = (props) =>{
     const fullText = textStart.concat( props.Date, textEnd)
 
     const ShowContent = () => {
-        if(props.homeScreen){
-            
-          return  <InfoBox text={fullText} ></InfoBox>;
+        if(props.homeScreen){ 
+          return  (
+            <React.Fragment>
+              <HomeDashBoardContainer person={props.person}/> 
+            </React.Fragment>
+          );
         }
         else if(props.portfolioScreen){
-          return  <InfoBox text="Portfolio" ></InfoBox>;
+          return;
         }
         else if(props.settingsScreen){
-          return  <InfoBox text="Settings eller inställningar" ></InfoBox>
+          return  (
+            <React.Fragment>
+              <SettingsDashBoardContainer person={props.person}/>
+            </React.Fragment>
+          );
         }
       }
     const getTitle = () => {
@@ -61,12 +62,21 @@ const MainComponent = (props) =>{
           return 'Settings';
         }
       }
+    
+    const displayInfobox = () =>{
+      if(props.homeScreen)
+        return  <InfoBox text={fullText} ></InfoBox>;
+    }
      
     return (
         <MainDivStyle>
-        <TopDivStyled><Header head={getTitle()}/>
-        {ShowContent()}</TopDivStyled>
-        <HomeDashBoardContainer person={dummyProfile}/>
+          <HeaderContainer>
+            <PageTitle head={getTitle()}/>
+            {displayInfobox()}
+          </HeaderContainer>
+          <DashBoardContainer>
+            {ShowContent()}
+          </DashBoardContainer>
         </MainDivStyle>
         )
 }

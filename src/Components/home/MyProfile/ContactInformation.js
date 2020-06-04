@@ -28,7 +28,7 @@ export default function HomeDashBoardMyProfileContactInformation(props){
             <tbody>
                 <tr>
                     <Th>Name</Th>
-                    <Td>{props.person.name}</Td>
+                    <Td>{props.person.fName + ' ' + props.person.lName}</Td>
                 </tr>
                 <tr>
                     <Th>Mail</Th>

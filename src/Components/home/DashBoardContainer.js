@@ -5,11 +5,11 @@ import MyPossessionsContent from '../home/MyPossessions/MyPossessionsContent';
 
 const MainContainer = styled.div`
     border-radius: 5px;
+    color: #3C4368;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
     background-color: #F6FAFB;
-    height: 100%;
+    height: fit-content;
     width: 100%;
     @media (max-width: 768px) {
         display: inline-block;
@@ -17,16 +17,17 @@ const MainContainer = styled.div`
 `;
 
 const SubContainer = styled.div`
-    height: 90%;
-    width: 40%;
+    min-height: 100%;
+    width:48%;
     background-color: white;
     border-radius: 10px;
+    margin: 0px;
     @media (max-width: 768px) {
         height: 50%;
         width: 90%;
         margin:auto;
     }
-    
+
 `;
 
 const HomeDashBoardContainer = ({person}) =>{
