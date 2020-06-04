@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components';
+import SettingsContext from '../../SettingsContext'
+
 
 const Container = styled.div`
     display: flex;
@@ -22,11 +24,12 @@ const Button = styled.button`
 `;
 
 const NavBar = () =>{
+    const clickEvent = useContext(SettingsContext);
     return (
         <Container>
-            <Button>Min Profil</Button>
-            <Button>Ändra lösenord</Button>
-            <Button>Preferenser</Button>
+            <Button onClick={clickEvent.myProfilClicked}>Min Profil</Button>
+            <Button onClick={clickEvent.changePassClicked}>Ändra lösenord</Button>
+            <Button onClick={clickEvent.referenceClicked}>Preferenser</Button>
         </Container>
     )
 }

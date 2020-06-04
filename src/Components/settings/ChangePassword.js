@@ -1,51 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Form, PaddedContainer, Input, Label, Main, Button, ContainerButton } from './StylesForm'
 
 const ChangePassword = () =>{
-    const ChangePassDivStyle = styled.div`
     
-    width: 90%;
-    height: 70%;
-    
-    `;
-    const PasswordForm = styled.form`
-        display: flexbox;
-        width:70%;
-        text-align:left;
-        padding:30px; 
-        justify-content: left;
+    return (
+        <Main>
+        <Form>
+            <PaddedContainer>
+                <Label name="CurrentPass">Nuvarande lösenord : </Label>
+                <Input type="text" value="currentPass"></Input>
+            </PaddedContainer>
+            <PaddedContainer>
+                <Label name="NewPass">Nytt lösenord : </Label>
+                <Input type="password" value="newPass"></Input>
+            </PaddedContainer>
+            <PaddedContainer>
+                <Label name="NewPassAgain">Bekräfta nytt lösenord : </Label>
+                <Input type="password" value="newPassAgain"></Input>
+            </PaddedContainer>
+        </Form>
+        <ContainerButton>
+            <Button>Save</Button>
+        </ContainerButton>
         
-    `;
-    const InputStyle = styled.input`
-    width: 100%;
-    height: 39px;
-    border: 1px solid #EBEDF2;
-    border-radius: 4px;
-    opacity: 1;
-    margin:10px;
-    `;
-    const LableStyle = styled.label`
-    width: 100%;
-    height: 12px;
-    text-align: left;
-    font-family:Poppins;
-    font-size:30px;
-    letter-spacing: -0.01px;
-    color: #A1A8C3;
-    opacity: 1;
-    margin:10px;     
-    `;
 
-    return (<ChangePassDivStyle>
-                <PasswordForm>
-                    <LableStyle name="CurrentPass">Nuvarande lösenord : </LableStyle>
-                    <InputStyle type="text" value="currentPass"></InputStyle>
-                    <LableStyle name="NewPass">Nytt lösenord : </LableStyle>
-                    <InputStyle type="password" value="newPass"></InputStyle>
-                    <LableStyle name="NewPassAgain">Bekräfta nytt lösenord : </LableStyle>
-                    <InputStyle type="password" value="newPassAgain"></InputStyle>
-                </PasswordForm>
-        </ChangePassDivStyle>)
+        </Main>
+      )
 
 }
 export default ChangePassword;
