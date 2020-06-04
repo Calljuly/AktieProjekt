@@ -3,6 +3,7 @@ import PageTitle from './PageTitle';
 import InfoBox from './InfoBox';
 import HomeDashBoardContainer from '../home/DashBoardContainer';
 import SettingsDashBoardContainer from '../settings/DashBoardContainer';
+import PortfolioDashboard from '../myPortfolio/Dashboard';
 import styled from 'styled-components'
 
   const MainDivStyle = styled.div`
@@ -18,7 +19,7 @@ const HeaderContainer = styled.div`
 `;
 
 const DashBoardContainer = styled.div`
-  min-height:90%;
+  min-height:90vh;
   min-width:90%;
   margin:15px;
 `;
@@ -38,7 +39,11 @@ const MainComponent = (props) =>{
           );
         }
         else if(props.portfolioScreen){
-          return;
+          return(
+            <React.Fragment>
+              <PortfolioDashboard/>
+            </React.Fragment>
+          );
         }
         else if(props.settingsScreen){
           return  (
@@ -55,11 +60,11 @@ const MainComponent = (props) =>{
         }
         else if(props.portfolioScreen){
            
-          return 'Portfolio';
+          return 'Min portfölj';
         }
         else if(props.settingsScreen){
             
-          return 'Settings';
+          return 'Inställningar';
         }
       }
     
