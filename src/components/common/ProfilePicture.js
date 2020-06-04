@@ -1,4 +1,5 @@
 import React from 'react';
+import pen from '../../images/penna.png';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -10,15 +11,19 @@ const Container = styled.div`
     margin: 1em;
 `;
 
-const EditSymbol = styled.div`
+const EditSymbolContainer = styled.div`
     background-color: #FDCC6B;
     position: absolute;
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: ${props => props.isHomeScreen && "none" };
 `;
 
-const Image = styled.img`
+const ProfileImage = styled.img`
     padding: 0px;
     margin: 0px;
     border-radius: 50%;
@@ -28,14 +33,21 @@ const Image = styled.img`
 `;
 
 
-
 export default function ProfilePicture (props){
+    
+    const PenImage = styled.img`
+        height: 15px;
+        width: 15px;
+        
+    `;
     
     return(
          
         <Container>
-            <EditSymbol/>
-            <Image src={require(`../../images/${props.pictureName.toLowerCase()}.jpg`)} alt='Profile'/>
+            <EditSymbolContainer isHomeScreen={props.isHomeScreen}>
+                <PenImage src={pen} alt='Penna'/>
+            </EditSymbolContainer>
+            <ProfileImage src={require(`../../images/${props.pictureName.toLowerCase()}.jpg`)} alt='Profile'/>
         </Container>
         
     );

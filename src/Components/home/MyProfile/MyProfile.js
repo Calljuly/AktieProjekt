@@ -38,7 +38,7 @@ export default function HomeDashboardMyProfile(props){
                 <Button>Redigera</Button>
             </TitleButtonContainer>
             <ImageSummaryContainer>
-                <ProfilePicture pictureName = {'testprofile'}/>
+                <ProfilePicture pictureName = {'testprofile'} isHomeScreen={true}/>
                 <HomeMyProfileSummary person = {props.person}/>
             </ImageSummaryContainer>
             <HomeDashBoardMyProfilePrefferedBusinesses person = {props.person}/>
