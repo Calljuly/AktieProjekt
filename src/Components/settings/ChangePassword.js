@@ -8,7 +8,7 @@ const ChangePassword = () =>{
         <Form>
             <PaddedContainer>
                 <Label name="CurrentPass">Nuvarande lösenord : </Label>
-                <Input type="text" value="currentPass"></Input>
+                <Input type="text" value="Password"></Input>
             </PaddedContainer>
             <PaddedContainer>
                 <Label name="NewPass">Nytt lösenord : </Label>
