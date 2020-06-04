@@ -3,6 +3,7 @@ import Main from './Components/home/MainContentComponent'
 import SideMenu from './Components/SidoMeny/SideMenu'
 import './App.css';
 import SettingsContext from './Components/SettingsContext'
+import PersonalInfo from './Data/PersonalInformation.json'
 
 function App() {
   const [date, setDate] = useState({
@@ -14,15 +15,15 @@ function App() {
   const [settingOptionsClicked, changeSettingOptionState] = useState(1)
 
   const settingOptionsProfilClicked = () =>{
-        
+
         changeSettingOptionState(1);
   }
   const settingOptionsPasswordClicked = () =>{
-        
+
     changeSettingOptionState(2);
   }
   const settingOptionsReferenceClicked = () =>{
-        
+
     changeSettingOptionState(3);
   }
 
@@ -49,22 +50,12 @@ function App() {
     }
   }
 
-  const dummyProfile = {
-    fName: 'Lisa',
-    lName: 'Nilsson',
-    'social security number': '730605-9090',
-    mail: 'john@gmail.com',
-    adress: 'trätorget',
-    zipCode: '456123',
-    city: 'Göteborg',
-    phone: '07001010101',
-    preferences: ['restaurang', 'djurhållning', 'it', 'Hitta nemo']
-  }
+  const dummyProfile = PersonalInfo;
 
-  
+
   return (
     <div className="App">
-      <SideMenu 
+      <SideMenu
       changeHome={homeButtonClicked}
       changePortfolio={portfolioButtonClicked}
       changeSettings={settingsButtonClicked}/>
@@ -81,9 +72,9 @@ function App() {
       portfolioScreen={portfolioClicked}
       settingsScreen={settingsClicked}
       person={dummyProfile}/>
-      
+
       </SettingsContext.Provider>
-    
+
     </div>
   );
 }

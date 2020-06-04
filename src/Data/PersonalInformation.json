@@ -1,0 +1,12 @@
+{
+    "fName": "Lisa",
+    "lName": "Nilsson",
+    "idNumber": "730605-9090",
+    "mail": "john@gmail.com",
+    "adress": "trätorget",
+    "zipCode": "456123",
+    "city": "Göteborg",
+    "phone": "07001010101",
+    "preferences": ["restaurang", "djurhållning", "it", "Hitta nemo"],
+    "imageLocation": ""
+  }

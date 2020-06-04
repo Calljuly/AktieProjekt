@@ -22,10 +22,21 @@ color: #646C9A;
 `;
 
 
-const BranchCard = ({branch, amount, boxColor}) =>{
+const BranchCard = ({branch, amount, boxColor, companies}) =>{
     let colorStyle = {
         backgroundColor: boxColor};
     
+        const listSomeCompanies = () =>{
+        
+            if (companies.length > 1){
+                return companies[0].company + ", " + companies[1].company + ((companies.length - 2) === 0 ? "" : (" +" + (companies.length - 2)));
+            }
+            else{
+                return companies[0].company;
+            }
+            
+        }
+
     return (
         
         <div className = "category">
@@ -34,7 +45,7 @@ const BranchCard = ({branch, amount, boxColor}) =>{
                 <p>
                     <BranchName>{branch}</BranchName> 
                     <br/> 
-                    <Companies>Företag 1, Företag 2 +4</Companies>
+                    <Companies>{listSomeCompanies()}</Companies>
                 </p>          
             </div>
             <p>
