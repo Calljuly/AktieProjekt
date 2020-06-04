@@ -1,40 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Form = styled.form`
-    width: 100%;
-`;
-
-const FlexContainer = styled.div`
-    display: flex;
-    width: 100%;
-    @media (max-width: 768px) {
-        display: block;
-    }
-`;
-
-const PaddedContainer = styled.div`
-    width: 100%;
-    margin-bottom: 1em;
-
-`;
-
-const PaddedContainerRightMargin = styled(PaddedContainer)`
-    margin-right: 1em;
-
-`;
-
-const Label = styled.label `
-    display: block;
-`;
-
-const Input = styled.input `
-    width:100%;
-    padding: 0.4em;
-    border-radius: 4px;
-    border: 1px solid #EBEDF2;
-
-`;
+import {Form, FlexContainer,PaddedContainer, PaddedContainerRightMargin,Label, Input} from '../StylesSettings'
 
 const SettingsMyProfileForm = ({person}) => {
     return(

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Main from './Components/home/MainContentComponent'
 import SideMenu from './Components/SidoMeny/SideMenu'
 import './App.css';
+import SettingsContext from './Components/SettingsContext'
 
 function App() {
   const [date, setDate] = useState({
@@ -10,6 +11,20 @@ function App() {
   const [homeClicked, changeHomeState] = useState(true)
   const [portfolioClicked, changePortfolioState] = useState(false)
   const [settingsClicked, changeSettingsState] = useState(false)
+  const [settingOptionsClicked, changeSettingOptionState] = useState(1)
+
+  const settingOptionsProfilClicked = () =>{
+        
+        changeSettingOptionState(1);
+  }
+  const settingOptionsPasswordClicked = () =>{
+        
+    changeSettingOptionState(2);
+  }
+  const settingOptionsReferenceClicked = () =>{
+        
+    changeSettingOptionState(3);
+  }
 
   const homeButtonClicked = () =>{
     if(!homeClicked){
@@ -53,11 +68,21 @@ function App() {
       changeHome={homeButtonClicked}
       changePortfolio={portfolioButtonClicked}
       changeSettings={settingsButtonClicked}/>
+
+      <SettingsContext.Provider value= {{
+        myProfilClicked : settingOptionsProfilClicked,
+        changePassClicked : settingOptionsPasswordClicked,
+        referenceClicked : settingOptionsReferenceClicked,
+        currentStateOfSettings : settingOptionsClicked
+      }}>
+
       <Main Date={date.date1}
       homeScreen={homeClicked}
       portfolioScreen={portfolioClicked}
       settingsScreen={settingsClicked}
       person={dummyProfile}/>
+      
+      </SettingsContext.Provider>
     
     </div>
   );
