@@ -1,25 +1,8 @@
 import React from 'react';
 import BranchCard from './BranschCard';
 import styled from 'styled-components';
+import Briefcase from '../../../Data/Briefcase.json';
 
-let total = 412244;
-
-let array = [{amount: 32244, color: '#5B74FF', branch: 'Byggsektorn'}, 
-{amount: 60000, color: '#FD397A', branch: 'Medtech'}, 
-{amount: 120000, color: '#34BFA3', branch: 'Fintech'}, 
-{amount: 140000, color: '#3C4368', branch: 'Industri X'}, 
-{amount: 60000, color: '#EBEDF2', branch: 'Övrigt'}];
-
-let items = array.map(element => {
-  let css = {
-    backgroundColor: element.color, 
-    width: ((element.amount / total) * 100) + '%'
-  };
-
-  return (<div className = 'result' style = {css}></div>);
-
-});
-  
 const TitleButtonContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -59,6 +42,54 @@ const TotalContainer = styled.p`
 
 `;
 
+let briefcase = Briefcase;
+
+const getTotal = (briefcase2) => {
+  let total = 0;
+  
+  briefcase2.map(i =>{
+    total += getTotalOfIndustry(i.arrayOfCompanies);
+  })
+
+  return total;
+}
+
+const getTotalOfIndustry = (industry) =>{
+
+  let total = 0;
+
+  industry.map(i =>{
+    i.arrayOfShares.map(j =>{
+      total += j.totalWorth;
+    })
+  }) 
+
+  return total;
+}
+
+let total = getTotal(briefcase);
+
+
+let items = briefcase.map(i => {
+  let industryAmount = getTotalOfIndustry(i.arrayOfCompanies);
+
+  let css = {
+    backgroundColor: i.color, 
+    width: ((industryAmount / total) * 100) + '%'
+  };
+
+  return (<div className = 'result' style = {css}></div>);
+
+});
+  
+let cards = briefcase.map(i => {
+   return <BranchCard amount = {getTotalOfIndustry(i.arrayOfCompanies)} 
+          boxColor = {i.color}
+          branch = {i.industry}
+          companies = {i.arrayOfCompanies}
+          />
+ });
+
 function MyPossessionsContent() {
   return (
     <Main>
@@ -72,11 +103,7 @@ function MyPossessionsContent() {
           
       </div>
       <br/><br/>
-      {array.map(i => {
-        return <BranchCard amount = {i.amount} 
-                boxColor = {i.color}
-                branch = {i.branch}/>
-      })}
+      {cards}
       
     </Main>
   );

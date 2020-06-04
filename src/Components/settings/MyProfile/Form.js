@@ -16,7 +16,7 @@ const SettingsMyProfileForm = ({person}) => {
             </FlexContainer>
             <PaddedContainer>
                 <Label>Personnummer/Organisationsnummer</Label>
-                <Input name='socialNumber' type="text" defaultValue={person['social security number']}></Input>
+                <Input name='socialNumber' type="text" defaultValue={person.idNumber}></Input>
             </PaddedContainer>
             <PaddedContainer>
                 <Label>Adress</Label>
