@@ -3,6 +3,7 @@ import PageTitle from './PageTitle';
 import InfoBox from './InfoBox';
 import HomeDashBoardContainer from '../home/DashBoardContainer';
 import SettingsDashBoardContainer from '../settings/DashBoardContainer';
+import PortfolioDashboard from '../myPortfolio/Dashboard';
 import {MainDivStyle, HeaderContainer, DashBoardContainer} from './StylesMain'
 
 const MainComponent = (props) =>{
@@ -20,7 +21,11 @@ const MainComponent = (props) =>{
           );
         }
         else if(props.StateMain === 2){
-          return;
+          return(
+            <React.Fragment>
+              <PortfolioDashboard/>
+            </React.Fragment>
+          )
         }
         else if(props.StateMain === 3){
           return  (
