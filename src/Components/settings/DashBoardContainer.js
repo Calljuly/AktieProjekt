@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useState} from 'react';
 import SettingsMyProfile from './MyProfile/MyProfile';
 import NavBar from '../settings/Navigation/NavBar';
 import ChangePassword from './ChangePassword';
@@ -7,15 +7,32 @@ import {MainDashBoard} from './StylesSettings';
 import PreferenceForm from './Preferences/Preferences';
 
 const SettingsDashBoardContainer = ({person}) =>{
-    const currentState = useContext(SettingsContext);
+
+    const [settingOptionsClicked, changeSettingOptionState] = useState(1)
+
+    const settingOptionsProfilClicked = () =>{
+  
+          changeSettingOptionState(1);
+    }
+    const settingOptionsPasswordClicked = () =>{
+  
+      changeSettingOptionState(2);
+    }
+    const settingOptionsPreferenceClicked = () =>{
+  
+      changeSettingOptionState(3);
+    }
+    
     return(
         <MainDashBoard>
-            <NavBar/>
-            {currentState.currentStateOfSettings ===1 ?
+            <NavBar myProfilClicked={settingOptionsProfilClicked}
+            changePassClicked={settingOptionsPasswordClicked}
+            preferenceClicked={settingOptionsPreferenceClicked} />
+            {settingOptionsClicked === 1 ?
                 <SettingsMyProfile person={person}></SettingsMyProfile> : null}
-            {currentState.currentStateOfSettings ===2 ?
+            {settingOptionsClicked === 2 ?
                 <ChangePassword/> : null}
-            {currentState.currentStateOfSettings ===3 ?
+            {settingOptionsClicked === 3 ?
                  <PreferenceForm/> : null}
         </MainDashBoard>
     )
