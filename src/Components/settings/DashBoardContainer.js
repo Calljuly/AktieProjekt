@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import SettingsMyProfile from './MyProfile/MyProfile';
 import NavBar from '../settings/Navigation/NavBar';
-import ChangePassword from './ChangePassword'
-import {MainDashBoard} from './StylesSettings'
+import ChangePassword from './ChangePassword';
+import SettingsContext from '../SettingsContext';
+import {MainDashBoard} from './StylesSettings';
+import PreferenceForm from './Preferences/Preferences';
 
 const SettingsDashBoardContainer = ({person}) =>{
 
@@ -31,7 +33,7 @@ const SettingsDashBoardContainer = ({person}) =>{
             {settingOptionsClicked === 2 ?
                 <ChangePassword/> : null}
             {settingOptionsClicked === 3 ?
-                 <SettingsMyProfile person={person}></SettingsMyProfile> : null}
+                 <PreferenceForm/> : null}
         </MainDashBoard>
     )
 }
