@@ -3,26 +3,7 @@ import PageTitle from './PageTitle';
 import InfoBox from './InfoBox';
 import HomeDashBoardContainer from '../home/DashBoardContainer';
 import SettingsDashBoardContainer from '../settings/DashBoardContainer';
-import PortfolioDashboard from '../myPortfolio/Dashboard';
-import styled from 'styled-components'
-
-  const MainDivStyle = styled.div`
-  background-color: #F6FAFB;
-  width: 80%;
-  min-height: 100%;
-  position: absolute;
-  left: 20%;
-  `;
-
-const HeaderContainer = styled.div`
-  margin: 15px;
-`;
-
-const DashBoardContainer = styled.div`
-  min-height:90vh;
-  min-width:90%;
-  margin:15px;
-`;
+import {MainDivStyle, HeaderContainer, DashBoardContainer} from './StylesMain'
 
 const MainComponent = (props) =>{
 
@@ -31,21 +12,17 @@ const MainComponent = (props) =>{
     const fullText = textStart.concat( props.Date, textEnd)
 
     const ShowContent = () => {
-        if(props.homeScreen){ 
+        if(props.StateMain ===1){ 
           return  (
             <React.Fragment>
               <HomeDashBoardContainer person={props.person}/> 
             </React.Fragment>
           );
         }
-        else if(props.portfolioScreen){
-          return(
-            <React.Fragment>
-              <PortfolioDashboard/>
-            </React.Fragment>
-          );
+        else if(props.StateMain === 2){
+          return;
         }
-        else if(props.settingsScreen){
+        else if(props.StateMain === 3){
           return  (
             <React.Fragment>
               <SettingsDashBoardContainer person={props.person}/>
@@ -54,22 +31,21 @@ const MainComponent = (props) =>{
         }
       }
     const getTitle = () => {
-        if(props.homeScreen){
-           
+        if(props.StateMain ===1){
           return  'Hem';
         }
-        else if(props.portfolioScreen){
+        else if(props.StateMain ===2){
            
           return 'Min portfölj';
         }
-        else if(props.settingsScreen){
+        else if(props.StateMain ===3){
             
           return 'Inställningar';
         }
       }
     
     const displayInfobox = () =>{
-      if(props.homeScreen)
+      if(props.StateMain === 1)
         return  <InfoBox text={fullText} ></InfoBox>;
     }
      

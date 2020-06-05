@@ -1,14 +1,13 @@
-import React, {useContext} from 'react';
-import SettingsContext from '../../SettingsContext'
+import React from 'react';
 import {NavBarContainer, ButtonNavBar} from '../StylesSettings'
 
-const NavBar = () =>{
-    const clickEvent = useContext(SettingsContext);
+const NavBar = (props) =>{
+
     return (
         <NavBarContainer>
-            <ButtonNavBar onClick={clickEvent.myProfilClicked}>Min Profil</ButtonNavBar>
-            <ButtonNavBar onClick={clickEvent.changePassClicked}>Ändra lösenord</ButtonNavBar>
-            <ButtonNavBar onClick={clickEvent.referenceClicked}>Preferenser</ButtonNavBar>
+            <ButtonNavBar onClick={props.myProfilClicked}>Min Profil</ButtonNavBar>
+            <ButtonNavBar onClick={props.changePassClicked}>Ändra lösenord</ButtonNavBar>
+            <ButtonNavBar onClick={props.preferenceClicked}>Preferenser</ButtonNavBar>
         </NavBarContainer>
     )
 }

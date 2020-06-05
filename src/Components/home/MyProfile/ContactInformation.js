@@ -1,25 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Table = styled.table`
-    width:100%;
-    padding: 0.5em;
-`;
-
-const Caption = styled.caption`
-    width:70%;
-    text-align: left;
-    color: rgb(170, 167, 167);
-    padding: 0.5em;
-`;
-
-const Th = styled.th`
-    text-align: left;
-`;
-
-const Td = styled.td`
-    text-align: left;
-`;
+import {Table, Caption, Th, Td} from './StylesMyProfil';
 
 export default function HomeDashBoardMyProfileContactInformation(props){
     return (
