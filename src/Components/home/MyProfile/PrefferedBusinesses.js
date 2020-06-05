@@ -1,18 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Table = styled.table`
-    width:100%;
-    padding: 0.5em;
-`;
-
-const Caption = styled.caption`
-    width:70%;
-    text-align: left;
-    color: rgb(170, 167, 167);
-    padding: 0.5em;
-`;
-
+import {Table, Caption} from './StylesMyProfil';
 
 export default function HomeDashBoardMyProfilePrefferedBusinesses(props){
     

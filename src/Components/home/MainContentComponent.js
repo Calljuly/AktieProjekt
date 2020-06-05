@@ -3,25 +3,7 @@ import PageTitle from './PageTitle';
 import InfoBox from './InfoBox';
 import HomeDashBoardContainer from '../home/DashBoardContainer';
 import SettingsDashBoardContainer from '../settings/DashBoardContainer';
-import styled from 'styled-components'
-
-  const MainDivStyle = styled.div`
-  background-color: #F6FAFB;
-  width: 80%;
-  min-height: 100%;
-  position: absolute;
-  left: 20%;
-  `;
-
-const HeaderContainer = styled.div`
-  margin: 15px;
-`;
-
-const DashBoardContainer = styled.div`
-  min-height:90%;
-  min-width:90%;
-  margin:15px;
-`;
+import {MainDivStyle, HeaderContainer, DashBoardContainer} from './StylesMain'
 
 const MainComponent = (props) =>{
 
