@@ -5,7 +5,7 @@ export default function HomeDashBoardMyProfilePrefferedBusinesses(props){
     
     const prefferedBusinesses = props.person.preferences;
     
-    const constructTableRows = (array) => {
+    const constructTableRows = () => {
         let rows = [];
         for(let i = 0; i <= prefferedBusinesses.length -1; i+=2){
             rows.push(
