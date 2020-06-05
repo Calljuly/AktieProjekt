@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import SettingsMyProfile from './MyProfile/MyProfile';
 import NavBar from '../settings/Navigation/NavBar';
 import ChangePassword from './ChangePassword';
-import SettingsContext from '../SettingsContext';
 import {MainDashBoard} from './StylesSettings';
 import PreferenceForm from './Preferences/Preferences';
 
