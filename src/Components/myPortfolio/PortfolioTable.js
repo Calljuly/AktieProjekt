@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import BriefCase from '../../Data/Briefcase.json';
 
@@ -26,18 +26,16 @@ const Td = styled.td`
 const briefCase = BriefCase;
 
 const PortfolioTable = () => {
-    const [page, updatePage] = useState(1);
     
     const extractBriefCaseInformation = () => {
+        
         let companyInformation = [];
         let shareInformation = [];
 
-        
-        
-        
         briefCase.map(industry => {
             companyInformation = companyInformation.concat(industry.arrayOfCompanies);
         });
+        
         companyInformation.map(company =>{
             company.arrayOfShares.map(share =>{
                 let tempObj = share;
@@ -45,6 +43,7 @@ const PortfolioTable = () => {
                 shareInformation.push(tempObj);
             })
         })        
+        
         return shareInformation;
     }
 
@@ -82,48 +81,3 @@ const PortfolioTable = () => {
 
 export default PortfolioTable;
 
-// briefCase.map((industry, i) => {
-//     let rowObj = {
-//         industry: '',
-//         company:'',
-//         innehav: 0,
-//         numberOfShares: 0
-
-//     };
-    
-//     rowObj.industry = industry.industry;
-    
-//     industry.arrayOfCompanies.map(company => {
-//         rowObj.company = company.company;
-        
-//         company.arrayOfShares.map(shares => {
-//             rowObj.innehav += shares.totalWorth;
-//             rowObj.numberOfShares += shares.shareAmount;
-            
-            
-//         })
-//     })
-    
-//     rows.push(rowObj);
-// });
-
-//THIS CODE WORKS BUT IT AINT PRETTY
-
-// const extractBriefCaseInformation = () => {
-//     let shareInformation = [];
-//     let what = briefCase.map(object => object.arrayOfCompanies);
-//     let nowWhat = what.map(company => {
-//         company.map(c =>{
-//             let obj = {company: c.company};
-//             c.arrayOfShares.map(shares =>{
-//                 obj.shareId = shares.shareId;
-//                 obj.totalWorth = shares.totalWorth;
-//                 obj.shareType = shares.shareType;
-//                 obj.ownership = shares.ownership;
-//                 obj.votingPower = shares.votingPower
-                
-//                 console.log(obj);
-//                 shareInformation.push(obj);
-//             })
-//         })
-//     });
