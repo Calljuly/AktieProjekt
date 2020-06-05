@@ -8,32 +8,18 @@ function App() {
   const [date, setDate] = useState({
     date1 : '2020-05-28'
   })
-  const [homeClicked, changeHomeState] = useState(true)
-  const [portfolioClicked, changePortfolioState] = useState(false)
-  const [settingsClicked, changeSettingsState] = useState(false)
- 
+  
+  const [mainPageState, setMainPageState] = useState(1)
 
+ 
   const homeButtonClicked = () =>{
-    if(!homeClicked){
-      changeHomeState(true);
-      changePortfolioState(false);
-      changeSettingsState(false);
-    }
+    setMainPageState(1);
   }
   const portfolioButtonClicked = () =>{
-    if(!portfolioClicked){
-      changePortfolioState(true);
-      changeHomeState(false);
-      changeSettingsState(false);
-
-    }
+    setMainPageState(2);
   }
   const settingsButtonClicked = () =>{
-    if(!settingsClicked){
-      changeSettingsState(true);
-      changeHomeState(false);
-      changePortfolioState(false);
-    }
+    setMainPageState(3);
   }
 
   const dummyProfile = PersonalInfo;
@@ -46,9 +32,7 @@ function App() {
       changeSettings={settingsButtonClicked}/>
 
       <Main Date={date.date1}
-      homeScreen={homeClicked}
-      portfolioScreen={portfolioClicked}
-      settingsScreen={settingsClicked}
+      StateMain={mainPageState}
       person={dummyProfile}/>
     </div>
   );

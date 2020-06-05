@@ -30,17 +30,17 @@ const MainComponent = (props) =>{
     const fullText = textStart.concat( props.Date, textEnd)
 
     const ShowContent = () => {
-        if(props.homeScreen){ 
+        if(props.StateMain ===1){ 
           return  (
             <React.Fragment>
               <HomeDashBoardContainer person={props.person}/> 
             </React.Fragment>
           );
         }
-        else if(props.portfolioScreen){
+        else if(props.StateMain === 2){
           return;
         }
-        else if(props.settingsScreen){
+        else if(props.StateMain === 3){
           return  (
             <React.Fragment>
               <SettingsDashBoardContainer person={props.person}/>
@@ -49,22 +49,21 @@ const MainComponent = (props) =>{
         }
       }
     const getTitle = () => {
-        if(props.homeScreen){
-           
+        if(props.StateMain ===1){
           return  'Hem';
         }
-        else if(props.portfolioScreen){
+        else if(props.StateMain ===2){
            
           return 'Portfolio';
         }
-        else if(props.settingsScreen){
+        else if(props.StateMain ===3){
             
           return 'Settings';
         }
       }
     
     const displayInfobox = () =>{
-      if(props.homeScreen)
+      if(props.StateMain === 1)
         return  <InfoBox text={fullText} ></InfoBox>;
     }
      
