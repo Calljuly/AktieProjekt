@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+import NavBar from './NavBar';
 import BriefCase from '../../Data/Briefcase.json';
 
 
@@ -25,56 +26,62 @@ const Td = styled.td`
 
 const briefCase = BriefCase;
 
+const extractBriefCaseInformation = () => {
+        
+    let companyInformation = [];
+    let shareInformation = [];
+
+    briefCase.map(industry => {
+        companyInformation = companyInformation.concat(industry.arrayOfCompanies);
+    });
+    
+    companyInformation.map(company =>{
+        company.arrayOfShares.map(share =>{
+            let tempObj = share;
+            tempObj.company = company.company;
+            shareInformation.push(tempObj);
+        })
+    })        
+    
+    return shareInformation;
+}
+
 const PortfolioTable = () => {
     
-    const extractBriefCaseInformation = () => {
-        
-        let companyInformation = [];
-        let shareInformation = [];
-
-        briefCase.map(industry => {
-            companyInformation = companyInformation.concat(industry.arrayOfCompanies);
-        });
-        
-        companyInformation.map(company =>{
-            company.arrayOfShares.map(share =>{
-                let tempObj = share;
-                tempObj.company = company.company;
-                shareInformation.push(tempObj);
-            })
-        })        
-        
-        return shareInformation;
-    }
-
+    const [shareInformation, updateShareInformation] = useState(extractBriefCaseInformation());
+    const [displayRange, updateDisplayRange] = useState([0,5]);
+    
     return (
-        <Table>
-            <thead>
-                <tr>
-                    <Th>Företag</Th>
-                    <Th>Innehav</Th>
-                    <Th>Aktietyp</Th>
-                    <Th>Antal aktier</Th>
-                    <Th>Aktienummer</Th>
-                    <Th>Ägarandel</Th>
-                    <Th>Röstvärde</Th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    extractBriefCaseInformation().map((shareInfoObj, index) => 
-                        <tr key={index}>
-                            <Td>{shareInfoObj.company}</Td>
-                            <Td>{shareInfoObj.totalWorth}</Td>
-                            <Td>{shareInfoObj.shareType}</Td>
-                            <Td>{shareInfoObj.shareAmount}</Td>
-                            <Td>{shareInfoObj.shareId}</Td>
-                            <Td>{shareInfoObj.ownership}</Td>
-                            <Td>{shareInfoObj.votingPower}</Td>
-                        </tr>)
-                }
-            </tbody>
-        </Table>
+        <div>
+            <Table>
+                <thead>
+                    <tr>
+                        <Th>Företag</Th>
+                        <Th>Innehav</Th>
+                        <Th>Aktietyp</Th>
+                        <Th>Antal aktier</Th>
+                        <Th>Aktienummer</Th>
+                        <Th>Ägarandel</Th>
+                        <Th>Röstvärde</Th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        shareInformation.slice(displayRange[0],displayRange[1]).map((shareInfoObj, index) => 
+                            <tr key={index}>
+                                <Td>{shareInfoObj.company}</Td>
+                                <Td>{shareInfoObj.totalWorth}</Td>
+                                <Td>{shareInfoObj.shareType}</Td>
+                                <Td>{shareInfoObj.shareAmount}</Td>
+                                <Td>{shareInfoObj.shareId}</Td>
+                                <Td>{shareInfoObj.ownership}</Td>
+                                <Td>{shareInfoObj.votingPower}</Td>
+                            </tr>)
+                    }
+                </tbody>
+            </Table>
+            <NavBar displayRange={displayRange} updateDisplayRange={updateDisplayRange} shares={shareInformation}/>
+        </div>
 
     )
 }
