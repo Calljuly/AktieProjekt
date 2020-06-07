@@ -13,7 +13,7 @@ const NavButton = (props) =>{
         props.updateDisplayRange(props.range);
     }
     
-    return <Button onClick={handleClick} selected={props.selected}>{props.text}</Button>
+    return <Button id={props.id} onClick={handleClick} selected={props.selected}>{props.text}</Button>
 }
 
 export default NavButton;

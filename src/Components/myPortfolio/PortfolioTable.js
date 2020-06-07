@@ -48,8 +48,9 @@ const extractBriefCaseInformation = () => {
 
 const PortfolioTable = () => {
     
+    const [sharesPerPage, updateSharesPerPage] = useState(5);
     const [shareInformation, updateShareInformation] = useState(extractBriefCaseInformation());
-    const [displayRange, updateDisplayRange] = useState([0,5]);
+    const [displayRange, updateDisplayRange] = useState([0,sharesPerPage]);
     
     return (
         <div>
@@ -80,7 +81,7 @@ const PortfolioTable = () => {
                     }
                 </tbody>
             </Table>
-            <NavBar displayRange={displayRange} updateDisplayRange={updateDisplayRange} shares={shareInformation}/>
+            <NavBar sharesPerPage={sharesPerPage} updateDisplayRange={updateDisplayRange} shares={shareInformation}/>
         </div>
 
     )
