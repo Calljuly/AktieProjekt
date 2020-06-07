@@ -6,7 +6,7 @@ const ButtonContainer = styled.div`
     display: flex;
 `;
 
-const NavBar = ({shares, displayRange, updateDisplayRange}) =>{
+const NavBar = ({shares, updateDisplayRange}) =>{
     const [selectedButton, updateSelectedButton] = useState("1");
     
     const makeButtons = () => {
@@ -14,20 +14,20 @@ const NavBar = ({shares, displayRange, updateDisplayRange}) =>{
         const numberOfButtons = Math.ceil(shares.length/5);
         let buttons = [];
         let count = 1;
+        let fromRange = 0;
+        let toRange = 5;
         while(count <= numberOfButtons){
-            buttons.push(<NavButton handleClick={handleClick} selected={selectedButton == count} text={count}/>)
+            buttons.push(<NavButton 
+                            range={[fromRange, toRange]} 
+                            updateSelectedButton={updateSelectedButton}
+                            selected={selectedButton == count} 
+                            text={count}
+                            updateDisplayRange={updateDisplayRange}/>)
             count++;
+            fromRange+=5;
+            toRange +=5;
         }
         return buttons;
-    }
-
-    const handleClick = (e) =>{
-        const btn = e.target.innerText;
-        updateSelectedButton(btn);
-        const from = displayRange[0];
-        const to = displayRange[1];
-        updateDisplayRange([from+5, to+5]);
-
     }
 
     return(

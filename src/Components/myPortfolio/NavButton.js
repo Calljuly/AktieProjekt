@@ -6,7 +6,14 @@ const Button = styled.button`
 `;
 
 const NavButton = (props) =>{
-    return <Button onClick={props.handleClick} selected={props.selected}>{props.text}</Button>
+    
+    const handleClick = (e) =>{
+        const btn = e.target.innerText;
+        props.updateSelectedButton(btn);
+        props.updateDisplayRange(props.range);
+    }
+    
+    return <Button onClick={handleClick} selected={props.selected}>{props.text}</Button>
 }
 
 export default NavButton;
