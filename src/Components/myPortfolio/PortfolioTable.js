@@ -81,7 +81,7 @@ const PortfolioTable = () => {
                     }
                 </tbody>
             </Table>
-            <NavBar sharesPerPage={sharesPerPage} updateDisplayRange={updateDisplayRange} shares={shareInformation}/>
+            <NavBar sharesPerPage={sharesPerPage} updateSharesPerPage={updateSharesPerPage} updateDisplayRange={updateDisplayRange} shares={shareInformation}/>
         </div>
 
     )
