@@ -1,13 +1,14 @@
 import React from 'react';
 import {NavBarContainer, ButtonNavBar} from '../StylesSettings'
+import {Link} from 'react-router-dom'
 
-const NavBar = (props) =>{
+const NavBar = () =>{
 
     return (
         <NavBarContainer>
-            <ButtonNavBar onClick={props.myProfilClicked}>Min Profil</ButtonNavBar>
-            <ButtonNavBar onClick={props.changePassClicked}>Ändra lösenord</ButtonNavBar>
-            <ButtonNavBar onClick={props.preferenceClicked}>Preferenser</ButtonNavBar>
+            <Link to="/settings"><ButtonNavBar>Min Profil</ButtonNavBar></Link>
+            <Link to="/password"><ButtonNavBar>Ändra lösenord</ButtonNavBar></Link>
+            <Link to="/settingspreference"><ButtonNavBar>Preferenser</ButtonNavBar></Link>
         </NavBarContainer>
     )
 }

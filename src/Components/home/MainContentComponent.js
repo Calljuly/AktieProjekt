@@ -47,7 +47,7 @@ const MainComponent = (props) =>{
           <SettingsDashBoardContainer person={props.person}/>
           </DashBoardContainer>
         </MainDivStyle>
-        }} />
+        }} /> 
 
       </Switch>
         

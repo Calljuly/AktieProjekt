@@ -9,7 +9,6 @@ function App() {
   const [date, setDate] = useState({
     date1 : '2020-05-28'
   })
-
   const dummyProfile = PersonalInfo;
 
   return (
