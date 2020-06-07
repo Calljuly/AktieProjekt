@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Button} from './StylesMyPortfolio'
 
-const Button = styled.button`
-    background-color: ${props => props.selected ? "yellow" : "grey"};
+
+const NavigatingButton = styled(Button)`
+    background-color: ${props => props.selected ? "#FDCC6B" : "white"};
     display: ${props => props.shouldDisplay ? "block" : "none"};
 
 `;
@@ -16,7 +18,7 @@ const NavButton = (props) =>{
         props.updateCurrentlyDisplaying(props.range);
     }
     
-    return <Button shouldDisplay={props.shouldDisplay} id={props.id} onClick={handleClick} selected={props.selected}>{props.text}</Button>
+    return <NavigatingButton shouldDisplay={props.shouldDisplay} id={props.id} onClick={handleClick} selected={props.selected}>{props.text}</NavigatingButton>
 }
 
 export default NavButton;

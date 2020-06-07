@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import NavButton from './NavButton'
 import StepButton from './StepButton';
 import DropDown from './DropDown';
+import {Button, P} from './StylesMyPortfolio'
 
 const ButtonContainer = styled.div`
     display: flex;
@@ -122,10 +123,10 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
         {
             makeButtons()
         }
-        <button>...</button>
+        <Button style={{backgroundColor: 'white'}}>...</Button>
         <StepButton handleClick={handleClickNext} text=">"/>
         <StepButton handleClick={handleClickGoToLastPage} text=">>"/>
-        <p>Visar: {currentlyDisplaying[0]} - {currentlyDisplaying[1]} av {shares.length}</p>
+        <P>Visar: {currentlyDisplaying[0]} - {currentlyDisplaying[1]} av {shares.length}</P>
         <DropDown onChange={handleChange}/>
         </ButtonContainer>
     )
