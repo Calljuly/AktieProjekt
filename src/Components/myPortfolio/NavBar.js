@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import NavButton from './NavButton'
 import StepButton from './StepButton';
@@ -12,29 +12,32 @@ const ButtonContainer = styled.div`
 
 const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}) =>{
     
-    const [selectedButton, updateSelectedButton] = useState("1");
-    const [currentlyDisplaying, updateCurrentlyDisplaying] = useState([1, sharesPerPage]);
+    const [selectedButton, updateSelectedButton] = useState(1);
     const [visibleButtons, updateVisibleButtons] = useState([1,2]);
     const [lastButton, updateLastButton] = useState(Math.ceil(shares.length/sharesPerPage));
+    const [currentlyDisplaying, updateCurrentlyDisplaying] = useState([0, sharesPerPage]);
+    
+    useEffect(()=>{
+        handleClickGoToFirstPage();
+    }, [lastButton]);
     
     const makeButtons = () => {
-        const numberOfButtons = Math.ceil(shares.length/sharesPerPage);
         let buttons = [];
         let count = 1;
         let fromRange = 0;
         let toRange = sharesPerPage;
-        while(count <= numberOfButtons){
+        while(count <= lastButton){
             buttons.push(<NavButton
                             text={count}
-                            id={count}
                             key = {count}
+                            id={count}
                             range={[fromRange, toRange]} 
                             selected={selectedButton == count}
                             shouldDisplay={visibleButtons.includes(count)} 
                             updateSelectedButton={updateSelectedButton}
                             updateDisplayRange={updateDisplayRange}
                             updateCurrentlyDisplaying = {updateCurrentlyDisplaying}
-                            sharesPerPage={sharesPerPage}/>)
+                            />)
                             
 
             count++;
@@ -46,11 +49,10 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
     }
 
     const handleClickGoToFirstPage = () =>{
-        if(selectedButton == "1")
+        if(selectedButton == 1)
             return;
         updateVisibleButtons([1, 2]);
-        let element = document.getElementById('1');
-        updateSelectedButton('1');
+        let element = document.getElementById(1);
         element.click()
         
     }
@@ -65,43 +67,52 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
     }
 
     const handleClickPrevious = () =>{
-        if(selectedButton == "1")
+        if(selectedButton == 1)
             return;
-        if(selectedButton == visibleButtons[0]){
+        
+        const newButton = selectedButton -1;
+        const newButtonElement = document.getElementById(newButton);
+
+        if(newButton < visibleButtons[0]){
             const newButtonsToDisplay = visibleButtons.map(value => value - 2);
             updateVisibleButtons(newButtonsToDisplay);
-            let element = document.getElementById(newButtonsToDisplay[1].toString());
-            element.click();
+            newButtonElement.click();
             return;
         }
-        const currentButtonAsNumber = parseInt(selectedButton);
-        const newButton = currentButtonAsNumber - 1;
-        const constNewButtonAsString = newButton.toString();
-        let element = document.getElementById(constNewButtonAsString);
-        updateSelectedButton(constNewButtonAsString);
-        element.click()
+        updateSelectedButton(newButton);
+        newButtonElement.click()
         
     }
 
     const handleClickNext = () =>{
-        if(selectedButton == Math.ceil(shares.length/sharesPerPage))
+        if(selectedButton == lastButton)
             return;
-        if(selectedButton == visibleButtons[1]){
+        
+        const newButton = selectedButton + 1;
+        const newButtonElement = document.getElementById(newButton);
+
+        if(newButton > visibleButtons[1]){
             const newButtonsToDisplay = visibleButtons.map(value => value +2);
             updateVisibleButtons(newButtonsToDisplay);
-            let element = document.getElementById(newButtonsToDisplay[0].toString());
-            element.click();
+            newButtonElement.click();
             return;
         }
-        const currentButtonAsNumber = parseInt(selectedButton);
-        const nextButton = currentButtonAsNumber + 1;
-        const constNewButtonAsString = nextButton.toString();
-        let element = document.getElementById(constNewButtonAsString);
-        updateSelectedButton(constNewButtonAsString);
-        element.click()
+        updateSelectedButton(newButton);
+        newButtonElement.click()
         
     }
 
+    const handleChange = () =>{
+        const e = document.getElementById("sharesPerPage");
+        const selection = e.options[e.selectedIndex].text;
+        const selectionAsNum = parseInt(selection);
+        updateSharesPerPage(selectionAsNum);
+        updateDisplayRange([0, selectionAsNum]);
+        updateLastButton(Math.ceil(shares.length/selectionAsNum));
+        
+    }
+
+    
     
 
     return(
@@ -115,7 +126,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
         <StepButton handleClick={handleClickNext} text=">"/>
         <StepButton handleClick={handleClickGoToLastPage} text=">>"/>
         <p>Visar: {currentlyDisplaying[0]} - {currentlyDisplaying[1]} av {shares.length}</p>
-        <DropDown handleClickGoToFirstPage={handleClickGoToFirstPage} shares={shares} updateSharesPerPage={updateSharesPerPage} updateLastButton={updateLastButton}/>
+        <DropDown onChange={handleChange}/>
         </ButtonContainer>
     )
 }

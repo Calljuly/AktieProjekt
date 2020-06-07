@@ -11,7 +11,7 @@ const NavButton = (props) =>{
     
     const handleClick = (e) =>{
         const btn = e.target.innerText;
-        props.updateSelectedButton(btn);
+        props.updateSelectedButton(parseInt(btn));
         props.updateDisplayRange(props.range);
         props.updateCurrentlyDisplaying(props.range);
     }
