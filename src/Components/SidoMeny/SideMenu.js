@@ -10,9 +10,7 @@ const SideMenu = (props) => {
 
     <SideMenuStyle>
         <LoggoStyle src={Bild} alt="Campus Mölndal"/>
-            <Container changeHome={props.changeHome}
-            changePortfolio={props.changePortfolio}
-            changeSettings={props.changeSettings}/>
+                <Container />
         <LogOut/>
     </SideMenuStyle>
     );

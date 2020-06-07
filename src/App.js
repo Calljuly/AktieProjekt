@@ -3,6 +3,7 @@ import Main from './Components/home/MainContentComponent'
 import SideMenu from './Components/SidoMeny/SideMenu'
 import './App.css';
 import PersonalInfo from './Data/PersonalInformation.json'
+import {BrowserRouter} from 'react-router-dom'
 
 function App() {
   const [date, setDate] = useState({
@@ -26,14 +27,12 @@ function App() {
 
   return (
     <div className="App">
-      <SideMenu
-      changeHome={homeButtonClicked}
-      changePortfolio={portfolioButtonClicked}
-      changeSettings={settingsButtonClicked}/>
+    <BrowserRouter>
+      <SideMenu/>
 
       <Main Date={date.date1}
-      StateMain={mainPageState}
       person={dummyProfile}/>
+      </BrowserRouter>
     </div>
   );
 }
