@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom'
 const Options = (props) => {
 
     return (
-        <NavLink to={props.path}>
+        <NavLink exact to={props.path}>
             <OptionsImgStyle src={props.bild} alt="meny button"/>
             {props.Name}
         </NavLink>
