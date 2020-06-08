@@ -89,6 +89,7 @@ p{
   text-align: left;
 }
 #test a{
+  text-decoration: none;
   background-color: #363636;
 color: #C9B791;
 border: none;
