@@ -19,6 +19,8 @@ border-top: 1px solid #C9B791;
 justify-content:center;
 `;
 export const SideMenuStyle = styled.div`
+display:flex;
+flex-direction:column;
 background-color: #3C3C3B;
 position: fixed;
 width: 20%;
