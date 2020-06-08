@@ -1,5 +1,5 @@
 import React from 'react'
-import {OptionsStyle,OptionsImgStyle} from './StylesSideMenu'
+import {OptionsImgStyle} from './StylesSideMenu'
 import {NavLink} from 'react-router-dom'
 
 

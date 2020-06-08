@@ -82,13 +82,13 @@ p{
 .result{
   height: 100%;
 }
-#test{
+#navContainer{
   display: flex;
   flex-direction: column;
   background-color:#363636;
   text-align: left;
 }
-#test a{
+#navContainer a{
   text-decoration: none;
   background-color: #363636;
 color: #C9B791;
@@ -100,9 +100,9 @@ padding: 20px;
 opacity: 1;
 }
 
-#test a:hover,
-#test a.active,
-#test a:active{
+#navContainer a:hover,
+#navContainer a.active,
+#navContainer a:active{
   background-color: #292929;
 color: #FDCC6B;
 }
