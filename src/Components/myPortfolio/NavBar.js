@@ -2,14 +2,14 @@ import React, {useState, useEffect} from 'react';
 import NavButton from './NavButton'
 import StepButton from './StepButton';
 import DropDown from './DropDown';
-import {Button, P, ButtonContainer} from './StylesMyPortfolio'
+import {Button, P, ButtonContainer, SectionBtnCont} from './StylesMyPortfolio'
 
 
 
 const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}) =>{
     
     const [selectedButton, setSelectedButton] = useState(1);
-    const [visibleButtons, updateVisibleButtons] = useState([1,2,3,4]);
+    const [visibleButtons, updateVisibleButtons] = useState([1,2]);
     const [totalNumberOfButtons, setTotalNumberOfButtons] = useState(Math.ceil(shares.length/sharesPerPage));
     const [currentlyDisplaying, updateCurrentlyDisplaying] = useState([0, sharesPerPage]);
     
@@ -113,16 +113,24 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
 
     return(
         <ButtonContainer>
-        <StepButton handleClick={handleClickGoToFirstPage} text="<<"/>
-        <StepButton handleClick={handleClickPrevious} text="<"/>
-        {
-            makeButtons()
-        }
-        <Button style={{backgroundColor: 'white'}}>...</Button>
-        <StepButton handleClick={handleClickNext} text=">"/>
-        <StepButton handleClick={handleClickGoToLastPage} text=">>"/>
-        <P>Visar: {currentlyDisplaying[0]} - {currentlyDisplaying[1]} av {shares.length}</P>
-        <DropDown shares={shares} onChange={handleChange}/>
+            <SectionBtnCont>
+                <StepButton handleClick={handleClickGoToFirstPage} text="<<"/>
+                <StepButton handleClick={handleClickPrevious} text="<"/>
+                {
+                    makeButtons()
+                }
+                <Button style={{backgroundColor: 'white'}}>...</Button>
+                <StepButton handleClick={handleClickNext} text=">"/>
+                <StepButton handleClick={handleClickGoToLastPage} text=">>"/>
+            </SectionBtnCont>
+            <SectionBtnCont>
+                <DropDown shares={shares} onChange={handleChange}/>
+                <P>Visar: {currentlyDisplaying[0]} - {currentlyDisplaying[1]} av {shares.length}</P>
+            </SectionBtnCont>
+            
+        
+        
+            
         </ButtonContainer>
     )
 }

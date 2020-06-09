@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Main = styled.div`
     min-width: 100%;
-    min-height: 500px;
+    min-height: 100%;
     background-color: white;
     border-radius: 5px;
 `;
@@ -19,14 +19,13 @@ export const P = styled.p`
     padding: 10px;
 `;
 
-export const OptionContainer = styled.div`
-    margin: 1px;
-    padding: 10px;
-    font-size: 1em;
+export const TableContainer = styled.div`
+    max-height: 400px;
+    overflow:scroll;
+    overflow-x: hidden;
 `;
 
 export const Table = styled.table`
-    min-height: 100%;
     min-width: 100%;
     text-align:left;
     font-size:1em;
@@ -42,10 +41,30 @@ export const Th = styled.th`
 export const Td = styled.td`
     color: #3C3C3B;
     border-bottom: 1px solid #EEF3FF;
+    padding: 0.25em;
 `;
 
 export const ButtonContainer = styled.div`
+    width: 80%;
+    padding: 10px;
     display: flex;
+    bottom: 5px;
+    justify-content: space-between;
     position: fixed;
-    bottom: 10px;
+    left: 20%;
+    bottom: 0;
+`;
+
+export const SectionBtnCont = styled.div`
+    display: inline-flex;
+`;
+
+export const Select = styled.select`
+    background-color:#FEEBC4;
+    border:none;
+    padding:10px;
+`;
+
+export const Option = styled.option`
+    background-color:white;
 `;

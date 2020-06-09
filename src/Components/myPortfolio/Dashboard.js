@@ -1,13 +1,13 @@
 import React from 'react';
 import PortfolioTable from './PortfolioTable';
-import {Main} from './StylesMyPortfolio';
+
 
 
 const PortfolioDashboard = () => {
     return(
-        <Main>
+        <div>
             <PortfolioTable/>
-        </Main>
+        </div>
     )
 }
 
