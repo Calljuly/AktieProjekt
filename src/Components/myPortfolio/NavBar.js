@@ -9,7 +9,7 @@ import {Button, P, ButtonContainer, SectionBtnCont} from './StylesMyPortfolio'
 const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}) =>{
     
     const [selectedButton, setSelectedButton] = useState(1);
-    const [visibleButtons, setVisibleButtons] = useState([1,2]);
+    const [visibleButtons, setVisibleButtons] = useState([1,2,3,4]);
     const [totalNumberOfButtons, setTotalNumberOfButtons] = useState(Math.ceil(shares.length/sharesPerPage));
     const [currentlyDisplaying, setCurrentlyDisplaying] = useState([0, sharesPerPage]);
     
@@ -47,7 +47,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
     const handleClickGoToFirstPage = () =>{
         if(selectedButton == 1)
             return;
-        setVisibleButtons([1, 2]);
+        setVisibleButtons([1, 2, 3, 4]);
         let element = document.getElementById(1);
         element.click()
         
@@ -56,7 +56,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
     const handleClickGoToLastPage = () =>{
         if(selectedButton == totalNumberOfButtons)
             return;
-        setVisibleButtons([totalNumberOfButtons-1, totalNumberOfButtons]);
+        setVisibleButtons([totalNumberOfButtons-3, totalNumberOfButtons-2, totalNumberOfButtons-1, totalNumberOfButtons]);
         let element = document.getElementById(totalNumberOfButtons);
         element.click()
         
@@ -70,7 +70,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
         const newButtonElement = document.getElementById(newButton);
 
         if(newButton < visibleButtons[0]){
-            const newButtonsToDisplay = visibleButtons.map(value => value - 2);
+            const newButtonsToDisplay = visibleButtons.map(value => value - 1);
             setVisibleButtons(newButtonsToDisplay);
             newButtonElement.click();
             return;
@@ -87,8 +87,8 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
         const newButton = selectedButton + 1;
         const newButtonElement = document.getElementById(newButton);
 
-        if(newButton > visibleButtons[1]){
-            const newButtonsToDisplay = visibleButtons.map(value => value +2);
+        if(newButton > visibleButtons[3]){
+            const newButtonsToDisplay = visibleButtons.map(value => value + 1);
             setVisibleButtons(newButtonsToDisplay);
             newButtonElement.click();
             return;
