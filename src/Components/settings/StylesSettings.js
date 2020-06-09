@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom';
+
 
 export const Form = styled.form`
     width: 100%;
@@ -81,4 +83,20 @@ export const NavBarContainer = styled.div`
     display: flex;
     border-bottom: 1px solid #EBEDF2;
     background-color: white;
+`;
+export const NavLinkSettings = styled(NavLink)`
+border: none;
+border-bottom: 1px solid #EBEDF2;
+font-size: 1em;
+background-color: white;
+padding: 1em;
+text-decoration:none;
+
+&:hover,
+&.active
+{
+    color:#FDCC6B;
+    border-bottom: 1px solid #FDCC6B;
+}
+
 `;

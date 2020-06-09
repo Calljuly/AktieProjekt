@@ -1,15 +1,13 @@
 import React from 'react'
-import {OptionsImgStyle} from './StylesSideMenu'
-import {NavLink} from 'react-router-dom'
-
+import {OptionsImgStyle, SideMenuOptions} from './StylesSideMenu'
 
 const Options = (props) => {
 
     return (
-        <NavLink exact to={props.path}>
+        <SideMenuOptions exact to={props.path}>
             <OptionsImgStyle src={props.bild} alt="meny button"/>
             {props.Name}
-        </NavLink>
+        </SideMenuOptions>
     )
 }
 export default Options;

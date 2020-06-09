@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom';
 
 export const OptionsImgStyle = styled.img`
 margin-right: 10px;
@@ -51,7 +52,31 @@ color: #FDCC6B;}
     font-size 1rem;
 }
 `;
+export const SideMenuOptions= styled(NavLink)`
+    text-decoration: none;
+    background-color: #363636;
+    color: #C9B791;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    opacity: 1;
 
+    &:hover,
+    &.active,
+    &:active{
+    background-color: #292929;
+    color: #FDCC6B;
+
+`;
+
+export const SideMenuContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color:#363636;
+    text-align: left;
+`;
 
   
 

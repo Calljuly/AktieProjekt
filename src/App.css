@@ -82,27 +82,3 @@ p{
 .result{
   height: 100%;
 }
-#navContainer{
-  display: flex;
-  flex-direction: column;
-  background-color:#363636;
-  text-align: left;
-}
-#navContainer a{
-  text-decoration: none;
-  background-color: #363636;
-color: #C9B791;
-border: none;
-font-size: 1rem;
-width: 100%;
-text-align: left;
-padding: 20px;
-opacity: 1;
-}
-
-#navContainer a:hover,
-#navContainer a.active,
-#navContainer a:active{
-  background-color: #292929;
-color: #FDCC6B;
-}
