@@ -1,31 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import PersonalInfo from '../../../Data/PersonalInformation.json'
 import PreferenceItem from './PreferenceItem'
-
-const StyledForm = styled.form`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin: 20px 0px;
-    font-size: 14px;
-    color: #3D4465;
-`;
-
-const StyledTable = styled.table`
-    text-align: left;
-    
-`;
-
-const GrayP = styled.p`
-    color: #A1A8C3;
-    font-size: 13px;
-`;
-
-const Link = styled.a`
-    color: #FDCC6B;
-`;
+import {StyledForm, StyledTable, GrayP, Link, PreferenceContainer} from '../StylesSettings'
 
 let suggestedIndustries = ["Byggsektorn", "Medtech", "Textech", "Spel", "Fintech", "Sovtech", "Läppglans"];
 let preferredIndustries = PersonalInfo.preferences;
@@ -79,7 +55,7 @@ const writeOutAllSuggestions = () =>{
 
 const PreferencesForm = () => {
     return (
-        <div className = "formContainer">
+        <PreferenceContainer>
             <GrayP>Mina prefererade industrier att investera inom:</GrayP>
             <StyledForm>
                 <StyledTable>
@@ -90,7 +66,7 @@ const PreferencesForm = () => {
                 <p style = {{marginBottom: '15px', color: '#3D4465', fontSize: '14px'}}>Tips! Ifall du väljer att integrerar din bank så kan vi anpassa dina investeringar utefter din ekonomi och preferenser.</p>
                 <GrayP><Link href="" style = {{marginRight: '15px'}}>Integrera min bank</Link>(detta kommer att skicka dig vidare etc....)</GrayP>
             </div>
-        </div>
+        </PreferenceContainer>
     )
 }
 
