@@ -39,7 +39,7 @@ export const TotalContainer = styled.p`
 
 `;
 
-export const BranchName = styled.span`
+export const IndustryName = styled.span`
     font-size: 14px;  
     color: #3D4465;
 `;
@@ -58,3 +58,32 @@ export const Amount = styled.span`
 font-size: 13px;
 color: #646C9A;
 `;
+
+export const IndustryCardDiv = styled.div`
+  height: 50px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 10px 0px;
+`;
+
+
+export const LeftSubcontainer = styled.div`
+  display: inline-flex;
+  align-items: center;
+`;
+
+export const ColorBox = styled.div`
+  height: 13px;
+  width: 13px;
+  margin-right: 15px;
+`;
+
+export const IndustryBars = styled.div`
+    width: 100%;
+    height: 15px;
+    display: inline-flex;
+    justify-content: flex-start;
+  `;

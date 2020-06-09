@@ -1,7 +1,7 @@
 import React from 'react';
-import {BranchName,Companies, SEK, Amount } from './StyleMyPossessions';
+import {IndustryName,Companies, SEK, Amount, IndustryCardDiv, LeftSubcontainer, ColorBox } from './StyleMyPossessions';
 
-const BranchCard = ({branch, amount, boxColor, companies}) =>{
+const IndustryCard = ({industry, amount, boxColor, companies}) =>{
     let colorStyle = {
         backgroundColor: boxColor};
     
@@ -18,21 +18,21 @@ const BranchCard = ({branch, amount, boxColor, companies}) =>{
 
     return (
         
-        <div className = "category">
-            <div className = "left">
-                <div className = "colorBox" style = {colorStyle}></div>
+        <IndustryCardDiv>
+            <LeftSubcontainer>
+                <ColorBox style = {colorStyle}></ColorBox>
                 <p>
-                    <BranchName>{branch}</BranchName> 
+                    <IndustryName>{industry}</IndustryName> 
                     <br/> 
                     <Companies>{listSomeCompanies()}</Companies>
                 </p>          
-            </div>
+            </LeftSubcontainer>
             <p>
                 <Amount>{amount}</Amount>
                 <SEK> SEK</SEK>
             </p>
-        </div>
+        </IndustryCardDiv>
     )
 }
 
-export default BranchCard
+export default IndustryCard
