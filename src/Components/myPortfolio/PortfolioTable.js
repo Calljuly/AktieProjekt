@@ -1,55 +1,14 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
 import NavBar from './NavBar';
 import BriefCase from '../../Data/Briefcase.json';
+import {Table, Th, Td} from './StylesMyPortfolio';
+import {extractBriefCaseInformation} from '../../Util/jsonExtractionScripts';
 
-
-const Table = styled.table`
-    min-height: 100%;
-    min-width: 100%;
-    text-align:left;
-    font-size:1em;
-
-`;
-
-const Th = styled.th`
-    color: #A1A8C3;
-    padding-bottom: 1.25em;
-
-`;
-
-const Td = styled.td`
-    color: #3C3C3B;
-    border-bottom: 1px solid #EEF3FF;
-`;
-
-
-const briefCase = BriefCase;
-
-const extractBriefCaseInformation = () => {
-        
-    let companyInformation = [];
-    let shareInformation = [];
-
-    briefCase.map(industry => {
-        companyInformation = companyInformation.concat(industry.arrayOfCompanies);
-    });
-    
-    companyInformation.map(company =>{
-        company.arrayOfShares.map(share =>{
-            let tempObj = share;
-            tempObj.company = company.company;
-            shareInformation.push(tempObj);
-        })
-    })        
-    
-    return shareInformation;
-}
 
 const PortfolioTable = () => {
     
     const [sharesPerPage, updateSharesPerPage] = useState(10);
-    const [shareInformation, updateShareInformation] = useState(extractBriefCaseInformation());
+    const [shareInformation, updateShareInformation] = useState(extractBriefCaseInformation(BriefCase));
     const [displayRange, updateDisplayRange] = useState([0,sharesPerPage]);
     
     return (
