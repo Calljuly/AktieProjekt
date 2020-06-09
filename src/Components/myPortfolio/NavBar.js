@@ -9,9 +9,9 @@ import {Button, P, ButtonContainer, SectionBtnCont} from './StylesMyPortfolio'
 const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}) =>{
     
     const [selectedButton, setSelectedButton] = useState(1);
-    const [visibleButtons, updateVisibleButtons] = useState([1,2]);
+    const [visibleButtons, setVisibleButtons] = useState([1,2]);
     const [totalNumberOfButtons, setTotalNumberOfButtons] = useState(Math.ceil(shares.length/sharesPerPage));
-    const [currentlyDisplaying, updateCurrentlyDisplaying] = useState([0, sharesPerPage]);
+    const [currentlyDisplaying, setCurrentlyDisplaying] = useState([0, sharesPerPage]);
     
     useEffect(()=>{
         handleClickGoToFirstPage();
@@ -32,7 +32,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
                             shouldDisplay={visibleButtons.includes(count)} 
                             updateSelectedButton={setSelectedButton}
                             updateDisplayRange={updateDisplayRange}
-                            updateCurrentlyDisplaying = {updateCurrentlyDisplaying}
+                            updateCurrentlyDisplaying = {setCurrentlyDisplaying}
                             />)
                             
 
@@ -47,7 +47,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
     const handleClickGoToFirstPage = () =>{
         if(selectedButton == 1)
             return;
-        updateVisibleButtons([1, 2]);
+        setVisibleButtons([1, 2]);
         let element = document.getElementById(1);
         element.click()
         
@@ -56,7 +56,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
     const handleClickGoToLastPage = () =>{
         if(selectedButton == totalNumberOfButtons)
             return;
-        updateVisibleButtons([totalNumberOfButtons-1, totalNumberOfButtons]);
+        setVisibleButtons([totalNumberOfButtons-1, totalNumberOfButtons]);
         let element = document.getElementById(totalNumberOfButtons);
         element.click()
         
@@ -71,7 +71,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
 
         if(newButton < visibleButtons[0]){
             const newButtonsToDisplay = visibleButtons.map(value => value - 2);
-            updateVisibleButtons(newButtonsToDisplay);
+            setVisibleButtons(newButtonsToDisplay);
             newButtonElement.click();
             return;
         }
@@ -89,7 +89,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
 
         if(newButton > visibleButtons[1]){
             const newButtonsToDisplay = visibleButtons.map(value => value +2);
-            updateVisibleButtons(newButtonsToDisplay);
+            setVisibleButtons(newButtonsToDisplay);
             newButtonElement.click();
             return;
         }
