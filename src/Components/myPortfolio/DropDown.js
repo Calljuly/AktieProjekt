@@ -1,26 +1,27 @@
-import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
-
-const Form = styled.div`
-    margin: 1px;
-    padding: 10px;
-    font-size: 1em;
-`;
+import React from 'react';
+import {OptionContainer}from './StylesMyPortfolio';
 
 
-
-const DropDown = (props) => {
-
+const DropDown = ({onChange, sharesPerPage}) => {
+    
+    const createDisplayOptions = () => {
+        let result = [];
+        for( let i = 1; i <= sharesPerPage; i++){
+            result.push(
+                <option key={i} value={i} selected={i === sharesPerPage && 'selected'}>{i}</option>
+            )
+        }
+        return result;
+    }
+   
     return (
-        <Form id='sharesPerPageForm'>
-            <select name="sharesPerPage" id="sharesPerPage" onChange={props.onChange}>
-                <option value="1">1</option>
-                <option value="2" >2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="4" selected="selected">5</option>
+        <OptionContainer id='sharesPerPageForm'>
+            <select name="sharesPerPage" id="sharesPerPage" onChange={onChange}>
+                {
+                    createDisplayOptions()
+                }
             </select>
-        </Form>
+        </OptionContainer>
         
     )
 }

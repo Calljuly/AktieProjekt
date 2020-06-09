@@ -127,7 +127,7 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
         <StepButton handleClick={handleClickNext} text=">"/>
         <StepButton handleClick={handleClickGoToLastPage} text=">>"/>
         <P>Visar: {currentlyDisplaying[0]} - {currentlyDisplaying[1]} av {shares.length}</P>
-        <DropDown onChange={handleChange}/>
+        <DropDown sharesPerPage={sharesPerPage} onChange={handleChange}/>
         </ButtonContainer>
     )
 }

@@ -48,7 +48,7 @@ const extractBriefCaseInformation = () => {
 
 const PortfolioTable = () => {
     
-    const [sharesPerPage, updateSharesPerPage] = useState(5);
+    const [sharesPerPage, updateSharesPerPage] = useState(10);
     const [shareInformation, updateShareInformation] = useState(extractBriefCaseInformation());
     const [displayRange, updateDisplayRange] = useState([0,sharesPerPage]);
     

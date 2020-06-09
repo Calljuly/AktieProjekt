@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import {Button} from './StylesMyPortfolio'
 
-const StepButton = (props) => {
-    return <Button onClick={props.handleClick}>{props.text}</Button>
+const StepButton = ({handleClick, text}) => {
+    return <Button onClick={handleClick}>{text}</Button>
 }
 
 export default StepButton;
