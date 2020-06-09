@@ -1,14 +1,13 @@
 import React from 'react'
-import {OptionsStyle,OptionsImgStyle} from './StylesSideMenu'
-
+import {OptionsImgStyle, SideMenuOptions} from './StylesSideMenu'
 
 const Options = (props) => {
 
     return (
-        <OptionsStyle onClick={props.change}>
+        <SideMenuOptions exact to={props.path}>
             <OptionsImgStyle src={props.bild} alt="meny button"/>
             {props.Name}
-        </OptionsStyle>
+        </SideMenuOptions>
     )
 }
 export default Options;

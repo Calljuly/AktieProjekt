@@ -3,16 +3,17 @@ import Options from './SideNavigationOptions'
 import Setting from '../../images/cog.svg'
 import Home from '../../images/home.svg'
 import Portfolio from '../../images/portfolio.png'
+import { SideMenuContainer} from './StylesSideMenu'
 
-
-const Container = (props) => {
+const Container = () => {
 return (
-    <div>
-        <Options change={props.changeHome} Name="Hem" bild={Home}/>
-        <Options change={props.changePortfolio} Name="Min portfolio" bild={Portfolio}/>
-        <Options change={props.changeSettings} Name="Inställningar" bild={Setting}/>
+    <SideMenuContainer >
 
-    </div>
+        <Options Name="Hem" bild={Home} path="/" />
+        <Options Name="Min portfolio" bild={Portfolio} path="/portfolio" />
+        <Options  Name="Inställningar" bild={Setting} path="/settings" />
+        
+    </SideMenuContainer>
     );
 }
 export default Container;

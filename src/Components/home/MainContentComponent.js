@@ -5,6 +5,7 @@ import HomeDashBoardContainer from '../home/DashBoardContainer';
 import SettingsDashBoardContainer from '../settings/DashBoardContainer';
 import PortfolioDashboard from '../myPortfolio/Dashboard';
 import {MainDivStyle, HeaderContainer, DashBoardContainer} from './StylesMain'
+import {Switch, Route} from 'react-router-dom'
 
 const MainComponent = (props) =>{
 
@@ -12,58 +13,44 @@ const MainComponent = (props) =>{
     const textEnd = '. Ta gärna en titt!'
     const fullText = textStart.concat( props.Date, textEnd)
 
-    const ShowContent = () => {
-        if(props.StateMain ===1){ 
-          return  (
-            <React.Fragment>
-              <HomeDashBoardContainer person={props.person}/> 
-            </React.Fragment>
-          );
-        }
-        else if(props.StateMain === 2){
-          return(
-            <React.Fragment>
-              <PortfolioDashboard/>
-            </React.Fragment>
-          )
-        }
-        else if(props.StateMain === 3){
-          return  (
-            <React.Fragment>
-              <SettingsDashBoardContainer person={props.person}/>
-            </React.Fragment>
-          );
-        }
-      }
-    const getTitle = () => {
-        if(props.StateMain ===1){
-          return  'Hem';
-        }
-        else if(props.StateMain ===2){
-           
-          return 'Min portfölj';
-        }
-        else if(props.StateMain ===3){
-            
-          return 'Inställningar';
-        }
-      }
-    
-    const displayInfobox = () =>{
-      if(props.StateMain === 1)
-        return  <InfoBox text={fullText} ></InfoBox>;
-    }
-     
     return (
-        <MainDivStyle>
+      <Switch>
+        <Route exact path="/" render={() => {
+          return <MainDivStyle>
           <HeaderContainer>
-            <PageTitle head={getTitle()}/>
-            {displayInfobox()}
+            <PageTitle head="Hem"/>
+            <InfoBox text={fullText} ></InfoBox>;
           </HeaderContainer>
           <DashBoardContainer>
-            {ShowContent()}
+            <HomeDashBoardContainer person={props.person}/> 
           </DashBoardContainer>
         </MainDivStyle>
+        }} />
+        <Route path="/portfolio" render={() => {
+          return <MainDivStyle>
+          <HeaderContainer>
+            <PageTitle head="Portfolio"/>
+            
+          </HeaderContainer>
+          <DashBoardContainer>
+          <PortfolioDashboard/>
+          </DashBoardContainer>
+        </MainDivStyle>
+        }} />
+        <Route path="/settings" render={() => {
+          return <MainDivStyle>
+          <HeaderContainer>
+            <PageTitle head="Settings"/>
+            
+          </HeaderContainer>
+          <DashBoardContainer>
+          <SettingsDashBoardContainer person={props.person}/>
+          </DashBoardContainer>
+        </MainDivStyle>
+        }} /> 
+
+      </Switch>
+        
         )
 }
 export default MainComponent;
