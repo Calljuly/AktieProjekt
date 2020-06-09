@@ -1,6 +1,6 @@
 import React from 'react';
-import {NavBarContainer, ButtonNavBar, NavLinkSettings} from '../StylesSettings'
-import {Link} from 'react-router-dom'
+import {NavBarContainer, NavLinkSettings} from '../StylesSettings'
+
 const NavBar = () =>{
 
     return (
