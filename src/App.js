@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Main from './Components/home/MainContentComponent'
-import SideMenu from './Components/SidoMeny/SideMenu'
+import Main from './Components/Pages/Pages'
+import SideMenu from './Components/SideMenu/SideMenu'
 import './App.css';
 import PersonalInfo from './Data/PersonalInformation.json'
 import {BrowserRouter} from 'react-router-dom'
