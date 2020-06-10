@@ -1,15 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import NavBar from './NavBar';
 import BriefCase from '../../../Data/Briefcase.json';
 import {Table, Th, Td, Main, TableContainer} from './Styles';
 import {HeaderStyle} from '../Styles';
 import {extractBriefCaseInformation} from '../../../Util/jsonExtractionScripts';
-
+import Context from '../../../Data/Context'
 
 const BriefcaseTable = () => {
+
+    const test = useContext(Context);
     
     const [sharesPerPage, updateSharesPerPage] = useState(10);
-    const [shareInformation, updateShareInformation] = useState(extractBriefCaseInformation(BriefCase));
+    const [shareInformation, updateShareInformation] = useState(extractBriefCaseInformation(test.briefCase));
     const [displayRange, updateDisplayRange] = useState([0,sharesPerPage]);
 
     const generateTableContent = () =>{
