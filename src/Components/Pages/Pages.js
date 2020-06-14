@@ -15,42 +15,41 @@ const Pages = (props) =>{
 
     return (
       <Switch>
-        <Route exact path="/" render={() => {
-          return <MainDivStyle>
-          <HeaderContainer>
-            <PageTitle head="Hem"/>
-            <MessageBox text={fullText} ></MessageBox>;
-          </HeaderContainer>
-          <DashBoardContainer>
-            <StartPage person={props.person}/> 
-          </DashBoardContainer>
-        </MainDivStyle>
-        }} />
-        <Route path="/portfolio" render={() => {
-          return <MainDivStyle>
-          <HeaderContainer>
-            <PageTitle head="Portfolio"/>
-            
-          </HeaderContainer>
-          <DashBoardContainer>
-          <BriefcasePage/>
-          </DashBoardContainer>
-        </MainDivStyle>
-        }} />
-        <Route path="/settings" render={() => {
-          return <MainDivStyle>
-          <HeaderContainer>
-            <PageTitle head="Settings"/>
-            
-          </HeaderContainer>
-          <DashBoardContainer>
-          <SettingsPage person={props.person}/>
-          </DashBoardContainer>
-        </MainDivStyle>
-        }} /> 
+        <Route exact path="/">
+          <MainDivStyle>
+            <HeaderContainer>
+              <PageTitle head="Hem"/>
+              <MessageBox text={fullText} ></MessageBox>;
+            </HeaderContainer>
+            <DashBoardContainer>
+              <StartPage person={props.person}/> 
+            </DashBoardContainer>
+          </MainDivStyle>
+        </Route>
 
-      </Switch>
+        <Route path="/portfolio">
+          <MainDivStyle>
+            <HeaderContainer>
+              <PageTitle head="Portfolio"/>
+            </HeaderContainer>
+            <DashBoardContainer>
+              <BriefcasePage/>
+            </DashBoardContainer>
+          </MainDivStyle>
+        </Route>
+
+        <Route path="/settings">
+          <MainDivStyle>
+            <HeaderContainer>
+              <PageTitle head="Settings"/>
+            </HeaderContainer>
+            <DashBoardContainer>
+              <SettingsPage person={props.person}/>
+            </DashBoardContainer>
+        </MainDivStyle>
+        </Route>
         
-        )
+      </Switch>      
+  )
 }
 export default Pages;
