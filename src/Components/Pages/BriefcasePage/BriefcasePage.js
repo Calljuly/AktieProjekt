@@ -5,9 +5,9 @@ import BriefcaseTable from './BriefcaseTable';
 
 const BriefcasePage = () => {
     return(
-        <div>
+        <>
             <BriefcaseTable/>
-        </div>
+        </>
     )
 }
 
