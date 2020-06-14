@@ -1,23 +1,25 @@
 import React, {useState} from 'react';
-import Main from './Components/Pages/Pages'
-import SideMenu from './Components/SideMenu/SideMenu'
 import './App.css';
 import PersonalInfo from './Data/PersonalInformation.json'
-import {BrowserRouter} from 'react-router-dom'
+import LogInForm from './Components/LogIn/LogIn';
+import Pages from './Components/Pages/Pages';
+
 
 const App = () =>{
+  const [loggedIn, setLoggedIn] = useState(false);
   const [date, setDate] = useState({date1 : '2020-05-28'});
   
   const dummyProfile = PersonalInfo;
 
   return (
     <div className="App">
-    <BrowserRouter>
-      <SideMenu/>
-      <Main Date={date.date1} person={dummyProfile}/>
-      </BrowserRouter>
+      {
+        loggedIn ? <Pages date={date} person={dummyProfile}/> : <LogInForm setLoggedIn={setLoggedIn}/>
+      }
     </div>
   );
 }
 
 export default App;
+
+

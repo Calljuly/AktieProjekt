@@ -5,7 +5,8 @@ import StartPage from './StartPage/StartPage';
 import SettingsPage from './SettingsPage/SettingsPage';
 import BriefcasePage from './BriefcasePage/BriefcasePage';
 import {MainDivStyle, HeaderContainer, DashBoardContainer} from './Styles'
-import {Switch, Route} from 'react-router-dom'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import SideMenu from '../SideMenu/SideMenu';
 
 const Pages = ({person, Date}) =>{
 
@@ -14,6 +15,10 @@ const Pages = ({person, Date}) =>{
     const fullText = textStart.concat( Date, textEnd)
 
     return (
+      <BrowserRouter>
+      <div>
+      
+      <SideMenu/>
       <Switch>
         <Route exact path="/">
           <MainDivStyle>
@@ -49,7 +54,9 @@ const Pages = ({person, Date}) =>{
         </MainDivStyle>
         </Route>
 
-      </Switch>      
+      </Switch>
+      </div>
+    </BrowserRouter>
   )
 }
 export default Pages;
