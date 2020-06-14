@@ -7,11 +7,11 @@ import BriefcasePage from './BriefcasePage/BriefcasePage';
 import {MainDivStyle, HeaderContainer, DashBoardContainer} from './Styles'
 import {Switch, Route} from 'react-router-dom'
 
-const Pages = (props) =>{
+const Pages = ({person, Date}) =>{
 
     const textStart = 'Välkommen Magnus! Ditt innehav blev senast uppdaterad ';
     const textEnd = '. Ta gärna en titt!'
-    const fullText = textStart.concat( props.Date, textEnd)
+    const fullText = textStart.concat( Date, textEnd)
 
     return (
       <Switch>
@@ -22,7 +22,7 @@ const Pages = (props) =>{
               <MessageBox text={fullText} ></MessageBox>;
             </HeaderContainer>
             <DashBoardContainer>
-              <StartPage person={props.person}/> 
+              <StartPage person={person}/> 
             </DashBoardContainer>
           </MainDivStyle>
         </Route>
@@ -44,11 +44,11 @@ const Pages = (props) =>{
               <PageTitle head="Settings"/>
             </HeaderContainer>
             <DashBoardContainer>
-              <SettingsPage person={props.person}/>
+              <SettingsPage person={person}/>
             </DashBoardContainer>
         </MainDivStyle>
         </Route>
-        
+
       </Switch>      
   )
 }
