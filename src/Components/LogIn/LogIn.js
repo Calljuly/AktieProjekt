@@ -35,7 +35,7 @@ const LogIn = ({setLoggedIn}) =>{
     <LogInContainer>
     <LoggoStyle src={Logga} alt="Campus Mölndal"/>
       <ContentDiv>
-      <h1>Logga in</h1>
+      <h1>Welcome</h1>
       <Switch>
           <Route exact path="/" render={() =>{return <LogInForm click={clickedLogIn} />}}/>
           <Route exact path="/createAccount" render={() =>{return <CreateAccount click={clickedLogIn} />}}/>

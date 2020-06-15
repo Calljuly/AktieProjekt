@@ -1,7 +1,9 @@
 import React from 'react'
-import {LogInContainer, LoggoStyle, ContentDiv, Form, Label, Input, Button,P, Link} from './StylesLogIn'
+import {Form, Label, Input, Button, Link} from './StylesLogIn'
+import {useHistory} from 'react-router-dom'
 
 const CreateAccount =(props) =>{
+    const history = useHistory();
     return(
 
         <Form onSubmit={props.click}>
@@ -12,6 +14,9 @@ const CreateAccount =(props) =>{
         <Label name="Password">Enter Password again :</Label>
         <Input id="password"type="password" required></Input>
         <Button>Create Account</Button>
+        <Button onClick={() =>
+            history.goBack()
+        }>Go Back to start </Button>
       </Form>
 
     )
