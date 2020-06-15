@@ -53,6 +53,10 @@ const Pages = ({person, Date}) =>{
             </DashBoardContainer>
         </MainDivStyle>
         </Route>
+        
+        <Route>
+          <h1>404 Not found</h1>
+        </Route>
 
       </Switch>
       </div>

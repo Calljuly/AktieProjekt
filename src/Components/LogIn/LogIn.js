@@ -14,6 +14,7 @@ const LogInForm = ({setLoggedIn}) =>{
             if(this.status == 200){
               console.log(JSON.parse(this.response));
               setLoggedIn(true);
+              sessionStorage.setItem("loggedIn", "true");
             }
             else{
               alert('Could not log in.');

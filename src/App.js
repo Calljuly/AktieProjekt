@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import PersonalInfo from './Data/PersonalInformation.json'
 import LogInForm from './Components/LogIn/LogIn';
@@ -10,6 +10,11 @@ const App = () =>{
   const [date, setDate] = useState({date1 : '2020-05-28'});
   
   const dummyProfile = PersonalInfo;
+
+  useEffect(() => {
+    if(sessionStorage.getItem('loggedIn'))
+      setLoggedIn(true);
+  }, []);
 
   return (
     <div className="App">
