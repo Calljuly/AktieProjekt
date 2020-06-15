@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PageTitle from './PageTitle';
 import MessageBox from './MessegeBox';
 import StartPage from './StartPage/StartPage';
@@ -8,26 +8,42 @@ import {MainDivStyle, HeaderContainer, DashBoardContainer} from './Styles'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import SideMenu from '../SideMenu/SideMenu';
 
-const Pages = ({person, Date}) =>{
+const Pages = ({user}) =>{
 
-    const textStart = 'Välkommen Magnus! Ditt innehav blev senast uppdaterad ';
-    const textEnd = '. Ta gärna en titt!'
-    const fullText = textStart.concat( Date, textEnd)
+  const [userInfo, setUserInfo] = useState();
+  const [loading, setLoading] = useState(true);
+
+
+    async function fetchUserInfo () {
+      const response = await fetch(`http://localhost:4001/customer/${user}`);
+      const json = await response.json();
+      
+      setUserInfo(JSON.parse(json.PersonalInformation));
+      setLoading(false);
+
+    }
+
+    useEffect( () => {
+      fetchUserInfo();
+    }, []);
 
     return (
       <BrowserRouter>
       <div>
-      
+
       <SideMenu/>
+      
       <Switch>
         <Route exact path="/">
           <MainDivStyle>
             <HeaderContainer>
               <PageTitle head="Hem"/>
-              <MessageBox text={fullText} ></MessageBox>;
+              <MessageBox user={userInfo}></MessageBox>;
             </HeaderContainer>
             <DashBoardContainer>
-              <StartPage person={person}/> 
+            {
+              loading ? <p>Loading...</p> : <StartPage person={userInfo}/>
+            }
             </DashBoardContainer>
           </MainDivStyle>
         </Route>
@@ -49,7 +65,9 @@ const Pages = ({person, Date}) =>{
               <PageTitle head="Settings"/>
             </HeaderContainer>
             <DashBoardContainer>
-              <SettingsPage person={person}/>
+            {
+              loading ? <p>Loading...</p> : <SettingsPage person={userInfo}/>
+            }
             </DashBoardContainer>
         </MainDivStyle>
         </Route>
