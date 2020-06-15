@@ -57,7 +57,7 @@ function Possessions() {
     <Main>
         <TitleButtonContainer>
                 <p><strong>Mitt innehav</strong></p>
-                <Button>Min Portfölj</Button>
+                <Button to="/portfolio">Min Portfölj</Button>
         </TitleButtonContainer>
         <TotalContainer><Total>{total} SEK</Total><LastUpdated>Uppdaterad: {new Date(document.lastModified).toDateString()}</LastUpdated></TotalContainer>
       <IndustryBars>
