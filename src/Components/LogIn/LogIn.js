@@ -1,5 +1,5 @@
 import React from 'react';
-import {LogInContainer, LoggoStyle, ContentDiv, Form, Label, Input, Button} from './StylesLogIn'
+import {LogInContainer, LoggoStyle, ContentDiv, Form, Label, Input, Button,P, Link} from './StylesLogIn'
 import Logga from '../../images/LoggoTyp.png'
 const LogInForm = ({setLoggedIn}) =>{
    
@@ -38,6 +38,7 @@ const LogInForm = ({setLoggedIn}) =>{
         <Input id="password"type="password" required></Input>
         <Button>Logga in</Button>
       </Form>
+      <P>Psst..    don't have a account? <Link href="Facebook.com">Klick here !</Link></P>
       </ContentDiv>
     </LogInContainer>
     )

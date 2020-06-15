@@ -18,7 +18,7 @@ export const ContentDiv = styled.div`
     border-radius:5px;
     padding:5%;
     margin-bottom:3%;
-
+    display:flex-box;
 `;
 export const LoggoStyle = styled.img`
 margin:auto;
@@ -30,6 +30,7 @@ height:280px;
 export const Form = styled.form`
     margin:auto;
     width:80%;
+    
 `;
 export const Label = styled.label`
     display:block;
@@ -47,4 +48,16 @@ width:20%;
     margin:1em;
     border-radius:4px; 
     border: 1px solid #EBEDF2;
+`;
+export const P = styled.p`
+    text-align: right;
+    font-style:italic;
+    padding-top:10%;
+`;
+export const Link = styled.a`
+    text-decoration:none;
+    &:hover{
+        color:darkred;
+        font-style:strong;
+    }
 `;
