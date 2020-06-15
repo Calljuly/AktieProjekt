@@ -6,7 +6,7 @@ export const LogInContainer = styled.div`
     width:40%;
     height:auto;
     border-radius:15px;
-    margin-top:10%;
+    margin-top:5%;
     padding:10px;
     display:block; 
     justify-content:center;

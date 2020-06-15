@@ -1,9 +1,13 @@
 import React from 'react';
 import {LogInContainer, LoggoStyle, ContentDiv, Form, Label, Input, Button,P, Link} from './StylesLogIn'
+import LogInForm from './LoginForm'
+import {Route, BrowserRouter, Switch} from 'react-router-dom'
 import Logga from '../../images/LoggoTyp.png'
-const LogInForm = ({setLoggedIn}) =>{
+import CreateAccount from './CreateAccount'
+
+const LogIn = ({setLoggedIn}) =>{
    
-    const logIn = (e) => {
+    const clickedLogIn = (e) => {
         e.preventDefault();
         
         const fName = document.getElementById('mail').value;
@@ -27,21 +31,20 @@ const LogInForm = ({setLoggedIn}) =>{
       }
     
     return(
+      <BrowserRouter>
     <LogInContainer>
     <LoggoStyle src={Logga} alt="Campus Mölndal"/>
       <ContentDiv>
       <h1>Logga in</h1>
-      <Form onSubmit={logIn}>
-        <Label name="Mail">Mail : </Label>
-        <Input id="mail"type="text" required></Input>
-        <Label name="Password">Password :</Label>
-        <Input id="password"type="password" required></Input>
-        <Button>Logga in</Button>
-      </Form>
-      <P>Psst..    don't have a account? <Link href="Facebook.com">Klick here !</Link></P>
+      <Switch>
+          <Route exact path="/" render={() =>{return <LogInForm click={clickedLogIn} />}}/>
+          <Route exact path="/createAccount" render={() =>{return <CreateAccount click={clickedLogIn} />}}/>
+      </Switch>
+      <P>Psst..    don't have a account? <Link href="/createAccount">Klick here !</Link></P>
       </ContentDiv>
     </LogInContainer>
+    </BrowserRouter>
     )
 }
 
-export default LogInForm;
+export default LogIn;
