@@ -6,20 +6,16 @@ import Pages from './Components/Pages/Pages';
 
 
 const App = () =>{
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState();
   const [date, setDate] = useState({date1 : '2020-05-28'});
   
   const dummyProfile = PersonalInfo;
 
-  useEffect(() => {
-    if(sessionStorage.getItem('loggedIn'))
-      setLoggedIn(true);
-  }, []);
 
   return (
     <div className="App">
       {
-        loggedIn ? <Pages date={date} person={dummyProfile}/> : <LogInForm setLoggedIn={setLoggedIn}/>
+        user ? <Pages date={date} person={dummyProfile} user={user}/> : <LogInForm setUser={setUser}/>
       }
     </div>
   );
