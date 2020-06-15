@@ -1,5 +1,6 @@
 import React from 'react';
-
+import {LogInContainer, LoggoStyle, ContentDiv, Form, Label, Input, Button} from './StylesLogIn'
+import Logga from '../../images/LoggoTyp.png'
 const LogInForm = ({setLoggedIn}) =>{
    
     const logIn = (e) => {
@@ -26,14 +27,19 @@ const LogInForm = ({setLoggedIn}) =>{
       }
     
     return(
-    <div>
+    <LogInContainer>
+    <LoggoStyle src={Logga} alt="Campus Mölndal"/>
+      <ContentDiv>
       <h1>Logga in</h1>
-      <form onSubmit={logIn}>
-        <input id="mail"type="text" required></input>
-        <input id="password"type="password" required></input>
-        <button>Logga in</button>
-      </form>
-    </div>
+      <Form onSubmit={logIn}>
+        <Label name="Mail">Mail : </Label>
+        <Input id="mail"type="text" required></Input>
+        <Label name="Password">Password :</Label>
+        <Input id="password"type="password" required></Input>
+        <Button>Logga in</Button>
+      </Form>
+      </ContentDiv>
+    </LogInContainer>
     )
 }
 
