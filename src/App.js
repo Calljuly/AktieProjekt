@@ -1,26 +1,30 @@
-import React, {useState} from 'react';
-import Main from './Components/Pages/Pages'
-import SideMenu from './Components/SideMenu/SideMenu'
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import PersonalInfo from './Data/PersonalInformation.json'
-import {BrowserRouter} from 'react-router-dom'
+import LogInForm from './Components/LogIn/LogIn';
+import Pages from './Components/Pages/Pages';
 
-function App() {
-  const [date, setDate] = useState({
-    date1 : '2020-05-28'
-  })
+
+const App = () =>{
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [date, setDate] = useState({date1 : '2020-05-28'});
+  
   const dummyProfile = PersonalInfo;
+
+  useEffect(() => {
+    if(sessionStorage.getItem('loggedIn'))
+      setLoggedIn(true);
+  }, []);
 
   return (
     <div className="App">
-    <BrowserRouter>
-      <SideMenu/>
-
-      <Main Date={date.date1}
-      person={dummyProfile}/>
-      </BrowserRouter>
+      {
+        loggedIn ? <Pages date={date} person={dummyProfile}/> : <LogInForm setLoggedIn={setLoggedIn}/>
+      }
     </div>
   );
 }
 
 export default App;
+
+

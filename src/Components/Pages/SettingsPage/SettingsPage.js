@@ -10,19 +10,22 @@ const SettingsPage = ({person}) =>{
 
     return(
         <BrowserRouter>
-        <MainDashBoard>
-            
-            <SettingsNavigation />
+            <MainDashBoard>
+                <SettingsNavigation />
+                
+                <Switch>
+                <Route path="/settings">
+                    <ProfileSettings person={person}/>
+                </Route>
+                <Route path="/password">
+                    <ChangePassword/>
+                </Route>
+                <Route path="/settingspreference">
+                    <PreferenceSettings/>
+                </Route>
+                </Switch>
 
-            <Switch>
-            <Route path="/settings" render={() =>{
-                return <ProfileSettings person={person}></ProfileSettings>
-            }}/>
-            <Route path="/password" render={()=> {return <ChangePassword/>}}/>
-            <Route path="/settingspreference" render={() => {return <PreferenceSettings/>}}/>
-            </Switch>
-             
-        </MainDashBoard>
+            </MainDashBoard>
         </BrowserRouter>
     )
 }
