@@ -18,7 +18,7 @@ const Pages = ({person, Date}) =>{
       <BrowserRouter>
       <div>
       
-      <SideMenu/>
+      <SideMenu />
       <Switch>
         <Route exact path="/">
           <MainDivStyle>

@@ -1,8 +1,13 @@
 import React from 'react';
+import {LogInContainer, LoggoStyle, ContentDiv, P, Link} from './StylesLogIn'
+import LogInForm from './LoginForm'
+import {Route, BrowserRouter, Switch} from 'react-router-dom'
+import Logga from '../../images/LoggoTyp.png'
+import CreateAccount from './CreateAccount'
 
-const LogInForm = ({setLoggedIn}) =>{
+const LogIn = ({setLoggedIn}) =>{
    
-    const logIn = (e) => {
+    const clickedLogIn = (e) => {
         e.preventDefault();
         
         const fName = document.getElementById('mail').value;
@@ -26,15 +31,22 @@ const LogInForm = ({setLoggedIn}) =>{
       }
     
     return(
-    <div>
-      <h1>Logga in</h1>
-      <form onSubmit={logIn}>
-        <input id="mail"type="text" required></input>
-        <input id="password"type="password" required></input>
-        <button>Logga in</button>
-      </form>
-    </div>
+      <BrowserRouter>
+    <LogInContainer>
+    <LoggoStyle src={Logga} alt="Campus Mölndal"/>
+      <ContentDiv>
+      <h1>Welcome</h1>
+      <Switch>
+          <Route exact path="/"> 
+          <LogInForm click={clickedLogIn} />
+          <P>Psst..    don't have a account? <Link href="/createAccount">Klick here !</Link></P>
+          </Route>
+          <Route exact path="/createAccount" render={() =>{return <CreateAccount click={clickedLogIn} />}}/>
+      </Switch>
+      </ContentDiv>
+    </LogInContainer>
+    </BrowserRouter>
     )
 }
 
-export default LogInForm;
+export default LogIn;
