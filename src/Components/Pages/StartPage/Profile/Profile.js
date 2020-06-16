@@ -10,7 +10,7 @@ export default function Profile(props){
         <Main>
             <TitleButtonContainer>
                 <p><strong>Min Profil</strong></p>
-                <Button>Redigera</Button>
+                <Button to="/settings">Redigera</Button>
             </TitleButtonContainer>
             <ImageSummaryContainer>
                 <ProfilePicture pictureName = {'testprofile'} isHomeScreen={true}/>
