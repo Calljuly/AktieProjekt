@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import NavBar from './NavBar';
 import BriefCase from '../../../Data/Briefcase.json';
 import {Table, Th, Td, Main, TableContainer} from './Styles';
@@ -6,11 +6,25 @@ import {HeaderStyle} from '../Styles';
 import {extractBriefCaseInformation} from '../../../Util/jsonExtractionScripts';
 
 
-const BriefcaseTable = () => {
+const BriefcaseTable = ({user}) => {
     
     const [sharesPerPage, updateSharesPerPage] = useState(10);
-    const [shareInformation, updateShareInformation] = useState(extractBriefCaseInformation(BriefCase));
+    const [shareInformation, updateShareInformation] = useState([]);
     const [displayRange, updateDisplayRange] = useState([0,sharesPerPage]);
+
+    async function fetchPortfolioInfo () {
+        const response = await fetch(`http://localhost:4001/customer/${user}`);
+        const json = await response.json();
+        
+        const portfolioInformation = JSON.parse(json.Briefcase);
+
+        updateShareInformation(extractBriefCaseInformation(portfolioInformation));
+  
+    }
+
+    useEffect (() => {
+        fetchPortfolioInfo();
+    }, []);
 
     const generateTableContent = () =>{
         return(

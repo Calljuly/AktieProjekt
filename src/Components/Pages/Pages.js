@@ -35,7 +35,7 @@ const Pages = ({user}) =>{
               <PageTitle head="Portfolio"/>
             </HeaderContainer>
             <DashBoardContainer>
-              <BriefcasePage/>
+              <BriefcasePage user={user}/>
             </DashBoardContainer>
           </MainDivStyle>
         </Route>
