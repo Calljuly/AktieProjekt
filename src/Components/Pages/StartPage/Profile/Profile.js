@@ -7,7 +7,7 @@ import ContactInformation from './ContactInformation';
 
 const Profile = ({username}) => {
     
-    const [userInfo, setUserInfo] = useState();
+    const [personalInformation, setPersonalInformation] = useState();
     const [loading, setLoading] = useState(true);
 
 
@@ -15,7 +15,7 @@ const Profile = ({username}) => {
         fetch(`http://localhost:4001/customer/${username}`)
         .then(response => response.json())
         .then(data => {
-            setUserInfo(JSON.parse(data.PersonalInformation));
+            setPersonalInformation(JSON.parse(data.PersonalInformation));
             setLoading(false);});
     }, []);
 
@@ -24,11 +24,11 @@ const Profile = ({username}) => {
             <>
                 <ImageSummaryContainer>
                     <ProfilePicture pictureName = {'testprofile'} isHomeScreen={true}/>
-                    <HomeMyProfileSummary person = {userInfo}/>
+                    <HomeMyProfileSummary person = {personalInformation}/>
                 </ImageSummaryContainer>
-                <PreferredBusinesses person = {userInfo}/>
+                <PreferredBusinesses person = {personalInformation}/>
                 <br/>
-                <ContactInformation person = {userInfo}/>
+                <ContactInformation person = {personalInformation}/>
             </>
         )
     }

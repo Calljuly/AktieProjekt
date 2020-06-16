@@ -3,7 +3,7 @@ import {InfoBoxStyle} from './Styles'
 
 const Messagebox = ({username}) => {
 
-    const [userInfo, setUserInfo] = useState();
+    const [personalInformation, setPersonalInformation] = useState();
     const [loading, setLoading] = useState(true);
 
 
@@ -11,13 +11,13 @@ const Messagebox = ({username}) => {
       fetch(`http://localhost:4001/customer/${username}`)
         .then(response => response.json())
         .then(data => {
-            setUserInfo(JSON.parse(data.PersonalInformation));
+            setPersonalInformation(JSON.parse(data.PersonalInformation));
             setLoading(false);});
     }, []);
 
     return (
         <InfoBoxStyle>
-            <p>Välkommen {!loading && userInfo.fName}! Ditt innehav blev senast uppdaterat 2020-05-31. Ta gärna en titt!</p>
+            <p>Välkommen {!loading && personalInformation.fName}! Ditt innehav blev senast uppdaterat 2020-05-31. Ta gärna en titt!</p>
         </InfoBoxStyle>)
 }
 export default Messagebox;
