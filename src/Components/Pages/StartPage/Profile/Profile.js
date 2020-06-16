@@ -5,7 +5,9 @@ import HomeMyProfileSummary from './Summary';
 import PreferredBusinesses from './PreferredBusinesses';
 import ContactInformation from './ContactInformation';
 
-export default function Profile(props){
+const Profile = ({person}) => {
+    
+    
     return(
         <Main>
             <TitleButtonContainer>
@@ -14,12 +16,14 @@ export default function Profile(props){
             </TitleButtonContainer>
             <ImageSummaryContainer>
                 <ProfilePicture pictureName = {'testprofile'} isHomeScreen={true}/>
-                <HomeMyProfileSummary person = {props.person}/>
+                <HomeMyProfileSummary person = {person}/>
             </ImageSummaryContainer>
-            <PreferredBusinesses person = {props.person}/>
+            <PreferredBusinesses person = {person}/>
             <br/>
-            <ContactInformation person = {props.person}/>
+            <ContactInformation person = {person}/>
         </Main>
 
     )
 }
+
+export default Profile;
