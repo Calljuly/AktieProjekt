@@ -19,7 +19,7 @@ const CreateAccount =(props) =>{
             
             <Button onClick={() =>
                 history.goBack()
-            }>Go Back to start </Button>
+            }>Go Back to start</Button>
       </Form>
 
     )

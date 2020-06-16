@@ -24,7 +24,7 @@ export const LoggoStyle = styled.img`
 margin:auto;
 padding: 5%;
 width: 80%;
-height:280px;
+height:auto;
 `;
 
 export const Form = styled.form`
@@ -42,12 +42,18 @@ export const Input = styled.input `
     border: 1px solid #EBEDF2;
 `;
 export const Button = styled.button`
-width:20%;
-    dsiplay:block;
+    width:100px;
+    height:auto;
     padding:0.7em;
     margin:1em;
     border-radius:4px; 
     border: 1px solid #EBEDF2;
+    @media (max-width: 500px) {
+        display:block;
+        width:80%;
+        margin:auto;
+        margin-top:4px;
+    }
 `;
 export const P = styled.p`
     text-align: right;
