@@ -3,11 +3,11 @@ import ProfilePicture from '../../../GlobalAssets/ProfilePicture';
 import ProfileForm from './ProfileForm';
 import {Main, Button, ContainerButton} from '../Styles'
 
-const ProfileSettings = ({person}) =>{
+const ProfileSettings = ({user}) =>{
     return(
         <Main>
             <ProfilePicture pictureName='testprofile'/>
-                <ProfileForm person={person}/>
+                <ProfileForm user={user}/>
             <ContainerButton>
                 <Button>Save</Button>
             </ContainerButton>
