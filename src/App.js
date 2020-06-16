@@ -1,26 +1,21 @@
-import React, {useState, useEffect} from 'react';
 import './App.css';
-import PersonalInfo from './Data/PersonalInformation.json'
-import LogInForm from './Components/LogIn/LogIn';
+import React, {useState, useEffect} from 'react';
+import LogIn from './Components/LogIn/LogIn';
 import Pages from './Components/Pages/Pages';
 
 
 const App = () =>{
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [date, setDate] = useState({date1 : '2020-05-28'});
-  
-  const dummyProfile = PersonalInfo;
+  const [username, setUserName] = useState();
 
   useEffect(() => {
-
-    if(sessionStorage.getItem('loggedIn'))
-      setLoggedIn(true);
-  }, []);
+    if(sessionStorage.getItem('username'))
+    setUserName(sessionStorage.getItem('username'));
+  }, [])
 
   return (
     <div className="App">
       {
-        loggedIn ? <Pages date={date} person={dummyProfile}/> : <LogInForm setLoggedIn={setLoggedIn}/>
+        username ? <Pages username={username}/> : <LogIn setUser={setUserName}/>
       }
     </div>
   );

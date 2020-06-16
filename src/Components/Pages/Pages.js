@@ -8,11 +8,7 @@ import {MainDivStyle, HeaderContainer, DashBoardContainer} from './Styles'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import SideMenu from '../SideMenu/SideMenu';
 
-const Pages = ({person, Date}) =>{
-
-    const textStart = 'Välkommen Magnus! Ditt innehav blev senast uppdaterad ';
-    const textEnd = '. Ta gärna en titt!'
-    const fullText = textStart.concat( Date, textEnd)
+const Pages = ({username}) =>{
 
     return (
       <BrowserRouter>
@@ -24,10 +20,10 @@ const Pages = ({person, Date}) =>{
           <MainDivStyle>
             <HeaderContainer>
               <PageTitle head="Hem"/>
-              <MessageBox text={fullText} ></MessageBox>;
+              <MessageBox username={username}/>
             </HeaderContainer>
             <DashBoardContainer>
-              <StartPage person={person}/> 
+              <StartPage username={username}/>
             </DashBoardContainer>
           </MainDivStyle>
         </Route>
@@ -38,7 +34,7 @@ const Pages = ({person, Date}) =>{
               <PageTitle head="Portfolio"/>
             </HeaderContainer>
             <DashBoardContainer>
-              <BriefcasePage/>
+              <BriefcasePage username={username}/>
             </DashBoardContainer>
           </MainDivStyle>
         </Route>
@@ -49,7 +45,7 @@ const Pages = ({person, Date}) =>{
               <PageTitle head="Settings"/>
             </HeaderContainer>
             <DashBoardContainer>
-              <SettingsPage person={person}/>
+              <SettingsPage username={username}/>
             </DashBoardContainer>
         </MainDivStyle>
         </Route>
