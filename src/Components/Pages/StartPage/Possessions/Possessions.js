@@ -2,18 +2,18 @@ import React, {useEffect, useState} from 'react';
 import IndustryCard from './IndustryCard';
 import {TitleButtonContainer, Button, Main, Total, LastUpdated, TotalContainer, IndustryBars} from './Styles';
 
-function Possessions() {
+function Possessions({username}) {
 
   const [briefcase, setBriefcase] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4001/")
+    fetch(`http://localhost:4001/users/${username}`)
     .then(response => response.json())
     .then(data => {
       
       data.Briefcase && setBriefcase(JSON.parse(data.Briefcase));
-      setLoading(true);
+      setLoading(false);
     });
     }, []);
 

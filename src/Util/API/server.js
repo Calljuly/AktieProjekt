@@ -43,19 +43,4 @@ app.get('/users/:username/:password', (req, res, next) => {
   })
 });
 
-app.get('/', (req, res, next) => {
-  db.get(`SELECT * FROM Users WHERE UserName = "{}"`,(err, row) => {
-    if (err) {
-      res.sendStatus(500);
-    } else {
-      if(row){
-        res.send(row);
-      }
-      else{
-        res.sendStatus(404);
-      }
-    }
-  })
-});
-
 app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))
