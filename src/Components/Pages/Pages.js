@@ -38,7 +38,7 @@ const Pages = ({user}) =>{
           <MainDivStyle>
             <HeaderContainer>
               <PageTitle head="Hem"/>
-              <MessageBox user={userInfo}></MessageBox>;
+              <MessageBox user={userInfo}/>
             </HeaderContainer>
             <DashBoardContainer>
             {
