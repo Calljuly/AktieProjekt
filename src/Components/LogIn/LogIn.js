@@ -37,10 +37,12 @@ const LogIn = ({setLoggedIn}) =>{
       <ContentDiv>
       <h1>Welcome</h1>
       <Switch>
-          <Route exact path="/" render={() =>{return <LogInForm click={clickedLogIn} />}}/>
+          <Route exact path="/"> 
+          <LogInForm click={clickedLogIn} />
+          <P>Psst..    don't have a account? <Link href="/createAccount">Klick here !</Link></P>
+          </Route>
           <Route exact path="/createAccount" render={() =>{return <CreateAccount click={clickedLogIn} />}}/>
       </Switch>
-      <P>Psst..    don't have a account? <Link href="/createAccount">Klick here !</Link></P>
       </ContentDiv>
     </LogInContainer>
     </BrowserRouter>
