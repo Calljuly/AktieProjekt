@@ -12,7 +12,7 @@ const BriefcaseTable = ({username}) => {
     const [displayRange, updateDisplayRange] = useState([0,sharesPerPage]);
 
     useEffect (() => {
-        fetch(`http://localhost:4001/customer/${username}`)
+        fetch(`http://localhost:4001/users/${username}`)
         .then(response => response.json())
         .then(data => {
             updateShareInformation(extractBriefCaseInformation(JSON.parse(data.Briefcase)));});

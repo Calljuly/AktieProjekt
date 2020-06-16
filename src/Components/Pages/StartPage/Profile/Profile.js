@@ -12,7 +12,7 @@ const Profile = ({username}) => {
 
 
     useEffect( () => {
-        fetch(`http://localhost:4001/customer/${username}`)
+        fetch(`http://localhost:4001/users/${username}`)
         .then(response => response.json())
         .then(data => {
             setPersonalInformation(JSON.parse(data.PersonalInformation));

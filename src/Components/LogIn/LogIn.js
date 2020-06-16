@@ -13,7 +13,7 @@ const LogIn = ({setUser}) =>{
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         
-        fetch(`http://localhost:4001/customer/${username}/${password}`)
+        fetch(`http://localhost:4001/users/${username}/${password}`)
         .then(response => response.json())
         .then(data => {
           setUser(data.UserName);
