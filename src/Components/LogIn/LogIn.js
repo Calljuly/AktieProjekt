@@ -1,5 +1,5 @@
 import React from 'react';
-import {LogInContainer, LoggoStyle, ContentDiv, Form, Label, Input, Button,P, Link} from './StylesLogIn'
+import {LogInContainer, LoggoStyle, ContentDiv, P, Link} from './StylesLogIn'
 import LogInForm from './LoginForm'
 import {Route, BrowserRouter, Switch} from 'react-router-dom'
 import Logga from '../../images/LoggoTyp.png'

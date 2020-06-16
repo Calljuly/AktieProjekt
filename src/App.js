@@ -12,6 +12,7 @@ const App = () =>{
   const dummyProfile = PersonalInfo;
 
   useEffect(() => {
+
     if(sessionStorage.getItem('loggedIn'))
       setLoggedIn(true);
   }, []);
