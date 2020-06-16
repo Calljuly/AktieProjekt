@@ -7,17 +7,12 @@ const Messagebox = ({user}) => {
     const [loading, setLoading] = useState(true);
 
 
-    async function fetchUserInfo () {
-      const response = await fetch(`http://localhost:4001/customer/${user}`);
-      const json = await response.json();
-      
-      setUserInfo(JSON.parse(json.PersonalInformation));
-      setLoading(false);
-
-    }
-
     useEffect( () => {
-      fetchUserInfo();
+      fetch(`http://localhost:4001/customer/${user}`)
+        .then(response => response.json())
+        .then(data => {
+            setUserInfo(JSON.parse(data.PersonalInformation));
+            setLoading(false);});
     }, []);
 
     return (
