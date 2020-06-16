@@ -13,9 +13,8 @@ const Pages = ({user}) =>{
     return (
       <BrowserRouter>
       <div>
-
-      <SideMenu/>
       
+      <SideMenu />
       <Switch>
         <Route exact path="/">
           <MainDivStyle>
