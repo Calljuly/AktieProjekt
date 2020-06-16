@@ -11,18 +11,11 @@ const BriefcaseTable = ({user}) => {
     const [shareInformation, updateShareInformation] = useState([]);
     const [displayRange, updateDisplayRange] = useState([0,sharesPerPage]);
 
-    async function fetchPortfolioInfo () {
-        const response = await fetch(`http://localhost:4001/customer/${user}`);
-        const json = await response.json();
-
-        const portfolioInformation = JSON.parse(json.Briefcase);
-
-        updateShareInformation(extractBriefCaseInformation(portfolioInformation));
-  
-    }
-
     useEffect (() => {
-        fetchPortfolioInfo();
+        fetch(`http://localhost:4001/customer/${user}`)
+        .then(response => response.json())
+        .then(data => {
+            updateShareInformation(extractBriefCaseInformation(JSON.parse(data.Briefcase)));});
     }, []);
 
     const generateTableContent = () =>{
