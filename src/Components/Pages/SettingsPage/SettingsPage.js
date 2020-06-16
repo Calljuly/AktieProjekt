@@ -6,7 +6,7 @@ import {MainDashBoard} from './Styles';
 import PreferenceSettings from '../SettingsPage/PreferenceSettings/PreferenceSettings';
 import {BrowserRouter,Route, Switch} from 'react-router-dom'
 
-const SettingsPage = ({user}) =>{
+const SettingsPage = ({username}) =>{
 
     return(
         <BrowserRouter>
@@ -15,7 +15,7 @@ const SettingsPage = ({user}) =>{
                 
                 <Switch>
                 <Route path="/settings">
-                    <ProfileSettings user={user}/>
+                    <ProfileSettings username={username}/>
                 </Route>
                 <Route path="/password">
                     <ChangePassword/>

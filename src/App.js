@@ -5,17 +5,17 @@ import Pages from './Components/Pages/Pages';
 
 
 const App = () =>{
-  const [user, setUser] = useState();
+  const [username, setUserName] = useState();
 
   useEffect(() => {
     if(sessionStorage.getItem('username'))
-    setUser(sessionStorage.getItem('username'));
+    setUserName(sessionStorage.getItem('username'));
   }, [])
 
   return (
     <div className="App">
       {
-        user ? <Pages user={user}/> : <LogIn setUser={setUser}/>
+        username ? <Pages username={username}/> : <LogIn setUser={setUserName}/>
       }
     </div>
   );

@@ -3,10 +3,10 @@ import BriefcaseTable from './BriefcaseTable';
 
 
 
-const BriefcasePage = ({user}) => {
+const BriefcasePage = ({username}) => {
     return(
         <>
-            <BriefcaseTable user={user}/>
+            <BriefcaseTable username={username}/>
         </>
     )
 }

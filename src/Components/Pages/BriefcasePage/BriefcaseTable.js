@@ -5,14 +5,14 @@ import {HeaderStyle} from '../Styles';
 import {extractBriefCaseInformation} from '../../../Util/jsonExtractionScripts';
 
 
-const BriefcaseTable = ({user}) => {
+const BriefcaseTable = ({username}) => {
     
     const [sharesPerPage, updateSharesPerPage] = useState(10);
     const [shareInformation, updateShareInformation] = useState([]);
     const [displayRange, updateDisplayRange] = useState([0,sharesPerPage]);
 
     useEffect (() => {
-        fetch(`http://localhost:4001/customer/${user}`)
+        fetch(`http://localhost:4001/customer/${username}`)
         .then(response => response.json())
         .then(data => {
             updateShareInformation(extractBriefCaseInformation(JSON.parse(data.Briefcase)));});

@@ -5,14 +5,14 @@ import HomeMyProfileSummary from './Summary';
 import PreferredBusinesses from './PreferredBusinesses';
 import ContactInformation from './ContactInformation';
 
-const Profile = ({user}) => {
+const Profile = ({username}) => {
     
     const [userInfo, setUserInfo] = useState();
     const [loading, setLoading] = useState(true);
 
 
     useEffect( () => {
-        fetch(`http://localhost:4001/customer/${user}`)
+        fetch(`http://localhost:4001/customer/${username}`)
         .then(response => response.json())
         .then(data => {
             setUserInfo(JSON.parse(data.PersonalInformation));

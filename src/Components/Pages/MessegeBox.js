@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import {InfoBoxStyle} from './Styles'
 
-const Messagebox = ({user}) => {
+const Messagebox = ({username}) => {
 
     const [userInfo, setUserInfo] = useState();
     const [loading, setLoading] = useState(true);
 
 
     useEffect( () => {
-      fetch(`http://localhost:4001/customer/${user}`)
+      fetch(`http://localhost:4001/customer/${username}`)
         .then(response => response.json())
         .then(data => {
             setUserInfo(JSON.parse(data.PersonalInformation));
