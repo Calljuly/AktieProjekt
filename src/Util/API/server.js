@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 4001;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/customer/:id', (req, res, next) => {
-  console.log('requested id is ' + req.params.id);
-  db.get(`SELECT * FROM Customers WHERE id = ${req.params.id}`,(err, row) => {
+app.get('/users/:username', (req, res, next) => {
+  console.log('requested id is ' + req.params.username);
+  db.get(`SELECT * FROM Users WHERE UserName = "${req.params.username}"`,(err, row) => {
     if (err) {
       res.sendStatus(500);
     } else {
@@ -27,8 +27,8 @@ app.get('/customer/:id', (req, res, next) => {
   })
 });
 
-app.get('/customer/:mail/:password', (req, res, next) => {
-  db.get(`SELECT id FROM Customers WHERE mail = "${req.params.mail}" AND password = "${req.params.password}"`,(err, row) => {
+app.get('/users/:username/:password', (req, res, next) => {
+  db.get(`SELECT UserName FROM Users WHERE UserName = "${req.params.username}" AND Password = "${req.params.password}"`,(err, row) => {
     if (err) {
       res.sendStatus(500);
     } else {
