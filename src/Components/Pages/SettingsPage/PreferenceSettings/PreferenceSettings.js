@@ -53,8 +53,10 @@ const writeOutAllSuggestions = () =>{
     return result;
 }
 
-const PreferencesSettings = () => {
+const PreferencesSettings = ({username}) => {
+    console.log("Hihi" + username);
     return (
+        
         <PreferenceContainer>
             <GrayP>Mina prefererade industrier att investera inom:</GrayP>
             <StyledForm>

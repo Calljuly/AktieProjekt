@@ -14,14 +14,14 @@ const SettingsPage = ({username}) =>{
                 <SettingsNavigation />
                 
                 <Switch>
-                <Route path="/settings">
+                <Route path="/settings" exact = {true}>
                     <ProfileSettings username={username}/>
                 </Route>
-                <Route path="/password">
+                <Route path="/settings/password">
                     <ChangePassword/>
                 </Route>
-                <Route path="/settingspreference">
-                    <PreferenceSettings/>
+                <Route path="/settings/settingspreference">
+                    <PreferenceSettings username = {username}/>
                 </Route>
                 </Switch>
 
