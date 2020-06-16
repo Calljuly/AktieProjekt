@@ -17,6 +17,7 @@ const LogIn = ({setUser}) =>{
         .then(response => response.json())
         .then(data => {
           setUser(data.UserName);
+          sessionStorage.setItem('username', data.UserName)
         })
         .catch(error => console.log(error));
       }
