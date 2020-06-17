@@ -8,7 +8,8 @@ import auth from '../ProtectedRoute/Auth'
 import {useHistory} from 'react-router-dom'
 
 const LogIn = ({setUser}) =>{
-   
+  const history = useHistory();
+
     const clickedLogIn = (e) => {
         e.preventDefault();
         
@@ -18,8 +19,12 @@ const LogIn = ({setUser}) =>{
         fetch(`http://localhost:4001/users/${username}/${password}`)
         .then(response => response.json())
         .then(data => {
-          setUser(data.UserName);
+          //setUser(data.UserName);
           sessionStorage.setItem('username', data.UserName)
+          console.log(history);
+          auth.logIn(() => {
+            history.push("/home");
+          });        
         })
         .catch(error => console.log(error));
       }

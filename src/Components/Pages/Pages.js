@@ -16,7 +16,7 @@ const Pages = ({username}) =>{
       
       <SideMenu />
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/home">
           <MainDivStyle>
             <HeaderContainer>
               <PageTitle head="Hem"/>

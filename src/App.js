@@ -5,8 +5,8 @@ import Pages from './Components/Pages/Pages';
 import {ProtectedRoute} from './Components/ProtectedRoute/ProtectedRoute'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
-
 const App = () =>{
+  
   const [username, setUserName] = useState();
 
   useEffect(() => {
@@ -20,9 +20,11 @@ const App = () =>{
         <div className="App">
       
           <Switch>
-            <ProtectedRoute exact path='/home' component={<h1>Works</h1>} /> 
+            <Route exact path='/home' render={() => {return <Pages username={username}/> }} /> 
 
-            <Route path='/' component={LogInForm} />
+            <Route exact path='/' render={() => {
+              return <LogIn />
+            }} />
             
             <Route path="*" render={() => {
               return <h1>Error 404</h1>

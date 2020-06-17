@@ -9,7 +9,7 @@ const OptionsContainer = () => {
 return (
     <SideMenuContainer >
 
-        <Options Name="Hem" bild={Home} path="/" />
+        <Options Name="Hem" bild={Home} path="/home" />
         <Options Name="Min portfolio" bild={Portfolio} path="/portfolio" />
         <Options  Name="Inställningar" bild={Setting} path="/settings" />
         
