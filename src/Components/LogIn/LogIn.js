@@ -4,9 +4,11 @@ import LogInForm from './LoginForm'
 import {Route, BrowserRouter, Switch} from 'react-router-dom'
 import Logga from '../../images/LoggoTyp.png'
 import CreateAccount from './CreateAccount'
+import auth from '../ProtectedRoute/Auth'
+import {useHistory} from 'react-router-dom'
 
 const LogIn = ({setLoggedIn}) =>{
-   
+   const history = useHistory();
     const clickedLogIn = (e) => {
         e.preventDefault();
         
@@ -18,8 +20,12 @@ const LogIn = ({setLoggedIn}) =>{
         xhttp.onload= function () {
             if(this.status == 200){
               console.log(JSON.parse(this.response));
-              setLoggedIn(true);
+              //setLoggedIn(true);
               sessionStorage.setItem("loggedIn", "true");
+              auth.logIn(() =>{
+                console.log("Hello");
+                history.push("/home");
+              });
             }
             else{
               alert('Could not log in.');

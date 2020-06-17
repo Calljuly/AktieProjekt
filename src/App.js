@@ -3,6 +3,8 @@ import './App.css';
 import PersonalInfo from './Data/PersonalInformation.json'
 import LogInForm from './Components/LogIn/LogIn';
 import Pages from './Components/Pages/Pages';
+import {ProtectedRoute} from './Components/ProtectedRoute/ProtectedRoute'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 
 const App = () =>{
@@ -19,9 +21,20 @@ const App = () =>{
 
   return (
     <div className="App">
-      {
-        loggedIn ? <Pages date={date} person={dummyProfile}/> : <LogInForm setLoggedIn={setLoggedIn}/>
-      }
+      <BrowserRouter>
+        <div className="App">
+      
+          <Switch>
+            <ProtectedRoute exact path='/home' component={<h1>Works</h1>} /> 
+
+            <Route path='/' component={LogInForm} />
+            
+            <Route path="*" render={() => {
+              return <h1>Error 404</h1>
+           }} />
+          </Switch>
+        </div>
+    </BrowserRouter>
     </div>
   );
 }
