@@ -7,33 +7,21 @@ import CreateAccount from './CreateAccount'
 import auth from '../ProtectedRoute/Auth'
 import {useHistory} from 'react-router-dom'
 
-const LogIn = ({setLoggedIn}) =>{
-   const history = useHistory();
+const LogIn = ({setUser}) =>{
+   
     const clickedLogIn = (e) => {
         e.preventDefault();
         
-        const fName = document.getElementById('mail').value;
-        const lName = document.getElementById('password').value;
-    
-        var xhttp = new XMLHttpRequest();		
-            xhttp.open("GET", `http://localhost:4001/customer/${fName}/${lName}`, true);		
-        xhttp.onload= function () {
-            if(this.status == 200){
-              console.log(JSON.parse(this.response));
-              //setLoggedIn(true);
-              sessionStorage.setItem("loggedIn", "true");
-              auth.logIn(() =>{
-                console.log("Hello");
-                history.push("/home");
-              });
-            }
-            else{
-              alert('Could not log in.');
-              document.getElementById('mail').value = '';
-              document.getElementById('password').value = '';
-            }
-        }
-        xhttp.send();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        fetch(`http://localhost:4001/users/${username}/${password}`)
+        .then(response => response.json())
+        .then(data => {
+          setUser(data.UserName);
+          sessionStorage.setItem('username', data.UserName)
+        })
+        .catch(error => console.log(error));
       }
     
     return(
