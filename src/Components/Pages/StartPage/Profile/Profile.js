@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {Main, Button, ImageSummaryContainer, TitleButtonContainer} from './Styles';
+import {Main, Button, TitleButtonContainer} from '../CommonStyles';
+import {ImageSummaryContainer} from './Styles';
 import ProfilePicture from '../../../GlobalAssets/ProfilePicture';
 import HomeMyProfileSummary from './Summary';
 import PreferredBusinesses from './PreferredBusinesses';

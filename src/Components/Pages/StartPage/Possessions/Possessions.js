@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import IndustryCard from './IndustryCard';
-import {TitleButtonContainer, Button, Main} from '../Profile/Styles';
+import {Main, Button, TitleButtonContainer} from '../CommonStyles';
 import {Total, LastUpdated, TotalContainer, IndustryBars} from './Styles';
 
 function Possessions({username}) {

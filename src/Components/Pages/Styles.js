@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const HeaderStyle = styled.h1`
   color: #656565;
@@ -30,7 +30,7 @@ font-size: 1em;
 padding: 1em;
 width: 100%;
 
- `;
+`;
 
  export const MainContainer = styled.div`
     border-radius: 5px;
