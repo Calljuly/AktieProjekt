@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import IndustryCard from './IndustryCard';
-import {TitleButtonContainer, Button, Main, Total, LastUpdated, TotalContainer, IndustryBars} from './Styles';
+import {Main, Button, TitleButtonContainer} from '../CommonStyles';
+import {Total, LastUpdated, TotalContainer, IndustryBars} from './Styles';
 
 function Possessions({username}) {
 
@@ -43,7 +44,7 @@ function Possessions({username}) {
     let total = !loading && getTotal(briefcase);
     
     
-    const renderIndustryBars = !loading && briefcase.map(i => {
+    const renderIndustryBars = !loading && briefcase.map((i, index) => {
           let industryAmount = getTotalOfIndustry(i.arrayOfCompanies);
         
           let css = {
@@ -51,7 +52,7 @@ function Possessions({username}) {
             width: ((industryAmount / total) * 100) + '%'    
           };
         
-          return (<div className = 'result' style = {css}></div>);
+          return (<div key ={index} className = 'result' style = {css}></div>);
         
         });
            
@@ -63,8 +64,8 @@ function Possessions({username}) {
         return <h1>Loading...</h1>
       }
       else if (briefcase.length > 1){
-        return briefcase.map(i => {
-          return <IndustryCard amount = {getTotalOfIndustry(i.arrayOfCompanies)} 
+        return briefcase.map((i, index) => {
+          return <IndustryCard key = {'ic' + index} amount = {getTotalOfIndustry(i.arrayOfCompanies)} 
                  boxColor = {i.color}
                  industry = {i.industry}
                  companies = {i.arrayOfCompanies}
