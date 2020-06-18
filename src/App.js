@@ -15,7 +15,7 @@ const App = () =>{
   return (
     <div className="App">
       {
-        username ? <Pages username={username}/> : <LogIn setUser={setUserName}/>
+        username ? <Pages username={username} setUserName={setUserName}/> : <LogIn setUser={setUserName}/>
       }
     </div>
   );

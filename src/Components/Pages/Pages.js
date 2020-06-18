@@ -8,13 +8,13 @@ import {MainDivStyle, HeaderContainer, DashBoardContainer} from './Styles'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import SideMenu from '../SideMenu/SideMenu';
 
-const Pages = ({username}) =>{
+const Pages = ({username, setUserName}) =>{
 
     return (
       <BrowserRouter>
       <div>
       
-      <SideMenu />
+      <SideMenu setUserName={setUserName} />
       <Switch>
         <Route exact path="/">
           <MainDivStyle>
