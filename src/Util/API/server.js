@@ -44,19 +44,14 @@ app.get('/users/:username/:password', (req, res, next) => {
   })
 });
 
-app.patch("/user/post", (req, res, next) => {
+app.patch("/update/personalinformation/:username", (req, res, next) => {
   
   var data = {
       personalInformation: req.body.personalInformation
   };
 
-  // let stringy = JSON.stringify(data.personalInformation);
-  // let parsed = JSON.parse(stringy);
-
-  // console.log(parsed.fName);
-
   db.run(
-      `UPDATE Users set PersonalInformation = (?) WHERE UserName = 'LiNi'`,
+      `UPDATE Users set PersonalInformation = (?) WHERE UserName = '${req.params.username}'`,
       [JSON.stringify(data.personalInformation)],
       
       function (err, result) {

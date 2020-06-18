@@ -24,17 +24,31 @@ const PreferencesSettings = ({username}) => {
 
         }, []);
 
-    // const updatePreferencesInDatabase = () =>{
+    const updatePreferencesInDatabase = () =>{
+        
 
-    // }
+
+        fetch(`http://localhost:4001/update/personalinformation/${username}`, {
+            body: JSON.stringify({personalInformation: personalInformation}),
+            headers: {
+              "Content-Type": "application/json",
+            },
+            method: 'PATCH'
+          })
+    }
 
     const editPreferences = (e, name) =>{
         if (e.target.checked === false){
 
             let index = preferredIndustries.indexOf(name);
+            let currentPreferredIndustries = preferredIndustries;
+            currentPreferredIndustries.splice(index, 1)
 
-            // Needs a chache because splice returns the deleted items
-            setPreferredIndustries(preferredIndustries.splice(index, 1));
+            setPreferredIndustries(currentPreferredIndustries);
+            let currentPersonalInformation = personalInformation;
+            currentPersonalInformation.preferences = preferredIndustries;
+            
+            updatePreferencesInDatabase();
         }
         else{
             let currentPreferredIndustries = preferredIndustries;
@@ -45,13 +59,7 @@ const PreferencesSettings = ({username}) => {
             currentPersonalInformation.preferences = preferredIndustries;
             setPersonalInformation(currentPersonalInformation);
 
-            fetch('http://localhost:4001/user/post', {
-            body: JSON.stringify({personalInformation: personalInformation}),
-            headers: {
-              "Content-Type": "application/json",
-            },
-            method: 'PATCH'
-          })
+            updatePreferencesInDatabase();
         }
 
     }
@@ -101,7 +109,7 @@ const PreferencesSettings = ({username}) => {
                 </StyledTable>
             </StyledForm>
             <div style = {{maxWidth: '50%', fontSize: '14px'}}>
-                <p style = {{marginBottom: '15px', color: '#3D4465', fontSize: '14px'}}>Tips! Ifall du väljer att integrerar din bank så kan vi anpassa dina investeringar utefter din ekonomi och preferenser.</p>
+                <p style = {{marginBottom: '15px', color: '#3D4465', fontSize: '14px'}}>Tips! Dina val i checkboxarna ovan sparas automatiskt vid klick.</p>
                 <GrayP><Link href="" style = {{marginRight: '15px'}}>Integrera min bank</Link>(detta kommer att skicka dig vidare etc....)</GrayP>
             </div>
         </PreferenceContainer>
