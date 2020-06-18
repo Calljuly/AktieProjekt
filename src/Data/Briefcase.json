@@ -119,6 +119,19 @@
                         "votingPower":1
                     }
                 ]
+            },
+            {
+                "company":"HelthWatchers",
+                "arrayOfShares":
+                [
+                    {
+                        "shareId":"126-143",
+                        "totalWorth":1,
+                        "shareType":"F",
+                        "shareAmount":2,
+                        "ownership":0.1,"votingPower":0.1
+                    }
+                ]
             }
         ]
     },

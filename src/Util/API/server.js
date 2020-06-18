@@ -4,7 +4,6 @@ const cors = require('cors');
 
 const db = require('./db');
 const app = express();
-const md5 = require('md5');
 
 const PORT = process.env.PORT || 4001;
 

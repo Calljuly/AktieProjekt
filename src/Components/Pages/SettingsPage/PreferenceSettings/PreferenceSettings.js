@@ -20,13 +20,18 @@ const PreferencesSettings = ({username}) => {
           setLoading(false);
         });
 
-
-
         }, []);
 
-    const updatePreferencesInDatabase = () =>{
-        
 
+    const updatePersonalInformation = (newPreferredIndustries) =>{
+            
+        setPreferredIndustries(newPreferredIndustries);
+        let currentPersonalInformation = personalInformation;
+        currentPersonalInformation.preferences = preferredIndustries;
+        setPersonalInformation(currentPersonalInformation);
+    }
+
+    const sendPersonalInformationToDatabase = () =>{
 
         fetch(`http://localhost:4001/update/personalinformation/${username}`, {
             body: JSON.stringify({personalInformation: personalInformation}),
@@ -44,22 +49,15 @@ const PreferencesSettings = ({username}) => {
             let currentPreferredIndustries = preferredIndustries;
             currentPreferredIndustries.splice(index, 1)
 
-            setPreferredIndustries(currentPreferredIndustries);
-            let currentPersonalInformation = personalInformation;
-            currentPersonalInformation.preferences = preferredIndustries;
-            
-            updatePreferencesInDatabase();
+            updatePersonalInformation(currentPreferredIndustries);
+            sendPersonalInformationToDatabase();
         }
         else{
             let currentPreferredIndustries = preferredIndustries;
             currentPreferredIndustries.push(name);
-            setPreferredIndustries(currentPreferredIndustries);
 
-            let currentPersonalInformation = personalInformation;
-            currentPersonalInformation.preferences = preferredIndustries;
-            setPersonalInformation(currentPersonalInformation);
-
-            updatePreferencesInDatabase();
+            updatePersonalInformation(currentPreferredIndustries);
+            sendPersonalInformationToDatabase();
         }
 
     }
