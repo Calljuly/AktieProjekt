@@ -24,18 +24,12 @@ export const DashBoardContainer = styled.div`
 `;
 
 export const InfoBoxStyle = styled.div`
-/* display:block; */
 background-color: #FFD98D;
 border-radius: 5px;
 font-size: 1em;
 padding: 1em;
-
-/* padding-left: 20px; */
 width: 100%;
-/* float: left;  */
-/* margin: 15px; */
-/* margin-top:20px; */
-/* text-align: left; */
+
  `;
 
  export const MainContainer = styled.div`

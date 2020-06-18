@@ -20,6 +20,7 @@ export const P = styled.p`
 `;
 
 export const TableContainer = styled.div`
+    padding: 1em;
     max-height: 400px;
     overflow:scroll;
     overflow-x: hidden;

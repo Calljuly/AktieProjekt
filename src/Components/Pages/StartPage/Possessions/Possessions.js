@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import IndustryCard from './IndustryCard';
-import {TitleButtonContainer, Button, Main, Total, LastUpdated, TotalContainer, IndustryBars} from './Styles';
+import {TitleButtonContainer, Button, Main} from '../Profile/Styles';
+import {Total, LastUpdated, TotalContainer, IndustryBars} from './Styles';
+import BriefcaseData from '../../../../Data/Briefcase.json';
 
 function Possessions({username}) {
 

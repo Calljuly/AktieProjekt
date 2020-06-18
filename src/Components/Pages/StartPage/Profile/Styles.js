@@ -22,12 +22,14 @@ export const Td = styled.td`
 
 export const Main = styled.div`
     margin: 0.5em;
-    padding: 2em;
+    padding: 0.5em;
 `;
 
 export const TitleButtonContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #EDEFF3;
+    padding: 0.5em;
 `;
 
 export const Button = styled(Link)`
@@ -35,7 +37,8 @@ export const Button = styled(Link)`
     background-color: rgb(70, 67, 67);
     color: white;
     border: none;
-    padding: 1em;
+    font-size: 0.9em;
+    padding: 0.5em;
     text-decoration: none;
     @media (max-width: 768px) {
         padding: 0.2em;
