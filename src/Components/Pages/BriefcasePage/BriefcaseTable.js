@@ -27,8 +27,8 @@ const BriefcaseTable = ({username}) => {
                                 <Td>{shareInfoObj.shareType}</Td>
                                 <Td>{shareInfoObj.shareAmount} st</Td>
                                 <Td>{shareInfoObj.shareId}</Td>
-                                <Td>{shareInfoObj.ownership}%%</Td>
-                                <Td>{shareInfoObj.votingPower}%%</Td>
+                                <Td>{shareInfoObj.ownership}%</Td>
+                                <Td>{shareInfoObj.votingPower}%</Td>
                             </tr>)
         );
     }
