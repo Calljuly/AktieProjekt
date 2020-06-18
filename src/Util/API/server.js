@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const db = require('./db');
 const app = express();
+const md5 = require('md5');
 
 const PORT = process.env.PORT || 4001;
 
@@ -43,6 +44,27 @@ app.get('/users/:username/:password', (req, res, next) => {
   })
 });
 
+app.patch("/update/personalinformation/:username", (req, res, next) => {
+  
+  var data = {
+      personalInformation: req.body.personalInformation
+  };
 
+  db.run(
+      `UPDATE Users set PersonalInformation = (?) WHERE UserName = '${req.params.username}'`,
+      [JSON.stringify(data.personalInformation)],
+      
+      function (err, result) {
+          if (err){
+              res.status(400).json({"error": res.message})
+              return;
+          }
+          res.json({
+              message: "success",
+              data: data,
+              changes: this.changes
+          })
+  });
+})
 
 app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))
