@@ -24,7 +24,7 @@ const Profile = ({username}) => {
         return(
             <>
                 <ImageSummaryContainer>
-                    <ProfilePicture pictureName = {'testprofile'} isHomeScreen={true}/>
+                    <ProfilePicture isHomeScreen={true}/>
                     <HomeMyProfileSummary person = {personalInformation}/>
                 </ImageSummaryContainer>
                 <PreferredBusinesses person = {personalInformation}/>
