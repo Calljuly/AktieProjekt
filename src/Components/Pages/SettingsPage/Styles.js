@@ -93,6 +93,12 @@ background-color: white;
 padding: 1em;
 text-decoration:none;
 
+&:link,
+&:visited
+{
+    color: grey;
+}
+
 &:hover,
 &.active
 {
