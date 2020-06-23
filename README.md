@@ -1,4 +1,4 @@
-#Backend
+# Backend
 Vi har implementerat en enkel backend med Nodejs och SQLite som bakomliggande databas.
 SQLite är (som bekant) en databas som endast består av en .db-fil och vår .db-fil ligger i src/Data och heter `testDb.db`.
 
@@ -16,7 +16,7 @@ När det kommer till generell funktionalitet i appen har vi **inte** hunnit att 
 
 Däremot kan man ändra "Preferenser" under sidan "Inställningr" genom att trycka i "checkboxarna". Detta läses in och skickas till databasen. Likaså kan man ta bort sitt konto och detta raderar användaren från databasen. Var försiktig dock, man får inte frågan "Är du säker på att du vill ta bort kontot?" eller liknande. Har du väl tryckt på knappen är du borta och loggas automatiskt ut.
 
-#Inloggning
+# Inloggning
 För att testa vår applikation har vi skapat två användare:
 1. Användarnamn: "LiNi" Lösenord: "777"
 2. Användarnamn "SiWe" Lösenord: "123"
@@ -24,5 +24,5 @@ För att testa vår applikation har vi skapat två användare:
 
 Lösenorden är hashade i databasen.
 
-#Avslutningsvis
+# Avslutningsvis
 Även om inte allting hanns med i detta projekt tycker vi att slutresultatet är bra och det mesta är på plats. Vi har dessutom gömt ett litet "easter egg" i applikationen... Kul om ni hittar det!
