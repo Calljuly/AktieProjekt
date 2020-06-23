@@ -1,9 +1,8 @@
 # Backend
 Vi har implementerat en enkel backend med Nodejs och SQLite som bakomliggande databas.
-SQLite är (som bekant) en databas som endast består av en .db-fil och vår .db-fil ligger i src/Data och heter `testDb.db`.
+SQLite är (som bekant) en databas som endast består av en .db-fil och vår .db-fil ligger i `src/Data` och heter `testDb.db`.
 
-Server skriptet ligger i mappen src/Util/API och heter `server.js`. Den startas med `node server.js` och lyssnar på
-port 4001.
+Server skriptet ligger i mappen `src/Util/API` och heter `server.js`. Den startas med `node server.js` och lyssnar på port 4001.
 
 Vårt fokus har legat på att **läsa information från databas** och renderera en dynamisk webbapplikation. Men vi har **inte hunnit att implementera all funktionalitet**.
 
@@ -20,6 +19,7 @@ Däremot kan man ändra "Preferenser" under sidan "Inställningr" genom att tryc
 För att testa vår applikation har vi skapat två användare:
 1. Användarnamn: "LiNi" Lösenord: "777"
 2. Användarnamn "SiWe" Lösenord: "123"
+
 "LiNi" har ett innehav att visa upp. För att se hur applikationen rendererar om man **inte** har innehav kan man logga in med "SiWe".
 
 Lösenorden är hashade i databasen.
