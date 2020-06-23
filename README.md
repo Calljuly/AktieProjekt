@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Backend
+Vi har implementerat en enkel backend med Nodejs och SQLite som bakomliggande databas.
+SQLite är (som bekant) en databas som endast består av en .db-fil och vår .db-fil ligger i src/Data och heter `testDb.db`.
 
-## Available Scripts
+Server skriptet ligger i mappen src/Util/API och heter `server.js`. Den startas med `node server.js` och lyssnar på
+port 4001.
 
-In the project directory, you can run:
+Vårt fokus har legat på att **läsa information från databas** och renderera en dynamisk webbapplikation. Men vi har **inte hunnit att implementera all funktionalitet**.
 
-### `yarn start`
+All information som visas i webbapplikationen läses in från databasen med undantag av "Ditt innehav blev senast uppdaterat 2020-05-31". Detta datum är hårdkodat. Vi läser inte heller in profilbilden från databasen utan också denna resurs är hårdkodad.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+När det kommer till generell funktionalitet i appen har vi **inte** hunnit att implementera:
+- Skapa en ny användare
+- Ändra lösenord
+- Redigera personuppgifter
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Däremot kan man ändra "Preferenser" under sidan "Inställningr" genom att trycka i "checkboxarna". Detta läses in och skickas till databasen. Likaså kan man ta bort sitt konto och detta raderar användaren från databasen. Var försiktig dock, man får inte frågan "Är du säker på att du vill ta bort kontot?" eller liknande. Har du väl tryckt på knappen är du borta och loggas automatiskt ut.
 
-### `yarn test`
+#Inloggning
+För att testa vår applikation har vi skapat två användare:
+1. Användarnamn: "LiNi" Lösenord: "777"
+2. Användarnamn "SiWe" Lösenord: "123"
+"LiNi" har ett innehav att visa upp. För att se hur applikationen rendererar om man **inte** har innehav kan man logga in med "SiWe".
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Lösenorden är hashade i databasen.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#Avslutningsvis
+Även om inte allting hanns med i detta projekt tycker vi att slutresultatet är bra och det mesta är på plats. Vi har dessutom gömt ett litet "easter egg" i applikationen... Kul om ni hittar det!

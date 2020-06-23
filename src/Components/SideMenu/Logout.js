@@ -16,7 +16,7 @@ const LogOut = ({setUserName}) => {
     return (
         <LogOutStyle >
         <OptionsImgStyle src={LogOutPic} alt="Log out "/>
-            <p onClick={logOut}>Logga ut</p>
+            <p style={{cursor: "pointer"}} onClick={logOut}>Logga ut</p>
         </LogOutStyle>
         )
     }
