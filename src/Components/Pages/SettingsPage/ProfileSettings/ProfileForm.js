@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {Form, FlexContainer,PaddedContainer, PaddedContainerRightMargin,Label, Input} from '../Styles'
 
-const ProfileForm = ({username}) => {
+const ProfileForm = ({userName}) => {
     const [personalInformation, setPersonalInformation] = useState();
     const [loading, setLoading] = useState(true);
 
 
     useEffect( () => {
-        fetch(`http://localhost:4001/users/${username}`)
+        fetch(`http://localhost:4001/users/${userName}`)
         .then(response => response.json())
         .then(data => {
             setPersonalInformation(JSON.parse(data.PersonalInformation));

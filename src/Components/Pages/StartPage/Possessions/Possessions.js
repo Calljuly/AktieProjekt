@@ -3,13 +3,13 @@ import IndustryCard from './IndustryCard';
 import {Main, Button, TitleButtonContainer} from '../CommonStyles';
 import {Total, LastUpdated, TotalContainer, IndustryBars} from './Styles';
 
-function Possessions({username}) {
+function Possessions({userName}) {
 
   const [briefcase, setBriefcase] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:4001/users/${username}`)
+    fetch(`http://localhost:4001/users/${userName}`)
     .then(response => response.json())
     .then(data => {
       

@@ -6,12 +6,12 @@ import {useHistory} from 'react-router-dom';
 
 
 
-const ProfileSettings = ({username, setUserName}) =>{
+const ProfileSettings = ({userName, setUserName}) =>{
     
     const history = useHistory();
 
     const sendDeleteAccountRequest = () =>{
-            fetch(`http://localhost:4001/delete/${username}`, {
+            fetch(`http://localhost:4001/delete/${userName}`, {
                 headers: {
                   "Content-Type": "application/json",
                 },
@@ -27,7 +27,7 @@ const ProfileSettings = ({username, setUserName}) =>{
     return(
         <Main>
             <ProfilePicture pictureName='testprofile'/>
-                <ProfileForm username={username}/>
+                <ProfileForm userName={userName}/>
             <ContainerButton>
                 <Button>Save</Button>
                 <Button onClick = {sendDeleteAccountRequest}>Delete My Account Now... Please!!</Button>

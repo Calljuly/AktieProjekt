@@ -3,14 +3,14 @@ import {MainContainer, SubContainer} from '../Styles';
 import Profile from './Profile/Profile';
 import Possessions from './Possessions/Possessions';
 
-const StartPage = ({username}) =>{
+const StartPage = ({userName}) =>{
     return(
         <MainContainer>
         <SubContainer>
-            <Profile username={username}/>
+            <Profile userName={userName}/>
         </SubContainer>
         <SubContainer>
-            <Possessions username = {username}/>
+            <Possessions userName = {userName}/>
         </SubContainer>
         </MainContainer>
     )

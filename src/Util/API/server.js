@@ -12,8 +12,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/users/:username', (req, res, next) => {
-  console.log('requested id is ' + req.params.username);
-  db.get(`SELECT * FROM Users WHERE UserName = "${req.params.username}"`,(err, row) => {
+
+  db.get(`SELECT * FROM Users WHERE UserName = ?`,
+  [req.params.username],
+  (err, row) => {
     if (err) {
       res.sendStatus(500);
     } else {
@@ -28,7 +30,9 @@ app.get('/users/:username', (req, res, next) => {
 });
 
 app.get('/users/:username/:password', (req, res, next) => {
-  db.get(`SELECT UserName FROM Users WHERE UserName = "${req.params.username}" AND Password = "${md5(req.params.password)}"`,(err, row) => {
+  db.get(`SELECT UserName FROM Users WHERE UserName = ? AND Password = ?`,
+  [req.params.username, md5(req.params.password)],
+  (err, row) => {
     if (err) {
       res.sendStatus(500);
     } else {
@@ -50,8 +54,8 @@ app.patch("/update/personalinformation/:username", (req, res, next) => {
   };
 
   db.run(
-      `UPDATE Users set PersonalInformation = (?) WHERE UserName = '${req.params.username}'`,
-      [JSON.stringify(data.personalInformation)],
+      `UPDATE Users set PersonalInformation = (?) WHERE UserName = ?`,
+      [JSON.stringify(data.personalInformation), req.params.username],
       
       function (err, result) {
           if (err){

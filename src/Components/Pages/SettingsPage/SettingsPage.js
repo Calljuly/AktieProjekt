@@ -6,7 +6,7 @@ import {MainDashBoard} from './Styles';
 import PreferenceSettings from '../SettingsPage/PreferenceSettings/PreferenceSettings';
 import {BrowserRouter,Route, Switch} from 'react-router-dom'
 
-const SettingsPage = ({username, setUserName}) =>{
+const SettingsPage = ({userName, setUserName}) =>{
 
     return(
         <BrowserRouter>
@@ -15,13 +15,13 @@ const SettingsPage = ({username, setUserName}) =>{
                 
                 <Switch>
                 <Route path="/settings" exact = {true}>
-                    <ProfileSettings username={username} setUserName = {setUserName}/>
+                    <ProfileSettings userName={userName} setUserName = {setUserName}/>
                 </Route>
                 <Route path="/settings/password">
                     <ChangePassword/>
                 </Route>
                 <Route path="/settings/settingspreference">
-                    <PreferenceSettings username = {username}/>
+                    <PreferenceSettings userName = {userName}/>
                 </Route>
                 </Switch>
 

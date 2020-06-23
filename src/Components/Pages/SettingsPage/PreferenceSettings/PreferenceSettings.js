@@ -4,7 +4,7 @@ import {StyledForm, StyledTable, GrayP, Link, PreferenceContainer} from '../Styl
 
 
 
-const PreferencesSettings = ({username}) => {
+const PreferencesSettings = ({userName}) => {
 
     let suggestedIndustries = ["Byggsektorn", "Medtech", "Textech", "Spel", "Fintech", "Sovtech", "Läppglans"];
     const [preferredIndustries, setPreferredIndustries] = useState([]);
@@ -12,7 +12,7 @@ const PreferencesSettings = ({username}) => {
     const [personalInformation, setPersonalInformation] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:4001/users/${username}`)
+        fetch(`http://localhost:4001/users/${userName}`)
         .then(response => response.json())
         .then(data => {
           setPersonalInformation(JSON.parse(data.PersonalInformation));
@@ -33,7 +33,7 @@ const PreferencesSettings = ({username}) => {
 
     const sendPersonalInformationToDatabase = () =>{
 
-        fetch(`http://localhost:4001/update/personalinformation/${username}`, {
+        fetch(`http://localhost:4001/update/personalinformation/${userName}`, {
             body: JSON.stringify({personalInformation: personalInformation}),
             headers: {
               "Content-Type": "application/json",

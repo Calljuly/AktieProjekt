@@ -8,7 +8,7 @@ import {MainDivStyle, HeaderContainer, DashBoardContainer} from './Styles'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import SideMenu from '../SideMenu/SideMenu';
 
-const Pages = ({username, setUserName}) =>{
+const Pages = ({userName, setUserName}) =>{
 
     return (
       <BrowserRouter>
@@ -20,10 +20,10 @@ const Pages = ({username, setUserName}) =>{
           <MainDivStyle>
             <HeaderContainer>
               <PageTitle head="Hem"/>
-              <MessageBox username={username}/>
+              <MessageBox userName={userName}/>
             </HeaderContainer>
             <DashBoardContainer>
-              <StartPage username={username}/>
+              <StartPage userName={userName}/>
             </DashBoardContainer>
           </MainDivStyle>
         </Route>
@@ -34,7 +34,7 @@ const Pages = ({username, setUserName}) =>{
               <PageTitle head="Portfolio"/>
             </HeaderContainer>
             <DashBoardContainer>
-              <BriefcasePage username={username}/>
+              <BriefcasePage userName={userName}/>
             </DashBoardContainer>
           </MainDivStyle>
         </Route>
@@ -45,7 +45,7 @@ const Pages = ({username, setUserName}) =>{
               <PageTitle head="Settings"/>
             </HeaderContainer>
             <DashBoardContainer>
-              <SettingsPage username={username} setUserName = {setUserName}/>
+              <SettingsPage userName={userName} setUserName = {setUserName}/>
             </DashBoardContainer>
         </MainDivStyle>
         </Route>
