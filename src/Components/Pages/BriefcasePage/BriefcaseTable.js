@@ -23,9 +23,9 @@ const BriefcaseTable = ({username}) => {
         shareInformation.slice(displayRange[0],displayRange[1]).map((shareInfoObj, index) => 
                             <tr key={index}>
                                 <Td>{shareInfoObj.company}</Td>
-                                <Td>{shareInfoObj.totalWorth}</Td>
+                                <Td>{shareInfoObj.totalWorth} SEK</Td>
                                 <Td>{shareInfoObj.shareType}</Td>
-                                <Td>{shareInfoObj.shareAmount}</Td>
+                                <Td>{shareInfoObj.shareAmount} st</Td>
                                 <Td>{shareInfoObj.shareId}</Td>
                                 <Td>{shareInfoObj.ownership}%</Td>
                                 <Td>{shareInfoObj.votingPower}%</Td>

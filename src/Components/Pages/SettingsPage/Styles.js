@@ -49,6 +49,7 @@ export const Button = styled.button`
     border: none;
     padding: 1em;
     margin-top: 0.1em;
+    margin-left: 15px;
 `;
 export const ContainerButton = styled.div`
     display: flexbox;
@@ -92,6 +93,12 @@ font-size: 1em;
 background-color: white;
 padding: 1em;
 text-decoration:none;
+
+&:link,
+&:visited
+{
+    color: grey;
+}
 
 &:hover,
 &.active

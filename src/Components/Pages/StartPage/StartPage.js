@@ -10,7 +10,7 @@ const StartPage = ({username}) =>{
             <Profile username={username}/>
         </SubContainer>
         <SubContainer>
-            <Possessions/>
+            <Possessions username = {username}/>
         </SubContainer>
         </MainContainer>
     )
