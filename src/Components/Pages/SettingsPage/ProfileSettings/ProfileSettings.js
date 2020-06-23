@@ -19,18 +19,18 @@ const ProfileSettings = ({userName, setUserName}) =>{
               }).then(() => {
                     history.push('/');
                     setUserName();
-                    sessionStorage.removeItem('username');
+                    sessionStorage.removeItem('userName');
                     
               });
     }
     
     return(
         <Main>
-            <ProfilePicture pictureName='testprofile'/>
+            <ProfilePicture/>
                 <ProfileForm userName={userName}/>
             <ContainerButton>
-                <Button>Save</Button>
-                <Button onClick = {sendDeleteAccountRequest}>Delete My Account Now... Please!!</Button>
+                <Button>Spara</Button>
+                <Button onClick = {sendDeleteAccountRequest}>Radera konto!</Button>
             </ContainerButton>
         </Main>
     )

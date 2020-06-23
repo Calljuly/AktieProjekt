@@ -9,17 +9,17 @@ const CreateAccount =(props) =>{
     return(
 
         <Form onSubmit={props.click}>
-            <Label name="Mail">Enter Mail : </Label>
+            <Label name="Mail">Ange mail : </Label>
             <Input id="mail"type="text" required></Input>
-            <Label name="Password">Enter Password :</Label>
+            <Label name="Password">Ange lösenord :</Label>
             <Input id="password"type="password" required></Input>
-            <Label name="Password">Enter Password again :</Label>
+            <Label name="Password">Upprepa lösenord :</Label>
             <Input id="password"type="password" required></Input>
-            <Button>Create Account</Button>
+            <Button>Skapa konto</Button>
             
             <Button onClick={() =>
                 history.goBack()
-            }>Go Back to start</Button>
+            }>Gå till start</Button>
       </Form>
 
     )

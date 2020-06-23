@@ -10,14 +10,14 @@ const LogIn = ({setUser}) =>{
     const clickedLogIn = (e) => {
         e.preventDefault();
         
-        const username = document.getElementById('username').value;
+        const userName = document.getElementById('userName').value;
         const password = document.getElementById('password').value;
         
-        fetch(`http://localhost:4001/users/${username}/${password}`)
+        fetch(`http://localhost:4001/users/${userName}/${password}`)
         .then(response => response.json())
         .then(data => {
           setUser(data.UserName);
-          sessionStorage.setItem('username', data.UserName)
+          sessionStorage.setItem('userName', data.UserName)
         })
         .catch(error => console.log(error));
       }
@@ -27,11 +27,11 @@ const LogIn = ({setUser}) =>{
     <LogInContainer>
     <LoggoStyle src={Logga} alt="Campus Mölndal"/>
       <ContentDiv>
-      <h1>Welcome</h1>
+      <h1>Välkommen</h1>
       <Switch>
           <Route exact path="/"> 
           <LogInForm click={clickedLogIn} />
-          <P>Psst..    don't have a account? <Link href="/createAccount">Klick here !</Link></P>
+          <P>Psst..    har du inget konto? <Link href="/createAccount">Klicka här!</Link></P>
           </Route>
           <Route exact path="/createAccount" render={() =>{return <CreateAccount click={clickedLogIn} />}}/>
       </Switch>

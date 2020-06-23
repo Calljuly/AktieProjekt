@@ -69,3 +69,9 @@ export const Select = styled.select`
 export const Option = styled.option`
     background-color:white;
 `;
+
+export const NavigatingButton = styled(Button)`
+    background-color: ${props => props.selected ? "#FDCC6B" : "white"};
+    display: ${props => props.shouldDisplay ? "block" : "none"};
+
+`;

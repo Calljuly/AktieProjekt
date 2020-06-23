@@ -8,7 +8,7 @@ import ContactInformation from './ContactInformation';
 
 const Profile = ({userName}) => {
     
-    const [personalInformation, setPersonalInformation] = useState();
+    const [personalInformation, setPersonalInformation] = useState({});
     const [loading, setLoading] = useState(true);
 
 

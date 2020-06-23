@@ -20,7 +20,7 @@ const ChangePassword = () =>{
             </PaddedContainer>
         </Form>
         <ContainerButton>
-            <Button>Save</Button>
+            <Button>Spara</Button>
         </ContainerButton>
         
 

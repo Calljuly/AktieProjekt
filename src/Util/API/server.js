@@ -11,10 +11,10 @@ const PORT = process.env.PORT || 4001;
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/users/:username', (req, res, next) => {
+app.get('/users/:userName', (req, res, next) => {
 
   db.get(`SELECT * FROM Users WHERE UserName = ?`,
-  [req.params.username],
+  [req.params.userName],
   (err, row) => {
     if (err) {
       res.sendStatus(500);
@@ -29,9 +29,9 @@ app.get('/users/:username', (req, res, next) => {
   })
 });
 
-app.get('/users/:username/:password', (req, res, next) => {
+app.get('/users/:userName/:password', (req, res, next) => {
   db.get(`SELECT UserName FROM Users WHERE UserName = ? AND Password = ?`,
-  [req.params.username, md5(req.params.password)],
+  [req.params.userName, md5(req.params.password)],
   (err, row) => {
     if (err) {
       res.sendStatus(500);
@@ -47,7 +47,7 @@ app.get('/users/:username/:password', (req, res, next) => {
   })
 });
 
-app.patch("/update/personalinformation/:username", (req, res, next) => {
+app.patch("/update/personalinformation/:userName", (req, res, next) => {
   
   var data = {
       personalInformation: req.body.personalInformation
@@ -55,7 +55,7 @@ app.patch("/update/personalinformation/:username", (req, res, next) => {
 
   db.run(
       `UPDATE Users set PersonalInformation = (?) WHERE UserName = ?`,
-      [JSON.stringify(data.personalInformation), req.params.username],
+      [JSON.stringify(data.personalInformation), req.params.userName],
       
       function (err, result) {
           if (err){
@@ -70,10 +70,10 @@ app.patch("/update/personalinformation/:username", (req, res, next) => {
   });
 })
 
-app.delete("/delete/:username", (req, res, next) => {
+app.delete("/delete/:userName", (req, res, next) => {
   db.run(
       `DELETE FROM Users WHERE UserName = ?`,
-      [req.params.username],
+      [req.params.userName],
       
       function (err, result) {
           if (err){

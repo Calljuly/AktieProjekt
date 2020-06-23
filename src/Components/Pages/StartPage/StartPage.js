@@ -6,12 +6,12 @@ import Possessions from './Possessions/Possessions';
 const StartPage = ({userName}) =>{
     return(
         <MainContainer>
-        <SubContainer>
-            <Profile userName={userName}/>
-        </SubContainer>
-        <SubContainer>
-            <Possessions userName = {userName}/>
-        </SubContainer>
+            <SubContainer>
+                <Profile userName={userName}/>
+            </SubContainer>
+            <SubContainer>
+                <Possessions userName = {userName}/>
+            </SubContainer>
         </MainContainer>
     )
 }

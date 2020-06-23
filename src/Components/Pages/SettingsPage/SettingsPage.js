@@ -23,6 +23,7 @@ const SettingsPage = ({userName, setUserName}) =>{
                 <Route path="/settings/settingspreference">
                     <PreferenceSettings userName = {userName}/>
                 </Route>
+                <Route render = {() => <h1 style = {{margin: '0px'}}>Error 404</h1>}/>
                 </Switch>
 
             </MainDashBoard>

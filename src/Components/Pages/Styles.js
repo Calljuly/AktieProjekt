@@ -5,7 +5,7 @@ export const HeaderStyle = styled.h1`
   text-align: left;
   font-size: 1.5em;
 `;
-export const MainDivStyle = styled.div`
+export const Main = styled.div`
   background-color: #F6FAFB;
   width: 80%;
   min-height: 100%;

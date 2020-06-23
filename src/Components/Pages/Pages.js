@@ -4,7 +4,7 @@ import MessageBox from './MessegeBox';
 import StartPage from './StartPage/StartPage';
 import SettingsPage from './SettingsPage/SettingsPage';
 import BriefcasePage from './BriefcasePage/BriefcasePage';
-import {MainDivStyle, HeaderContainer, DashBoardContainer} from './Styles'
+import {Main, HeaderContainer, DashBoardContainer} from './Styles'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import SideMenu from '../SideMenu/SideMenu';
 
@@ -17,7 +17,7 @@ const Pages = ({userName, setUserName}) =>{
       <SideMenu setUserName={setUserName} />
       <Switch>
         <Route exact path="/">
-          <MainDivStyle>
+          <Main>
             <HeaderContainer>
               <PageTitle head="Hem"/>
               <MessageBox userName={userName}/>
@@ -25,33 +25,33 @@ const Pages = ({userName, setUserName}) =>{
             <DashBoardContainer>
               <StartPage userName={userName}/>
             </DashBoardContainer>
-          </MainDivStyle>
+          </Main>
         </Route>
 
         <Route path="/portfolio">
-          <MainDivStyle>
+          <Main>
             <HeaderContainer>
               <PageTitle head="Portfolio"/>
             </HeaderContainer>
             <DashBoardContainer>
               <BriefcasePage userName={userName}/>
             </DashBoardContainer>
-          </MainDivStyle>
+          </Main>
         </Route>
 
         <Route path="/settings">
-          <MainDivStyle>
+          <Main>
             <HeaderContainer>
-              <PageTitle head="Settings"/>
+              <PageTitle head="Inställningar"/>
             </HeaderContainer>
             <DashBoardContainer>
               <SettingsPage userName={userName} setUserName = {setUserName}/>
             </DashBoardContainer>
-        </MainDivStyle>
+        </Main>
         </Route>
         
         <Route>
-          <h1>404 Not found</h1>
+          <h1 style = {{margin: '0px'}}>Error 404</h1>
         </Route>
 
       </Switch>

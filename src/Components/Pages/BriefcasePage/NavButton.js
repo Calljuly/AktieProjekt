@@ -1,13 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import {Button} from './Styles'
+import {NavigatingButton} from './Styles'
 
 
-const NavigatingButton = styled(Button)`
-    background-color: ${props => props.selected ? "#FDCC6B" : "white"};
-    display: ${props => props.shouldDisplay ? "block" : "none"};
 
-`;
 
 const NavButton = (props) =>{
     

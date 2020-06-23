@@ -127,10 +127,6 @@ const NavBar = ({shares, sharesPerPage, updateSharesPerPage, updateDisplayRange}
                 <DropDown shares={shares} onChange={handleChange}/>
                 <P>Visar: {currentlyDisplaying[0]} - {currentlyDisplaying[1]} av {shares.length}</P>
             </SectionBtnCont>
-            
-        
-        
-            
         </ButtonContainer>
     )
 }

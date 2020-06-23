@@ -10,7 +10,7 @@ const LogOut = ({setUserName}) => {
     const logOut = () => {
         history.push('/')
         setUserName();
-        sessionStorage.removeItem('username');
+        sessionStorage.removeItem('userName');
     }
 
     return (
