@@ -45,7 +45,7 @@ const Pages = ({username, setUserName}) =>{
               <PageTitle head="Settings"/>
             </HeaderContainer>
             <DashBoardContainer>
-              <SettingsPage username={username}/>
+              <SettingsPage username={username} setUserName = {setUserName}/>
             </DashBoardContainer>
         </MainDivStyle>
         </Route>
