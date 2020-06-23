@@ -17,9 +17,10 @@ const ProfileSettings = ({username, setUserName}) =>{
                 },
                 method: 'DELETE'
               }).then(() => {
+                    history.push('/');
                     setUserName();
                     sessionStorage.removeItem('username');
-                    history.push('/');
+                    
               });
     }
     
