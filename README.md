@@ -17,8 +17,8 @@ Däremot kan man ändra "Preferenser" under sidan "Inställningr" genom att tryc
 
 # Inloggning
 För att testa vår applikation har vi skapat två användare:
-1. Användarnamn: "LiNi" Lösenord: "777"
-2. Användarnamn "SiWe" Lösenord: "123"
+**Användarnamn: "LiNi" Lösenord: "777"**
+**Användarnamn "SiWe" Lösenord: "123"**
 
 LiNi har ett innehav att visa upp. För att se hur applikationen rendererar om man **inte** har innehav kan man logga in med SiWe.
 
