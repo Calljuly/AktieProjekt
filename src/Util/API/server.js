@@ -66,4 +66,21 @@ app.patch("/update/personalinformation/:username", (req, res, next) => {
   });
 })
 
+app.delete("/delete/:username", (req, res, next) => {
+  db.run(
+      `DELETE FROM Users WHERE UserName = ?`,
+      [req.params.username],
+      
+      function (err, result) {
+          if (err){
+              res.status(400).json({"error": res.message})
+              return;
+          }
+          res.json({
+              message: "DELETED",
+              changes: this.changes
+          })
+  });
+})
+
 app.listen(PORT, () => console.log(`Example app listening at http://localhost:${PORT}`))

@@ -49,6 +49,7 @@ export const Button = styled.button`
     border: none;
     padding: 1em;
     margin-top: 0.1em;
+    margin-left: 15px;
 `;
 export const ContainerButton = styled.div`
     display: flexbox;
